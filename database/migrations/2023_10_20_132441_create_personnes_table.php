@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    
     /**
      * Run the migrations.
      */
@@ -16,6 +17,7 @@ return new class extends Migration
             $table->string('nom', 100);
             $table->date('date_naissance');
             $table->text('lien_photo');
+            $table->string('role',25);
             $table->timestamps();
         });
     }
