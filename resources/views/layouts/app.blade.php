@@ -91,7 +91,7 @@
           </li>
  
           <li>
-            <a href="#" class="navbar-link">Pricing</a>
+            <a href="/acteurs" class="navbar-link">Acteurs</a>
           </li>
  
         </ul>

@@ -16,9 +16,14 @@ return new class extends Migration
             $table->string('titre', 100);
             $table->text('resume');
             $table->integer('duree');
-            $table->date('date_sortie');
+            $table->integer('annee_sortie');
             $table->text('lien_film');
             $table->text('lien_pochette');
+            $table->string('type', 50);
+            $table->string('genre', 50);
+            $table->string('brand', 50);
+            $table->double('cote');
+            $table->string('rating', 20);
             $table->unsignedBigInteger('realisateur');
             $table->foreign('realisateur')->references('id')->on('personnes');
             $table->unsignedBigInteger('producteur');
