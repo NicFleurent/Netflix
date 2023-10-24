@@ -108,7 +108,7 @@
                       <h3 class="card-title">{{$film->titre}}</h3>
                     </a>
   
-                    <time datetime="2022">2022</time>
+                    <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
                   </div>
   
                   <div class="card-meta">
@@ -117,13 +117,13 @@
                     <div class="duration">
                       <ion-icon name="time-outline"></ion-icon>
   
-                      <time datetime="PT137M">137 min</time>
+                      <time datetime="PT137M">{{$film->duree}} min</time>
                     </div>
   
                     <div class="rating">
                       <ion-icon name="star"></ion-icon>
   
-                      <data>8.5</data>
+                      <data>{{$film->cote}}</data>
                     </div>
                   </div>
   
