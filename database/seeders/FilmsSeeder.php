@@ -15,6 +15,7 @@ class FilmsSeeder extends Seeder
     {
         DB::table('films')->insert([
             [
+                'id' => 1,
                 'titre' => 'Mission impossible : Dead Reckoning, partie 1',
                 'resume' => "Ethan Hunt, au service de Mission Impossible depuis des décennies, fait face à ennemi d'un nouveau genre: une intelligence artificielle nommée « l'Entité », intangible, omniprésente, capable d'influencer comme jamais notre monde d'aujourd'hui. Entré en possession d'un indice qui pourrait permettre à quiconque parvenant à suivre la piste de contrôler le destin de cette I.A., Ethan Hunt ne suit plus les ordres, mais s'assigne lui-même une mission: mettre un terme à la menace de l'Entité par tous les moyens. Mais alors qu'il est traqué par le monde entier, Ethan va découvrir que cette Entité connaît tout de lui, s'est alliée à des ennemis de son passé d'avant Mission Impossible, et que pour la vaincre et sauver l'avenir, il devra sacrifier ce qu'il a de plus cher au monde.",
                 'duree' => 163,
@@ -26,6 +27,7 @@ class FilmsSeeder extends Seeder
                 'acteur_principal' => 1,
             ],
             [
+                'id' => 2,
                 'titre' => 'Avatar : La Voie de l\'eau',
                 'resume' => "Sur Pandora, plus d'une décennie après la guerre entre le peuple autochtone des Na'vi et les humains de la Ressource Development Administration (RDA), Jake Sully assume désormais son rôle de chef des Omaticaya. Avec sa compagne, Neytiri, ils s'occupent de leur famille : Neteyam, leur fils aîné, Lo'ak, leur fils cadet, Kiri, leur fille adoptive (mystérieusement née de l'avatar inerte de la Dre Grace Augustine), Spider, un garçon humain abandonné sur la planète, et Tuk, leur fille benjamine. C'est alors que la RDA et ses troupes reviennent en force sur Pandora. Leur mission est de préparer la planète à devenir une nouvelle Terre et accueillir leur exode. Jake, Neytiri et les Omaticaya sont les premiers à s'opposer à eux. Cependant, les humains ont également dans leurs rangs une escouade de « recombinés » : des avatars Na'vi avec les souvenirs de soldats décédés. Leur chef n'est autre que le colonel Quaritch, qui avait pris soin de faire une sauvegarde de sa mémoire et de sa personnalité avant la bataille où il perdit la vie.",
                 'duree' => 192,
@@ -37,6 +39,7 @@ class FilmsSeeder extends Seeder
                 'acteur_principal' => 4,
             ],
             [
+                'id' => 3,
                 'titre' => 'Les benchwarmers',
                 'resume' => "Gus et ses deux amis Richie et Clark délaissés sont engagés par un millionnaire qui veut former une équipe de baseball et affronter les plus méchants joueurs des plus méchantes équipes des ligues mineures. Gus est si doué pour le baseball qui devient vite un modèle pour les exclus comme lui...",
                 'duree' => 85,
@@ -48,6 +51,7 @@ class FilmsSeeder extends Seeder
                 'acteur_principal' => 7,
             ],
             [
+                'id' => 4,
                 'titre' => 'Star Wars, épisode I : La Menace fantôme',
                 'resume' => "Avant de devenir un célèbre chevalier Jedi, et bien avant de se révéler l'âme la plus noire de la galaxie, Anakin Skywalker est un jeune esclave sur la planète Tatooine. La Force est déjà puissante en lui et il est un remarquable pilote de Podracer. Le maître Jedi Qui-Gon Jinn le découvre et entrevoit alors son immense potentiel. Pendant ce temps, l'armée de droïdes de l'insatiable Fédération du Commerce a envahi Naboo dans le cadre d'un plan secret des Sith visant à accroître leur pouvoir.",
                 'duree' => 136,
@@ -59,6 +63,7 @@ class FilmsSeeder extends Seeder
                 'acteur_principal' => 9,
             ],
             [
+                'id' => 5,
                 'titre' => 'One Piece Film: Red',
                 'resume' => "L'histoire se déroule sur l'île d'Élégia où l'équipage au Chapeau de paille va voir un concert. Ils sont impatients d'écouter la chanteuse la plus connue du monde, Uta, qui se trouve être la fille du légendaire pirate Shanks Le Roux et une amie d'enfance de Luffy.",
                 'duree' => 115,
@@ -70,6 +75,7 @@ class FilmsSeeder extends Seeder
                 'acteur_principal' => 12,
             ],
             [
+                'id' => 6,
                 'titre' => 'La Reine des neiges',
                 'resume' => "L'histoire se déroule sur l'île d'Élégia où l'équipage au Chapeau de paille va voir un concert. Ils sont impatients d'écouter la chanteuse la plus connue du monde, Uta, qui se trouve être la fille du légendaire pirate Shanks Le Roux et une amie d'enfance de Luffy.",
                 'duree' => 102,
@@ -81,6 +87,7 @@ class FilmsSeeder extends Seeder
                 'acteur_principal' => 15,
             ],
             [
+                'id' => 7,
                 'titre' => 'La Pat\'Patrouille : La Super Patrouille, le film',
                 'resume' => "Après qu'une savante « zin zin » ait attiré une météorite jusque sur AventureVille avec un aimant géant, elle se fait arrêter par la police et l'objet venu de l'espace se retrouve entre les pattes de la Pat' Patrouille. Les chiots obtiennent soudainement des super-pouvoirs, ce qui les aide grandement dans leur mission de secourir la veuve et l'orphelin. Stella tentera de tirer profit de cette nouvelle opportunité afin de prouver qu'elle peut être un atout pour l'équipe. Mais, quand ladite savante « zin zin » s'évade de prison avec le maire Hellinger, les choses se compliqueront pour Stella et le reste de la bande.",
                 'duree' => 92,
@@ -92,6 +99,7 @@ class FilmsSeeder extends Seeder
                 'acteur_principal' => 18,
             ],
             [
+                'id' => 8,
                 'titre' => 'La Ligne verte',
                 'resume' => "Paul Edgecomb, pensionnaire centenaire d'une maison de retraite, est hanté par ses souvenirs. Gardien-chef du pénitencier de Cold Mountain, en 1935, en Louisiane, il était chargé de veiller au bon déroulement des exécutions capitales au bloc E (la ligne verte) en s'efforçant d'adoucir les derniers moments des condamnés. Parmi eux se trouvait un colosse du nom de John Coffey, accusé du viol et du meurtre de deux fillettes.",
                 'duree' => 188,
@@ -103,6 +111,7 @@ class FilmsSeeder extends Seeder
                 'acteur_principal' => 20,
             ],
             [
+                'id' => 9,
                 'titre' => 'Forrest Gump',
                 'resume' => "Sur un banc, à Savannah, en Géorgie, Forrest Gump attend le bus. Comme celui-ci tarde à venir, le jeune homme raconte sa vie à ses compagnons d'ennui. A priori, ses capacités intellectuelles plutôt limitées ne le destinaient pas à de grandes choses. Qu'importe. Forrest Gump, sans jamais rien y comprendre, s'associa à tous les grands événements de l'Histoire de son pays.",
                 'duree' => 142,
@@ -114,6 +123,7 @@ class FilmsSeeder extends Seeder
                 'acteur_principal' => 20,
             ],
             [
+                'id' => 10,
                 'titre' => 'Il faut sauver le soldat Ryan',
                 'resume' => "Tandis que les forces alliées débarquent à Omaha Beach, Miller doit conduire son escouade derrière les lignes ennemies pour une mission particulièrement dangereuse: trouver et ramener sain et sauf le simple soldat James Ryan, dont les trois frères sont morts au combat en l'espace de trois jours. Pendant que l'escouade progresse en territoire ennemi, les hommes de Miller se posent des questions et se demandent s'il faut vraiment risquer la vie de huit hommes pour en sauver un seul.",
                 'duree' => 163,
