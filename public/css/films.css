@@ -368,10 +368,6 @@ body.active {
   color: var(--citrine);
 }
 
-.movie-card .duration {
-  /*margin-left: auto;*/
-}
-
 .movie-card :is(.duration, .rating) {
   display: flex;
   align-items: center;
