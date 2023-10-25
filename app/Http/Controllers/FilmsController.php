@@ -12,8 +12,30 @@ class FilmsController extends Controller
      */
     public function index()
     {
-        $films = Film::all();
-        return View('Films.index', compact('films'));
+        $filmsDernieresSorties = Film::orderby('annee_sortie', 'desc')
+                                    ->take(8)
+                                    ->get();
+
+        $filmsToutPublic = Film::where('rating', 'G')
+                                ->orwhere('rating', 'PG')
+                                ->orderby('annee_sortie', 'desc')
+                                ->take(4)
+                                ->get();
+
+        $filmsMeilleur = Film::orderby('cote', 'desc')
+                            ->take(4)
+                            ->get();
+
+        $filmsCourt = Film::orderby('duree', 'asc')
+                            ->take(4)
+                            ->get();
+
+        $filmsComedie = Film::where('genre', 'Comédie')
+                            ->orderby('cote', 'desc')
+                            ->take(4)
+                            ->get();
+
+        return View('Films.index', compact('filmsDernieresSorties', 'filmsToutPublic', 'filmsMeilleur', 'filmsCourt','filmsComedie'));
     }
 
     /**
