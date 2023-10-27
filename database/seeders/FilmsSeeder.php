@@ -184,6 +184,23 @@ class FilmsSeeder extends Seeder
                 'cote' => 9.4,
                 'rating' => 'R'
             ],
+            [
+                'id' => 11,
+                'titre' => 'Demon Slayer',
+                'resume' => "Depuis les temps anciens, il existe des rumeurs concernant des démons mangeurs d'hommes qui se cachent dans les bois. Pour cette raison, les citadins locaux ne s'y aventurent jamais la nuit. La légende raconte aussi qu'un tueur déambule la nuit, chassant ces démons assoiffés de sang.",
+                'duree' => 23,
+                'annee_sortie' => '2019',
+                'lien_film' => 'https://www.youtube.com/watch?v=7VBsDfsXJfQ',
+                'lien_pochette' => 'https://i.pinimg.com/736x/0e/52/37/0e5237897dbefb7b67443ed28adbee3d.jpg',
+                'realisateur' => 24,
+                'producteur' => 25,
+                'acteur_principal' => 26,
+                'type' => 'anime',
+                'genre' => 'shonen',
+                'brand' => 'Ufotable',
+                'cote' => 8.8,
+                'rating' => 'PG-13'
+            ],
         ]);
     }
 }

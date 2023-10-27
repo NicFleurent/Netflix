@@ -175,6 +175,27 @@ class PersonnesSeeder extends Seeder
                 'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/MKr25402_Steven_Spielberg_%28Berlinale_2023%29.jpg/260px-MKr25402_Steven_Spielberg_%28Berlinale_2023%29.jpg',
                 'role'=> 'Réalisateur'
             ],
+            [
+                'id' => 24,
+                'nom' => 'Akira Matsushima',
+                'date_naissance' => '1976-11-08',
+                'lien_photo' => 'https://www.freeboard.co.jp/wp-content/uploads/2019/12/MatsushimaAkira_2011_Artist-rotated-e1578131871401.jpg',
+                'role'=> 'Réalisateur'
+            ],
+            [
+                'id' => 25,
+                'nom' => 'Hikaru Kondo',
+                'date_naissance' => '1969-12-02',
+                'lien_photo' => 'https://cdn.myanimelist.net/images/voiceactors/3/21563.jpg',
+                'role'=> 'Producteur'
+            ],
+            [
+                'id' => 26,
+                'nom' => 'Natsuki Hanae',
+                'date_naissance' => '1991-06-26',
+                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Natsuki_Hanae_%E8%8A%B1%E6%B1%9F%E5%A4%8F%E6%A8%B9_2020.jpg/260px-Natsuki_Hanae_%E8%8A%B1%E6%B1%9F%E5%A4%8F%E6%A8%B9_2020.jpg',
+                'role'=> 'Doubleur'
+            ],
         ]);
             
             
