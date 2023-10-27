@@ -383,6 +383,10 @@ body.active {
   color: var(--citrine);
 }
 
+.movie-card .type-contenu{
+  display: none;
+}
+
 /**
  * CUSTOM SLIDER & SCROLLBAR
  */

@@ -18,11 +18,11 @@
             <ul class="filter-list">
  
               <li>
-                <button class="filter-btn">Movies</button>
+                <button class="filter-btn">Films</button>
               </li>
  
               <li>
-                <button class="filter-btn">TV Shows</button>
+                <button class="filter-btn">Séries TV</button>
               </li>
  
               <li>
@@ -71,6 +71,8 @@
                       <data>{{$film->cote}}</data>
                     </div>
                   </div>
+
+                  <div class="type-contenu">{{$film->type}}</div>
   
                 </div>
               </li>
