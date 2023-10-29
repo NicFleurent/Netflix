@@ -11,7 +11,7 @@
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
  
   <!-- custom css link-->
-  <link rel="stylesheet" href="css/films.css">
+  <link rel="stylesheet" href="{{asset('css/films.css')}}">
   <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +27,8 @@
  
       <div class="overlay" data-overlay></div>
  
-      <a href="./index.html" class="logo">
-        <img src="img/logo.svg" alt="Filmlane logo">
+      <a href="/" class="logo">
+        <img src="{{asset('img/logo.svg')}}" alt="Filmlane logo">
       </a>
  
       <div class="header-actions">
@@ -62,8 +62,8 @@
  
         <div class="navbar-top">
  
-          <a href="./index.html" class="logo">
-            <img src="img/logo.svg" alt="Filmlane logo">
+          <a href="/" class="logo">
+            <img src="{{asset('img/logo.svg')}}" alt="Filmlane logo">
           </a>
  
           <button class="menu-close-btn" data-menu-close-btn>
@@ -75,11 +75,11 @@
         <ul class="navbar-list">
  
           <li>
-            <a href="./index.html" class="navbar-link">Home</a>
+            <a href="/" class="navbar-link">Home</a>
           </li>
  
           <li>
-            <a href="#famille" class="navbar-link">Famille</a>
+            <a href="/#famille" class="navbar-link">Famille</a>
           </li>
  
           <li>
@@ -146,14 +146,14 @@
  
         <div class="footer-brand-wrapper">
  
-          <a href="./index.html" class="logo">
-            <img src="img/logo.svg" alt="Filmlane logo">
+          <a href="/" class="logo">
+            <img src="{{asset('img/logo.svg')}}" alt="Filmlane logo">
           </a>
  
           <ul class="footer-list">
  
             <li>
-              <a href="./index.html" class="footer-link">Home</a>
+              <a href="/" class="footer-link">Home</a>
             </li>
  
             <li>
@@ -240,7 +240,7 @@
           &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
         </p>
  
-        <img src="img/footer-bottom-img.png" alt="Online banking companies logo" class="footer-bottom-img">
+        <img src="{{asset('img/footer-bottom-img.png')}}" alt="Online banking companies logo" class="footer-bottom-img">
  
       </div>
     </div>

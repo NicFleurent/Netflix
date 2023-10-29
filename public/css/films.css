@@ -590,7 +590,7 @@ body.active {
  * #UPCOMING
 \*-----------------------------------*/
 
-.upcoming {
+.upcoming, .zoomFilm {
   background: url("../images/upcoming-bg.png") no-repeat;
   background-size: cover;
   background-position: center;

@@ -15,12 +15,14 @@ use App\Http\Controllers\PersonnesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 
+[FilmsController::class, 'index']);
 
 Route::get('films', 
 [FilmsController::class, 'index']);
+
+Route::get('films/{film}', 
+[FilmsController::class, 'show'])->name('film.show');
 
 Route::get('acteurs', 
 [PersonnesController::class, 'index']);

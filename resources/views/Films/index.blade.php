@@ -40,7 +40,7 @@
               <li>
                 <div class="movie-card">
   
-                  <a href="./movie-details.html">
+                  <a href="{{route('film.show', [$film])}}">
                     <figure class="card-banner">
                       <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
 
@@ -51,7 +51,7 @@
                   </a>
   
                   <div class="title-wrapper">
-                    <a href="./movie-details.html">
+                    <a href="{{route('film.show', [$film])}}">
                       <h3 class="card-title">{{$film->titre}}</h3>
                     </a>
   
@@ -119,7 +119,7 @@
                 <li>
                   <div class="movie-card">
 
-                    <a href="./movie-details.html">
+                    <a href="{{route('film.show', [$film])}}">
                       <figure class="card-banner">
                         <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
                       
@@ -130,7 +130,7 @@
                     </a>
 
                     <div class="title-wrapper">
-                      <a href="./movie-details.html">
+                      <a href="{{route('film.show', [$film])}}">
                         <h3 class="card-title">{{$film->titre}}</h3>
                       </a>
 
@@ -196,7 +196,7 @@
                 <li>
                   <div class="movie-card">
 
-                    <a href="./movie-details.html">
+                    <a href="{{route('film.show', [$film])}}">
                       <figure class="card-banner">
                         <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
                       
@@ -207,7 +207,7 @@
                     </a>
 
                     <div class="title-wrapper">
-                      <a href="./movie-details.html">
+                      <a href="{{route('film.show', [$film])}}">
                         <h3 class="card-title">{{$film->titre}}</h3>
                       </a>
 
@@ -253,7 +253,7 @@
                 <li>
                   <div class="movie-card">
 
-                    <a href="./movie-details.html">
+                    <a href="{{route('film.show', [$film])}}">
                       <figure class="card-banner">
                         <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
                       
@@ -264,7 +264,7 @@
                     </a>
 
                     <div class="title-wrapper">
-                      <a href="./movie-details.html">
+                      <a href="{{route('film.show', [$film])}}">
                         <h3 class="card-title">{{$film->titre}}</h3>
                       </a>
 
@@ -330,7 +330,7 @@
                 <li>
                   <div class="movie-card">
 
-                    <a href="./movie-details.html">
+                    <a href="{{route('film.show', [$film])}}">
                       <figure class="card-banner">
                         <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
                       
@@ -341,7 +341,7 @@
                     </a>
 
                     <div class="title-wrapper">
-                      <a href="./movie-details.html">
+                      <a href="{{route('film.show', [$film])}}">
                         <h3 class="card-title">{{$film->titre}}</h3>
                       </a>
 
