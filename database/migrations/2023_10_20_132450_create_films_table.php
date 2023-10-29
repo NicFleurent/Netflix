@@ -24,12 +24,9 @@ return new class extends Migration
             $table->string('brand', 50);
             $table->double('cote');
             $table->string('rating', 20);
-            $table->unsignedBigInteger('realisateur');
-            $table->foreign('realisateur')->references('id')->on('personnes');
-            $table->unsignedBigInteger('producteur');
-            $table->foreign('producteur')->references('id')->on('personnes');
-            $table->unsignedBigInteger('acteur_principal');
-            $table->foreign('acteur_principal')->references('id')->on('personnes');
+            $table->foreignId('realisateur_id')->constrained('personnes');
+            $table->foreignId('producteur_id')->constrained('personnes');
+            $table->foreignId('acteurPrincipal_id')->constrained('personnes');
             $table->timestamps();
         });
     }

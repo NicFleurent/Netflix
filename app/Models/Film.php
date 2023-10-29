@@ -8,5 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Film extends Model
 {
     use HasFactory;
-    protected $table='films';
+
+    public function realisateur(){
+        return $this->belongsTo(Personne::class);
+    }
+    
+    public function producteur(){
+        return $this->belongsTo(Personne::class);
+    }
+    
+    public function acteurPrincipal(){
+        return $this->belongsTo(Personne::class);
+    }
+    
+    public function acteur(){
+        return $this->belongsToMany(Personne::class);
+    }
 }
