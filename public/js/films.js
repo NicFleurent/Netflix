@@ -52,38 +52,57 @@ window.addEventListener("scroll", function () {
 });
 
 /**
- * Dernières Sorties Bouton filtre
+ * Bouton filtre
  */
-let sectionDernieresSortie = document.querySelector(".upcoming");
-let filtreDernieresSortie = sectionDernieresSortie.querySelectorAll(".filter-btn");
-let listeFilmsDernieresSortie = sectionDernieresSortie.querySelector(".movies-list");
-let filmsDernieresSortie = listeFilmsDernieresSortie.querySelectorAll("li");
+let sectionsContenu = document.querySelectorAll(".section-contenu");
+sectionsContenu.forEach(section => {
+  let filtres = section.querySelectorAll(".filter-btn");
+  let listeContenu = section.querySelector(".movies-list");
+  let films = listeContenu.querySelectorAll("li");
 
-console.log(sectionDernieresSortie);
-console.log(filtreDernieresSortie);
-console.log(listeFilmsDernieresSortie);
-console.log(filmsDernieresSortie);
-
-filtreDernieresSortie.forEach(filtre => {
-  filtre.addEventListener('click', function(){
-    let comparateur;
-    if(filtre.innerHTML === "Films"){
-      comparateur = "film";
-    }
-    else{
-      comparateur = "anime";
-    }
-    
-    console.log(comparateur);
-    filmsDernieresSortie.forEach(film => {
-      let type = film.querySelector('.type-contenu').innerHTML;
-      console.log(type);
-      if(type === comparateur){
-        film.style.display = "flex";
+  filtres.forEach(filtre => {
+    filtre.addEventListener('click', function(){
+      let comparateur;
+      if(filtre.innerHTML === "Films"){
+        comparateur = "film";
+      }
+      else if(filtre.innerHTML === "Séries TV"){
+        comparateur = "serie";
+      }
+      else if(filtre.innerHTML === "Anime"){
+        comparateur = "anime";
       }
       else{
-        film.style.display = "none";
+        comparateur = "tous";
+      }
+      
+      let nbrFilmAffiche = 0;
+  
+      films.forEach(film => {
+        let type = film.querySelector('.type-contenu').innerHTML;
+  
+        if(type === comparateur || comparateur === "tous"){
+          film.style.display = "flex";
+          nbrFilmAffiche++;
+        }
+        else{
+          film.style.display = "none";
+        }
+      });
+  
+      let aucunFilm = document.createElement("h3");
+      aucunFilm.setAttribute('class', 'section-subtitle');
+      aucunFilm.style.textAlign = 'center';
+      aucunFilm.innerHTML = "Il n'y a présentement pas de contenu de ce type dans cette section";
+
+      if (section.childNodes.length > 3){
+        section.lastChild.remove();
+      }
+  
+      if(nbrFilmAffiche === 0){
+        section.appendChild(aucunFilm);
       }
     });
   });
 });
+

@@ -139,6 +139,21 @@ class FilmPersonneSeeder extends Seeder
                 'film_id' => 10,
                 'personne_id' => 23,
             ],
+            [
+                'id' => 27,
+                'film_id' => 11,
+                'personne_id' => 24,
+            ],
+            [
+                'id' => 28,
+                'film_id' => 11,
+                'personne_id' => 25,
+            ],
+            [
+                'id' => 29,
+                'film_id' => 11,
+                'personne_id' => 26,
+            ],
         ]);
     }
 }

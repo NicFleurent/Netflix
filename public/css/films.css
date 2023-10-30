@@ -128,8 +128,23 @@ body.active {
   overflow: hidden;
 }
 
+/*-----------------------------------*\
+ * #show.film style
+\*-----------------------------------*/
+.presentation{
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+}
 
+.presentation img{
+  width: 30%;
+  margin-right: 30px;
+}
 
+.information{
+  color: white;
+}
 
 
 /*-----------------------------------*\
@@ -1251,6 +1266,7 @@ figure:hover .pop-over-description{
 
   .upcoming .movies-list>li {
     min-width: calc(50% - 15px);
+    max-width: calc(50% - 15px);
   }
 
 
@@ -1592,6 +1608,7 @@ figure:hover .pop-over-description{
 
   .upcoming .movies-list>li {
     min-width: calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
   }
 
 
@@ -1753,6 +1770,7 @@ figure:hover .pop-over-description{
 
   .upcoming .movies-list>li {
     min-width: calc(25% - 22.5px);
+    max-width: calc(25% - 22.5px);
   }
 
 

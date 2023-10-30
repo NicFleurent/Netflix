@@ -6,7 +6,7 @@
 <main>
     <article>
       <!-- #UPCOMING -->
-      <section class="upcoming">
+      <section class="upcoming section-contenu">
         <div class="container">
  
           <div class="flex-wrapper">
@@ -16,6 +16,10 @@
             </div>
  
             <ul class="filter-list">
+ 
+              <li>
+                <button class="filter-btn">Tous</button>
+              </li>
  
               <li>
                 <button class="filter-btn">Films</button>
@@ -87,7 +91,7 @@
       </section>
  
       <!-- #Top Rated Movie-->
-      <section class="top-rated">
+      <section class="top-rated section-contenu">
         <div class="container">
 
           <h2 class="h2 section-title">Les meilleurs films</h2>
@@ -95,19 +99,19 @@
           <ul class="filter-list">
 
             <li>
-              <button class="filter-btn">Movies</button>
+              <button class="filter-btn">Tous</button>
             </li>
 
             <li>
-              <button class="filter-btn">TV Shows</button>
+              <button class="filter-btn">Films</button>
             </li>
 
             <li>
-              <button class="filter-btn">Documentary</button>
+              <button class="filter-btn">Séries TV</button>
             </li>
 
             <li>
-              <button class="filter-btn">Sports</button>
+              <button class="filter-btn">Anime</button>
             </li>
 
           </ul>
@@ -151,6 +155,8 @@
                       </div>
                     </div>
 
+                    <div class="type-contenu">{{$film->type}}</div>
+
                   </div>
                 </li>
               @endforeach
@@ -164,7 +170,7 @@
       </section>
 
        <!-- #Film Court-->
-       <section class="top-rated">
+       <section class="top-rated section-contenu">
         <div class="container">
 
           <h2 class="h2 section-title">Vous avez peu de temps?</h2>
@@ -172,19 +178,19 @@
           <ul class="filter-list">
 
             <li>
-              <button class="filter-btn">Movies</button>
+              <button class="filter-btn">Tous</button>
             </li>
 
             <li>
-              <button class="filter-btn">TV Shows</button>
+              <button class="filter-btn">Films</button>
             </li>
 
             <li>
-              <button class="filter-btn">Documentary</button>
+              <button class="filter-btn">Séries TV</button>
             </li>
 
             <li>
-              <button class="filter-btn">Sports</button>
+              <button class="filter-btn">Anime</button>
             </li>
 
           </ul>
@@ -227,6 +233,8 @@
                         <data>{{$film->cote}}</data>
                       </div>
                     </div>
+
+                    <div class="type-contenu">{{$film->type}}</div>
 
                   </div>
                 </li>
@@ -285,6 +293,8 @@
                       </div>
                     </div>
 
+                    <div class="type-contenu">{{$film->type}}</div>
+
                   </div>
                 </li>
               @endforeach
@@ -298,7 +308,7 @@
       </section>
  
       <!-- #Famille-->
-      <section id="famille" class="top-rated">
+      <section id="famille" class="top-rated section-contenu">
         <div class="container">
 
           <h2 class="h2 section-title">Pour toute la famille</h2>
@@ -306,19 +316,19 @@
           <ul class="filter-list">
 
             <li>
-              <button class="filter-btn">Movies</button>
+              <button class="filter-btn">Tous</button>
             </li>
 
             <li>
-              <button class="filter-btn">TV Shows</button>
+              <button class="filter-btn">Films</button>
             </li>
 
             <li>
-              <button class="filter-btn">Documentary</button>
+              <button class="filter-btn">Séries TV</button>
             </li>
 
             <li>
-              <button class="filter-btn">Sports</button>
+              <button class="filter-btn">Anime</button>
             </li>
 
           </ul>
@@ -361,6 +371,8 @@
                         <data>{{$film->cote}}</data>
                       </div>
                     </div>
+
+                    <div class="type-contenu">{{$film->type}}</div>
 
                   </div>
                 </li>
