@@ -10,17 +10,19 @@
                 <div class="presentation">
                     <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
                     <div class="information">
-                        <p>{{$film->resume}}</p>
-                        <p>{{$film->duree}}</p>
-                        <p>{{$film->annee_sortie}}</p>
-                        <p>{{$film->genre}}</p>
-                        <p>{{$film->type}}</p>
-                        <p>{{$film->brand}}</p>
-                        <p>{{$film->cote}}</p>
-                        <p>{{$film->rating}}</p>
-                        <p>{{$film->realisateur->nom}}</p>
-                        <p>{{$film->producteur->nom}}</p>
-                        <p>{{$film->acteurPrincipal}}</p>
+                        <p>Decription :</p>
+                        <p class="space">{{$film->resume}}</p>
+                        <p>Durée : {{$film->duree}}</p>
+                        <p class="space">Année de sortie : {{$film->annee_sortie}}</p>
+                        <p>Genre : {{$film->genre}}</p>
+                        <p class="space">Type de contenu : {{$film->type}}</p>
+                        <p>Marque : {{$film->brand}}</p>
+                        <p>Côte : {{$film->cote}}</p>
+                        <p class="space">Classement PG : {{$film->rating}}</p>
+                        <p>Réalisateur : {{$film->realisateur->nom}}</p>
+                        <p>Producteur : {{$film->producteur->nom}}</p>
+                        <p class="space">Acteur Principal : {{$film->acteurPrincipal}}</p>
+                        <p>Acteurs :</p>
                         @foreach($film->acteurs as $acteurDuFilm)
                             <p>{{$acteurDuFilm->nom}}</p>
                         @endforeach

@@ -146,6 +146,10 @@ body.active {
   color: white;
 }
 
+.space{
+  margin-bottom: 15px;
+}
+
 
 /*-----------------------------------*\
  * #REUSED STYLE
