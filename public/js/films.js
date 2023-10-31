@@ -106,3 +106,12 @@ sectionsContenu.forEach(section => {
   });
 });
 
+/**
+ * Modification Durée pour durée par épisode
+ */
+let pageZoom = document.querySelectorAll(".zoomFilm");
+let typeContenu = pageZoom.querySelector('.type-contenu').innerHTML;
+let duree = pageZoom.querySelector('.bloc-info #duree');
+if(typeContenu === "anime"){
+  duree.innerHTML = "Durée par épisode : <span>{{$film->duree}}</span>"
+}

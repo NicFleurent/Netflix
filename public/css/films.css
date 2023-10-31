@@ -134,16 +134,35 @@ body.active {
 .presentation{
   display: flex;
   flex-direction: row;
-  margin: 30px;
 }
 
-.presentation img{
-  width: 30%;
+.presentation .image img{
+  display: none;
+  width: 30vw;
   margin-right: 30px;
 }
 
 .information{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
   color: white;
+}
+
+.bloc-resume{
+  margin-bottom: 15px;
+}
+.bloc-info{
+  margin-right: 50px;
+  margin-bottom: 15px;
+}
+.bloc-info span{
+  display: contents;
+  color: #e2d703;
+}
+.bloc-acteur{
+  width: 100%;
 }
 
 .space{
@@ -1241,6 +1260,10 @@ figure:hover .pop-over-description{
     margin-inline: auto;
   }
 
+  .presentation .image img{
+    display: none;
+  }
+
   /* MOVIE CARD */
 
   .movies-list {
@@ -1345,6 +1368,10 @@ figure:hover .pop-over-description{
 
   .container {
     max-width: 720px;
+  }
+
+  .presentation .image img{
+    display: block;
   }
 
 
