@@ -12,13 +12,11 @@
                         <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
                     </div>
                     <div class="information">
-                        <h2 class="h2 section-title">Voir le trailer</h3>
                         <div class="trailer">
                             <iframe width="560" height="315" src="{{$film->lien_film}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
 
                         <div class="bloc-resume">
-                            <div class="text-info">Decription :</div>
                             <div class="text-info">{{$film->resume}}</div>
                         </div>
                         <div class="bloc-info">
