@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('rating', 20);
             $table->foreignId('realisateur_id')->constrained('personnes');
             $table->foreignId('producteur_id')->constrained('personnes');
-            $table->foreignId('acteurPrincipal_id')->constrained('personnes');
+            $table->foreignId('acteurprincipal_id')->constrained('personnes');
             $table->timestamps();
         });
     }

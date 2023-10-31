@@ -175,8 +175,20 @@ body.active {
   margin: 30px;
 }
 
-.zoomFilm .container h2{
+.information h2{
+  width: 100%;
   margin: 30px;
+}
+
+.trailer{
+  width: 100%;
+  text-align: center;
+}
+
+iframe{
+  width: 300px;
+  height: 169px;
+  margin-bottom: 15px;
 }
 
 
@@ -1274,6 +1286,11 @@ figure:hover .pop-over-description{
     display: none;
   }
 
+  iframe{
+    width: 400px;
+    height: 225px;
+  }
+
   /* MOVIE CARD */
 
   .movies-list {
@@ -1381,7 +1398,7 @@ figure:hover .pop-over-description{
   }
 
   .presentation .image img{
-    display: block;
+    display: none;
   }
 
 
@@ -1555,6 +1572,16 @@ figure:hover .pop-over-description{
 
   .container {
     max-width: 960px;
+  }
+
+  .presentation .image img{
+    display: block;
+  }
+
+  iframe{
+    width: 560px;
+    height: 315px;
+    margin-bottom: 15px;
   }
 
   /* MOVIE CARD */

@@ -17,7 +17,7 @@ class Film extends Model
         return $this->belongsTo(Personne::class);
     }
     
-    public function acteurPrincipal(){
+    public function acteurprincipal(){
         return $this->belongsTo(Personne::class);
     }
     
