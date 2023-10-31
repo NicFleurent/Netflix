@@ -153,6 +153,7 @@ body.active {
 .bloc-resume{
   margin-bottom: 15px;
 }
+
 .bloc-info{
   margin-right: 50px;
   margin-bottom: 15px;
@@ -161,12 +162,21 @@ body.active {
   display: contents;
   color: #e2d703;
 }
+
 .bloc-acteur{
   width: 100%;
 }
 
 .space{
   margin-bottom: 15px;
+}
+
+.zoomFilm .container h1{
+  margin: 30px;
+}
+
+.zoomFilm .container h2{
+  margin: 30px;
 }
 
 

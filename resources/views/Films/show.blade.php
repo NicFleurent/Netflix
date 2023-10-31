@@ -6,7 +6,7 @@
     @if(isset($film))
         <section class="zoomFilm">
             <div class="container">
-                <h2 class="h2 section-title">{{$film->titre}}</h2>
+                <h1 class="h1 section-title">{{$film->titre}}</h1>
                 <div class="presentation">
                     <div class="image">
                         <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
@@ -46,7 +46,10 @@
                         
                     </div>
                 </div>
-                <h1>Ajouter Trailer</h1>
+                <h2 class="h2 section-title">Voir le trailer</h3>
+                <div class="trailer">
+                    <iframe width="560" height="315" src="{{$film->lien_film}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
             </div>
         </section>
     @endif
