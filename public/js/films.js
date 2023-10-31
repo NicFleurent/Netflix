@@ -112,6 +112,12 @@ sectionsContenu.forEach(section => {
 let pageZoom = document.querySelectorAll(".zoomFilm");
 let typeContenu = pageZoom.querySelector('.type-contenu').innerHTML;
 let duree = pageZoom.querySelector('.bloc-info #duree');
+
+console.log("test");
+console.log(pageZoom);
+console.log(typeContenu);
+console.log(duree);
+
 if(typeContenu === "anime"){
   duree.innerHTML = "Durée par épisode : <span>{{$film->duree}}</span>"
 }

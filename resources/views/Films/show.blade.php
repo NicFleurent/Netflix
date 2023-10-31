@@ -12,6 +12,11 @@
                         <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
                     </div>
                     <div class="information">
+                        <h2 class="h2 section-title">Voir le trailer</h3>
+                        <div class="trailer">
+                            <iframe width="560" height="315" src="{{$film->lien_film}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+
                         <div class="bloc-resume">
                             <div class="text-info">Decription :</div>
                             <div class="text-info">{{$film->resume}}</div>
@@ -21,7 +26,7 @@
                             <div class="text-info">Année de sortie : <span>{{$film->annee_sortie}}</span></div>
                         </div>
                         <div class="bloc-info">
-                            <div class="text-info">Côte : <span>{{$film->cote}}</span></div>
+                            <div class="text-info">Cote : <span>{{$film->cote}}</span></div>
                             <div class="text-info">Classement PG : <span>{{$film->rating}}</span></div>
                         </div>
                         <div class="bloc-info">
@@ -35,7 +40,7 @@
                         </div>
                         <div class="bloc-info">
                             <div class="text-info">Producteur : <span>{{$film->producteur->nom}}</span></div>
-                            <div class="text-info">Acteur Principal : <span>{{$film->acteurPrincipal}}</span></div>
+                            <div class="text-info">Acteur Principal : <span>{{$film->acteurprincipal->nom}}</span></div>
                         </div>
                         <div class="bloc-acteur">
                             <p>Acteurs :</p>
@@ -45,10 +50,6 @@
                         </div>
                         
                     </div>
-                </div>
-                <h2 class="h2 section-title">Voir le trailer</h3>
-                <div class="trailer">
-                    <iframe width="560" height="315" src="{{$film->lien_film}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
