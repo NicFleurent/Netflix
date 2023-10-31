@@ -4,7 +4,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/acteurs.css') }}">
-@stop
+@endsection
 
 @section('contenu')
     <main>
@@ -17,20 +17,22 @@
                         <h2 class="h2 section-title">Acteurs/Actrices</h2>
                     </div>
 
-
                 </div>
                 <ul class="movies-list  has-scrollbar">
 
                     @if (count($acteurs))
                         @foreach ($acteurs as $acteur)
-                            <li>
-                                <div class="movie-card">
-                                    <img class="img" src="{{ $acteur->lien_photo }}" alt="Image de {{ $acteur->nom }} ">
-                                    <div class="title-wrapper">
-                                        <h3 class="card-title">{{ $acteur->nom }}</h3>
+                            <a href="{{ route('personnes.show', [$acteur]) }}">
+                                <li>
+                                    <div class="movie-card">
+                                        <img class="img" src="{{ $acteur->lien_photo }}"
+                                            alt="Image de {{ $acteur->nom }} ">
+                                        <div class="title-wrapper">
+                                            <h3 class="card-title">{{ $acteur->nom }}</h3>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                            </a>
                         @endforeach
                     @else
                     @endif
@@ -50,14 +52,17 @@
                 <ul class="movies-list  has-scrollbar">
                     @if (count($realisateurs))
                         @foreach ($realisateurs as $realisateur)
-                            <li>
-                                <div class="movie-card">
-                                    <img class="img" src="{{ $realisateur->lien_photo }}" alt="Image de {{ $realisateur->nom }} ">
-                                    <div class="title-wrapper">
-                                        <h3 class="card-title">{{ $realisateur->nom }}</h3>
+                            <a href="{{ route('personnes.show', [$realisateur]) }}">
+                                <li>
+                                    <div class="movie-card">
+                                        <img class="img" src="{{ $realisateur->lien_photo }}"
+                                            alt="Image de {{ $realisateur->nom }} ">
+                                        <div class="title-wrapper">
+                                            <h3 class="card-title">{{ $realisateur->nom }}</h3>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                            </a>
                         @endforeach
                     @else
                     @endif
@@ -77,14 +82,17 @@
                 <ul class="movies-list  has-scrollbar">
                     @if (count($producteurs))
                         @foreach ($producteurs as $producteur)
-                            <li>
-                                <div class="movie-card">
-                                    <img class="img" src="{{ $producteur->lien_photo }}" alt="Image de {{ $producteur->nom }} ">
-                                    <div class="title-wrapper">
-                                        <h3 class="card-title">{{ $producteur->nom }}</h3>
+                            <a href="{{ route('personnes.show', [$producteur]) }}">
+                                <li>
+                                    <div class="movie-card">
+                                        <img class="img" src="{{ $producteur->lien_photo }}"
+                                            alt="Image de {{ $producteur->nom }} ">
+                                        <div class="title-wrapper">
+                                            <h3 class="card-title">{{ $producteur->nom }}</h3>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                            </a>
                         @endforeach
                     @else
                     @endif
@@ -93,7 +101,7 @@
             </div>
         </section>
 
-          <!-- Fêtes du mois -->
+        <!-- Fêtes du mois -->
         <section class="upcoming">
             <div class="container">
                 <div class="flex-wrapper">
@@ -104,14 +112,17 @@
                 <ul class="movies-list  has-scrollbar">
                     @if (count($dateAnniversaires))
                         @foreach ($dateAnniversaires as $dateAnniversaire)
-                            <li>
-                                <div class="movie-card">
-                                    <img class="img" src="{{ $dateAnniversaire->lien_photo }}" alt="Image de {{ $dateAnniversaire->nom }} ">
-                                    <div class="title-wrapper">
-                                        <h3 class="card-title">{{ $dateAnniversaire->nom }}</h3>
+                            <a href="{{ route('personnes.show', [$dateAnniversaire]) }}">
+                                <li>
+                                    <div class="movie-card">
+                                        <img class="img" src="{{ $dateAnniversaire->lien_photo }}"
+                                            alt="Image de {{ $dateAnniversaire->nom }} ">
+                                        <div class="title-wrapper">
+                                            <h3 class="card-title">{{ $dateAnniversaire->nom }}</h3>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                            </a>
                         @endforeach
                     @else
                     @endif

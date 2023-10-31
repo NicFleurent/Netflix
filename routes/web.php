@@ -26,3 +26,6 @@ Route::get('films/{film}',
 
 Route::get('acteurs', 
 [PersonnesController::class, 'index']);
+
+Route::get('/personnes/{personne}', 
+[PersonnesController::class, 'show'])->name('personnes.show');

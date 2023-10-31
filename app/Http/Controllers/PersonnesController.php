@@ -51,10 +51,11 @@ class PersonnesController extends Controller
 
     /**
      * Display the specified resource.
+     * @param object $personne
      */
-    public function show(string $id)
+    public function show(Personne $personne)
     {
-        //
+        return View('personnes.show', compact('personne'));
     }
 
     /**
