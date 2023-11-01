@@ -37,27 +37,27 @@ class FilmPersonneSeeder extends Seeder
             [
                 'id' => 5,
                 'film_id' => 3,
-                'personne_id' => 28,
+                'personne_id' => 40,
             ],
             [
                 'id' => 6,
                 'film_id' => 3,
-                'personne_id' => 29,
+                'personne_id' => 41,
             ],
             [
                 'id' => 7,
                 'film_id' => 3,
-                'personne_id' => 30,
+                'personne_id' => 42,
             ],
             [
                 'id' => 8,
                 'film_id' => 4,
-                'personne_id' => 32,
+                'personne_id' => 45,
             ],
             [
                 'id' => 9,
                 'film_id' => 4,
-                'personne_id' => 33,
+                'personne_id' => 46,
             ],
             [
                 'id' => 10,
@@ -157,22 +157,22 @@ class FilmPersonneSeeder extends Seeder
             [
                 'id' => 30,
                 'film_id' => 3,
-                'personne_id' => 27,
+                'personne_id' => 43,
             ],
             [
                 'id' => 31,
                 'film_id' => 3,
-                'personne_id' => 31,
+                'personne_id' => 44,
             ],
             [
                 'id' => 32,
                 'film_id' => 4,
-                'personne_id' => 34,
+                'personne_id' => 46,
             ],
             [
                 'id' => 33,
                 'film_id' => 4,
-                'personne_id' => 35,
+                'personne_id' => 47,
             ],
         ]);
     }
