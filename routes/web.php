@@ -29,3 +29,9 @@ Route::get('acteurs',
 
 Route::get('/personnes/{personne}', 
 [PersonnesController::class, 'show'])->name('personnes.show');
+
+Route::get('/acteurs/ajouter',
+[PersonnesController::class, 'create'])->name('acteurs.create');
+
+Route::get('/films/ajouter',
+[FilmsController::class, 'create'])->name('films.create');
