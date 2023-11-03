@@ -34,7 +34,7 @@
                         <td>{{$listefilms->titre}}</td>
                         <img class="img" src="{{ $listefilms->lien_pochette }}" alt="Poster de {{ $listefilms->titre }} ">
                     </a>
-
+                   {{-- Ajouter des if si vide et aller chercher dans $personne->filmsRealises et filmsProduits --}}
                     <td>{{ $personne->role }}</td>
                 </tr>
                 @endforeach

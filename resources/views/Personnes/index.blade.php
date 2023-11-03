@@ -8,7 +8,6 @@
 
 @section('contenu')
     <main>
-
         <!-- Acteurs/Actrices-->
         <section class="upcoming">
             <div class="container">

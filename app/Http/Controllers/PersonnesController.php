@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Personne;
+use Illuminate\Http\Facades\Log;
+use App\Http\Requests\PersonneRequest;
 
 class PersonnesController extends Controller
 {
@@ -47,7 +49,15 @@ class PersonnesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $personne = new Personne($request->all());
+            $personne->save();
+        }
+        catch(\Throwable $e){
+            //Permet de gérer l'erreur
+            Log::debug($e);
+        }
+            return redirect()->route('personnes.index');
     }
 
     /**

@@ -23,4 +23,6 @@ class Personne extends Model
     {
         return $this->hasMany(Film::class, 'producteur_id');
     }
+
+    protected $fillable = ['nom','date_naissance','lien_photo','role'];
 }
