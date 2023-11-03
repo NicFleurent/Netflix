@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Film;
+use App\Models\Personne;
 use Illuminate\Contracts\View\View;
 
 class FilmsController extends Controller
@@ -44,7 +45,8 @@ class FilmsController extends Controller
      */
     public function create()
     {
-        return View('films.create');
+        $personnes = Personne::All();
+        return View('films.create', compact('personnes'));
     }
 
     /**
@@ -52,7 +54,16 @@ class FilmsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $film = new Film($request->all());
+            $film->save();
+        }
+    
+        catch (\Throwable $e) {
+            //Gérer l'erreur
+            Log::debug($e);
+        }
+        return redirect()->route('films.index');
     }
 
     /**

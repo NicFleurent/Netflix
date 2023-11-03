@@ -19,7 +19,7 @@ Route::get('/',
 [FilmsController::class, 'index']);
 
 Route::get('films', 
-[FilmsController::class, 'index']);
+[FilmsController::class, 'index'])->name('films.index');
 
 Route::get('films/ajouter',
 [FilmsController::class, 'create'])->name('films.create');
@@ -31,7 +31,7 @@ Route::post('films',
 [FilmsController::class, 'store'])->name('films.store');
 
 Route::get('personnes', 
-[PersonnesController::class, 'index']);
+[PersonnesController::class, 'index'])->name('personnes.index');
 
 Route::get('/personnes/ajouter',
 [PersonnesController::class, 'create'])->name('personnes.create');

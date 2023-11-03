@@ -86,7 +86,7 @@
                         <div class="dropdown">
                             <button onclick="myFunction()" class="dropbtn navbar-link">Admin</button>
                             <div id="myDropdown" class="dropdown-content">
-                                <a href="/films/ajouter">Ajouter un film</a>
+                                <a href="{{ route('films.create') }}">Ajouter un film</a>
                                 <a href="/personnes/ajouter">Ajouter un acteur</a>
                                 <a href="#">Ajouter une relation</a>
                             </div>
