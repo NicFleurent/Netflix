@@ -44,7 +44,7 @@ class FilmsController extends Controller
      */
     public function create()
     {
-        //
+        return View('films.create');
     }
 
     /**

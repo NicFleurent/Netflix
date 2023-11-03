@@ -79,7 +79,7 @@
                     </li>
 
                     <li>
-                        <a href="/acteurs" class="navbar-link">Acteurs</a>
+                        <a href="/personnes" class="navbar-link">Personnes</a>
                     </li>
 
                     <li>
@@ -87,7 +87,7 @@
                             <button onclick="myFunction()" class="dropbtn navbar-link">Admin</button>
                             <div id="myDropdown" class="dropdown-content">
                                 <a href="/films/ajouter">Ajouter un film</a>
-                                <a href="/acteurs/ajouter">Ajouter un acteur</a>
+                                <a href="/personnes/ajouter">Ajouter un acteur</a>
                                 <a href="#">Ajouter une relation</a>
                             </div>
                         </div>
