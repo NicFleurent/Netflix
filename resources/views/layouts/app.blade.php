@@ -38,19 +38,6 @@
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
 
-                <div class="lang-wrapper">
-                    <label for="language">
-                        <ion-icon name="globe-outline"></ion-icon>
-                    </label>
-
-                    <select name="language" id="language">
-                        <option value="en">EN</option>
-                        <option value="au">AU</option>
-                        <option value="ar">AR</option>
-                        <option value="tu">TU</option>
-                    </select>
-                </div>
-
                 <button class="btn btn-primary">Sign in</button>
 
             </div>
@@ -93,6 +80,17 @@
 
                     <li>
                         <a href="/acteurs" class="navbar-link">Acteurs</a>
+                    </li>
+
+                    <li>
+                        <div class="dropdown">
+                            <button onclick="myFunction()" class="dropbtn navbar-link">Admin</button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="/films/ajouter">Ajouter un film</a>
+                                <a href="/acteurs/ajouter">Ajouter un acteur</a>
+                                <a href="#">Ajouter une relation</a>
+                            </div>
+                        </div>
                     </li>
 
                 </ul>

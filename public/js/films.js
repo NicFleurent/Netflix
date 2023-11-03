@@ -1,6 +1,32 @@
 'use strict';
 
 /**
+ * Dropdown
+ */
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener("click", function(event){
+  console.log("test window");
+  if (!event.target.matches('.dropbtn')) {
+    console.log("test not dropdown");
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+});
+
+/**
  * navbar variables
  */
 
