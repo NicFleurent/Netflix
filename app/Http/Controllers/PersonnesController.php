@@ -39,7 +39,7 @@ class PersonnesController extends Controller
      */
     public function create()
     {
-        //
+        return View('acteurs.create');
     }
 
     /**

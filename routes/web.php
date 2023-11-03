@@ -35,3 +35,9 @@ Route::get('/acteurs/ajouter',
 
 Route::get('/films/ajouter',
 [FilmsController::class, 'create'])->name('films.create');
+
+Route::post('/acteurs',
+[PersonnesController::class, 'store'])->name('acteurs.store');
+
+Route::post('/films',
+[FilmsController::class, 'store'])->name('films.store');
