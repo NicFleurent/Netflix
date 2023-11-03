@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Film;
 use App\Models\Personne;
+use App\Http\Requests\FilmRequest;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Log;
 
 class FilmsController extends Controller
 {
@@ -52,7 +54,7 @@ class FilmsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(FilmRequest $request)
     {
         try {
             $film = new Film($request->all());

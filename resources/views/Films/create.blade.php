@@ -5,6 +5,15 @@
 @section('contenu')
     <section class="upcoming">
         <div class="container">
+
+            @if(isset($errors) && $errors->any())
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                    @endforeach
+                </div>
+            @endif
+
             <form method="post" action="{{ route('films.store') }}">
                 @csrf
                 <div class="form-group">
@@ -21,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="annee_sortie">Année de sortie</label>
-                    <input type="number" class="form-control" id="annee_sortie" placeholder="Durée" name="annee_sortie" value="{{ old('annee_sortie') }}">
+                    <input type="number" class="form-control" id="annee_sortie" placeholder="Année" name="annee_sortie" value="{{ old('annee_sortie') }}">
                 </div>
                 <div class="form-group">
                     <label for="lien_film">Lien du trailer (Prendre la source d'un embed)</label>

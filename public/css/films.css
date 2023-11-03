@@ -620,6 +620,12 @@ iframe{
 .dropdown {
   position: relative;
   display: inline-block;
+  width: 100%;
+}
+
+.dropdown button{
+  width: 100%;
+  text-align: start;
 }
 
 /* Dropdown Content (Hidden by Default) */
