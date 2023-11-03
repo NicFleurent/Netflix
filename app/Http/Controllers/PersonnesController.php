@@ -12,25 +12,26 @@ class PersonnesController extends Controller
      */
     public function index()
     {
-        $acteurs = Personne::where('role','Acteur')
-        ->orWhere('role','Actrice')
-        ->get();
+        $acteurs = Personne::where('role', 'Acteur')
+            ->orWhere('role', 'Actrice')
+            ->get();
 
-        $realisateurs = Personne::where('role','Réalisateur')
-        ->orWhere('role','Réalisatrice')
-        ->get();
+        $realisateurs = Personne::where('role', 'Réalisateur')
+            ->orWhere('role', 'Réalisatrice')
+            ->get();
 
-        $producteurs = Personne::where('role','Producteur')
-        ->orWhere('role','Productrice')
-        ->get();
+        $producteurs = Personne::where('role', 'Producteur')
+            ->orWhere('role', 'Productrice')
+            ->get();
 
-        $doubleurs = Personne::where('role','Doubleur')
-        ->orWhere('role','Doubleuse')
-        ->get();
+        $doubleurs = Personne::where('role', 'Doubleur')
+            ->orWhere('role', 'Doubleuse')
+            ->get();
 
-        $dateAnniversaires= Personne::whereMonth('date_naissance','=',date('m'))
-        ->get();
-        return View('Personnes.index', compact('acteurs', 'realisateurs','producteurs','doubleurs','dateAnniversaires'));
+        $dateAnniversaires = Personne::whereMonth('date_naissance', '=', date('m'))
+            ->get();
+
+        return View('Personnes.index', compact('acteurs', 'realisateurs', 'producteurs', 'doubleurs', 'dateAnniversaires'));
     }
 
     /**

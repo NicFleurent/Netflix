@@ -9,19 +9,24 @@ class Film extends Model
 {
     use HasFactory;
 
-    public function realisateur(){
+    public function realisateur()
+    {
         return $this->belongsTo(Personne::class);
     }
-    
-    public function producteur(){
+
+    public function producteur()
+    {
         return $this->belongsTo(Personne::class);
     }
-    
-    public function acteurprincipal(){
+
+    public function acteurprincipal()
+    {
         return $this->belongsTo(Personne::class);
     }
-    
-    public function acteurs(){
+
+    public function acteurs()
+    {
         return $this->belongsToMany(Personne::class);
     }
+
 }
