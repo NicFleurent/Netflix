@@ -30,7 +30,6 @@
             <tbody>
                 {{-- acteurs/actrices --}}
                 @foreach($personne->filmsJoues as $listefilms)
-
                 <tr>
                     <td>{{ $listefilms->annee_sortie }}</td>
                     <a href="#">
@@ -65,6 +64,7 @@
                     @endif
                     {{-- Rajouter les if ici pour realisateurs, producteurs --}}
                 </tr>
+                </tr>
                 @endforeach
 
                 {{-- réalisateur/réalisatrice --}}
@@ -82,7 +82,7 @@
                     @endphp
 
                     {{-- Recherche des rôles dans les films --}}
-                    @foreach ($personne->roles as $role)
+                    @foreach ($personne->roles as $role)                 
                     @if ($personne->id === $filmRealise->producteur_id)
                     @php
                     $roleProducteur = "Producteur";
@@ -100,43 +100,18 @@
                 @endforeach
 
                 {{-- producteurs/productrices --}}
+                @if ($personne->filmsProduits->where('producteur_id', '!=', $personne->id)->isNotEmpty())
                 @foreach ($personne->filmsProduits as $filmProduit)
-                @php
-                $roleProducteur = "";
-                $roleRealisateur = "";
-                @endphp
-
-                @foreach ($personne->roles as $role)
-                @if ($role->id === $filmProduit->producteur_id)
-                @php
-                $roleProducteur = "Producteur";
-                @endphp
-                @elseif ($role->id === $filmProduit->realisateur_id)
-                @php
-                $roleRealisateur = "Réalisateur";
-                @endphp
-                @endif
-                @endforeach
-
-                {{-- Vérifiez si le producteur ID n'est pas égal à l'acteur ID --}}
-                @if ($filmProduit->producteur_id != $personne->filmsJoues->acteurprincipal_id)
                 <tr>
                     <td>{{ $filmProduit->annee_sortie }}</td>
                     <a href="#">
                         <td>{{ $filmProduit->titre }}</td>
                         <img class="img" src="{{ $filmProduit->lien_pochette }}" alt="Poster de {{ $filmProduit->titre }}">
                     </a>
-
-                    {{-- Affichage du rôle dans le tableau --}}
-                    @if ($roleProducteur != "" || $roleRealisateur != "")
-                    <td>{{ $personne->role . ($roleProducteur ? ', ' . $roleProducteur : '') . ($roleRealisateur ? ', ' . $roleRealisateur : '') }}</td>
-                    @else
                     <td>{{ $personne->role }}</td>
-                    @endif
                 </tr>
-                @endif
                 @endforeach
-
+                @endif
             </tbody>
         </table>
     </div>
