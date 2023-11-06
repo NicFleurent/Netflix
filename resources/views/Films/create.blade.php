@@ -2,6 +2,10 @@
 
 @section('title', 'Ajouter un film | Netflix')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/forms.css') }}">
+@endsection
+
 @section('contenu')
     <section class="upcoming">
         <div class="container">
@@ -14,8 +18,14 @@
                 </div>
             @endif
 
-            <form method="post" action="{{ route('films.store') }}">
+            <form class="form" method="post" action="{{ route('films.store') }}">
                 @csrf
+                <div class="title">Ajouter du contenu</div>
+                <div class="input-container ic1">
+                    <input id="titre" class="input" type="text" placeholder=" " name="titre" value="{{ old('titre') }}"/>
+                    <div class="cut cut-short"></div>
+                    <label for="titre" class="placeholder">Titre</label>
+                </div>
                 <div class="form-group">
                     <label for="titre">Titre</label>
                     <input type="text" class="form-control" id="titre" placeholder="Titre" name="titre" value="{{ old('titre') }}">
