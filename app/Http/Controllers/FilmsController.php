@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Film;
 use App\Models\Personne;
 use App\Http\Requests\FilmRequest;
+use App\Http\Requests\ActeurFilmRequest;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Log;
 
@@ -52,6 +53,16 @@ class FilmsController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     */
+    public function createActeurFilm()
+    {
+        $films = Film::orderby('titre')->get();
+        $personnes = Personne::orderby('nom')->get();
+        return View('films.createActeurFilm', compact('personnes', 'films'));
+    }
+
+    /**
      * Store a newly created resource in storage.
      */
     public function store(FilmRequest $request)
@@ -59,6 +70,31 @@ class FilmsController extends Controller
         try {
             $film = new Film($request->all());
             $film->save();
+        }
+    
+        catch (\Throwable $e) {
+            //Gérer l'erreur
+            Log::debug($e);
+        }
+        return redirect()->route('films.index');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function storeActeurFilm(ActeurFilmRequest $request)
+    {
+        try {
+            $personne = Personne::find($request->personne_id);
+            $film = Film::find($request->film_id);
+
+            if($film->acteurs->contains($personne)){
+                Log::debug("La relation existe déjà");
+            }
+            else{
+                $film->acteurs()->attach($personne);
+                $film->save();
+            }
         }
     
         catch (\Throwable $e) {

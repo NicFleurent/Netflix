@@ -105,6 +105,9 @@
                                 <option value="R" {{ "R" == old('rating') ? 'selected' : null }}>R</option>
                             </select>
                         </div>
+                        @if($errors->has('rating'))
+                            <span>{{ $errors->first('rating') }}</span>
+                        @endif
                     </div>
                     <div class="select-subgroup">
                         <label for="realisateur_id">Réalisateur</label>
@@ -119,6 +122,9 @@
                                 @endforeach
                             </select>
                         </div>
+                        @if($errors->has('realisateur_id'))
+                            <span>{{ $errors->first('realisateur_id') }}</span>
+                        @endif
                     </div>
                     <div class="select-subgroup">
                         <label for="producteur_id">Producteur</label>
@@ -133,6 +139,9 @@
                                 @endforeach
                             </select>
                         </div>
+                        @if($errors->has('producteur_id'))
+                            <span>{{ $errors->first('producteur_id') }}</span>
+                        @endif
                     </div>
                     <div class="select-subgroup">
                         <label for="acteurprincipal_id">Acteur Principal</label>
@@ -147,20 +156,11 @@
                                 @endforeach
                             </select>
                         </div>
+                        @if($errors->has('acteurprincipal_id'))
+                            <span>{{ $errors->first('acteurprincipal_id') }}</span>
+                        @endif
                     </div>
                 </div>
-                @if($errors->has('rating'))
-                    <p>{{ $errors->first('rating') }}</p>
-                @endif
-                @if($errors->has('realisateur_id'))
-                    <p>{{ $errors->first('realisateur_id') }}</p>
-                @endif
-                @if($errors->has('producteur_id'))
-                    <p>{{ $errors->first('producteur_id') }}</p>
-                @endif
-                @if($errors->has('acteurprincipal_id'))
-                    <p>{{ $errors->first('acteurprincipal_id') }}</p>
-                @endif
 
                 <div class="button-group">
                     <button type="submit" class="btn btn-primary">Enregistrer</button>

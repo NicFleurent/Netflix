@@ -30,6 +30,12 @@ Route::get('films/{film}',
 Route::post('films',
 [FilmsController::class, 'store'])->name('films.store');
 
+Route::get('relation',
+[FilmsController::class, 'createActeurFilm'])->name('films.createActeurFilm');
+
+Route::post('relation',
+[FilmsController::class, 'storeActeurFilm'])->name('films.storeActeurFilm');
+
 Route::get('personnes', 
 [PersonnesController::class, 'index'])->name('personnes.index');
 

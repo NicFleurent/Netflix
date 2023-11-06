@@ -25,16 +25,16 @@ class FilmRequest extends FormRequest
             'titre' => 'required',
             'resume' => 'required',
             'duree' => 'required',
-            'annee_sortie' => 'required',
-            'lien_film' => 'required',
-            'lien_pochette' => 'required',
+            'annee_sortie' => 'required|size:4',
+            'lien_film' => 'required|URL|regex:/embed/i',
+            'lien_pochette' => 'required|URL',
             'realisateur_id' => 'required',
             'producteur_id' => 'required',
             'acteurprincipal_id' => 'required',
             'type' => 'required',
             'genre' => 'required',
             'brand' => 'required',
-            'cote' => 'required',
+            'cote' => 'required|numeric|min:0|max:10',
             'rating' => 'required'
         ];
     }
@@ -45,8 +45,12 @@ class FilmRequest extends FormRequest
             'resume.required' => 'Le synopsis est requis',
             'duree.required' => 'La durée est requise',
             'annee_sortie.required' => 'L\'année de sortie est requise',
+            'annee_sortie.size' => 'L\'année doit être en 4 chiffres',
             'lien_film.required' => 'Le lien du trailer est requis',
+            'lien_film.u_r_l' => 'Entrer une URL valide',
+            'lien_film.regex' => 'Le lien doit être la source d\'un iframe',
             'lien_pochette.required' => 'Le lien du poster est requis',
+            'lien_pochette.u_r_l' => 'Entrer une URL valide',
             'realisateur_id.required' => 'Le réalisateur est requis',
             'producteur_id.required' => 'Le producteur est requis',
             'acteurprincipal_id.required' => 'L\'acteur principal est requis',
@@ -54,6 +58,9 @@ class FilmRequest extends FormRequest
             'genre.required' => 'Le genre est requis',
             'brand.required' => 'La marque est requise',
             'cote.required' => 'La cote est requise',
+            'cote.numeric' => 'La cote doit être un chiffre',
+            'cote.min' => 'La cote doit être d\'au moins 0',
+            'cote.max' => 'La cote doit être d\'au plus 10',
             'rating.required' => 'La classification est requise'
         ];
     }

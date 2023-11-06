@@ -63,68 +63,22 @@
                 <ul class="navbar-list">
 
                     <li>
-                        <a href="/" class="navbar-link">Home</a>
+                        <a href="{{ route('films.index') }}" class="navbar-link">Films</a>
                     </li>
 
                     <li>
-                        <a href="/#famille" class="navbar-link">Famille</a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="navbar-link">Tv Show</a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="navbar-link">Web Series</a>
-                    </li>
-
-                    <li>
-                        <a href="/personnes" class="navbar-link">Personnes</a>
+                        <a href="{{ route('personnes.index') }}" class="navbar-link">Personnes</a>
                     </li>
 
                     <li>
                         <div class="dropdown">
                             <button onclick="myFunction()" class="dropbtn navbar-link">Admin</button>
                             <div id="myDropdown" class="dropdown-content">
-                                <a href="{{ route('films.create') }}">Ajouter un film</a>
-                                <a href="/personnes/ajouter">Ajouter un acteur</a>
-                                <a href="#">Ajouter une relation</a>
+                                <a href="{{ route('films.create') }}">Ajouter un contenu</a>
+                                <a href="{{ route('personnes.create') }}">Ajouter une personne</a>
+                                <a href="{{ route('films.createActeurFilm') }}">Ajouter une relation</a>
                             </div>
                         </div>
-                    </li>
-
-                </ul>
-
-                <ul class="navbar-social-list">
-
-                    <li>
-                        <a href="#" class="navbar-social-link">
-                            <ion-icon name="logo-twitter"></ion-icon>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="navbar-social-link">
-                            <ion-icon name="logo-facebook"></ion-icon>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="navbar-social-link">
-                            <ion-icon name="logo-pinterest"></ion-icon>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="navbar-social-link">
-                            <ion-icon name="logo-instagram"></ion-icon>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="navbar-social-link">
-                            <ion-icon name="logo-youtube"></ion-icon>
-                        </a>
                     </li>
 
                 </ul>
@@ -152,23 +106,11 @@
                     <ul class="footer-list">
 
                         <li>
-                            <a href="/" class="footer-link">Home</a>
+                            <a href="{{ route('personnes.index') }}" class="footer-link">Films</a>
                         </li>
 
                         <li>
-                            <a href="#" class="footer-link">Movie</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="footer-link">TV Show</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="footer-link">Web Series</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="footer-link">Pricing</a>
+                            <a href="#" class="footer-link">Personnes</a>
                         </li>
 
                     </ul>
@@ -237,6 +179,9 @@
 
                 <p class="copyright">
                     &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+                </p>
+                <p class="copyright">
+                    Réalisé par <a href="#">Nicolas Fleurent et Mirolie Théroux</a>. 
                 </p>
 
                 <img src="{{ asset('img/footer-bottom-img.png') }}" alt="Online banking companies logo"

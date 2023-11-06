@@ -1,7 +1,11 @@
-p{
+p, span{
     color: red;
     margin-left: 15px;
 }
+span{
+    color: red;
+}
+
 .form {
     background-color: var(--rich-black-fogra-29);
     border: 2px solid var(--citrine);
@@ -153,8 +157,8 @@ select::-ms-expand {
 .select {
     position: relative;
     display: flex;
-    width: 25em;
-    min-width: 371px;
+    width: 20em;
+    min-width: 350px;
     margin-top: 30px;
     margin-left: 5px;
     margin-right: 5px;
