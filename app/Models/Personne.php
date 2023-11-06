@@ -24,5 +24,10 @@ class Personne extends Model
         return $this->hasMany(Film::class, 'producteur_id');
     }
 
-    protected $fillable = ['nom','date_naissance','lien_photo','role'];
+    public function roles()
+    {
+        return $this->belongsToMany(Film::class);
+    }
+
+    protected $fillable = ['nom', 'date_naissance', 'lien_photo', 'role'];
 }
