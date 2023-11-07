@@ -103,7 +103,12 @@ span{
 .cut-cote {
     width: 48px;
 }
-
+.cut-ddn{
+    width: 118px;
+}
+.cut-lien{
+    width: 158px;
+}
 .input:focus ~ .cut, .input:not(:placeholder-shown) ~ .cut {
     transform: translateY(13px);
 }
@@ -210,9 +215,14 @@ select::-ms-expand {
     min-width: 125px;
 }
 
+.select-role{
+    width: 175px;
+    min-width: 125px;
+}
 .button-group{
     display: flex;
     width: 100%;
     justify-content: center;
     margin-bottom: 10px;
 }
+

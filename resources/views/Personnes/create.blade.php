@@ -30,9 +30,9 @@
                   <label for="lien_photo" class="placeholder">Lien photo de la personne</label>
                 </div>
                                   
-                <div id="role" class="select-subgroup">
+                <div class="select-subgroup">
                         <label for="role">Choisir un rôle</label>
-                        <div class="select select-classification">
+                        <div class="select select-role">
                             <select class="form-control" id="rating" name="rating">
                             <option value="Acteur">Acteur</option>
                         <option value="Actrice">Actrice</option>
