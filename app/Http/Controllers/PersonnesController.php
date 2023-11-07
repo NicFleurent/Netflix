@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Personne;
-use Illuminate\Http\Facades\Log;
+use App\Models\Film;
+use Illuminate\Support\Facades\Log;
 use App\Http\Requests\PersonneRequest;
 
 class PersonnesController extends Controller
