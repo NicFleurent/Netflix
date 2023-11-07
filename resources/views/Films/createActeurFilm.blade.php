@@ -54,6 +54,11 @@
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                 </div>
             </form>
+
+            <div class="button-group button-ajout">
+                <a href="{{ route('films.create') }}"><button type="button" class="btn btn-primary">Ajouter un contenu</button></a>
+                <a href="{{ route('personnes.create') }}"><button type="button" class="btn btn-primary">Ajouter une personne</button></a>
+            </div>
         </div>
     </main>
 @endsection

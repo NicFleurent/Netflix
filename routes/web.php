@@ -24,14 +24,23 @@ Route::get('films',
 Route::get('films/ajouter',
 [FilmsController::class, 'create'])->name('films.create');
 
+Route::get('films/maj/{film}',
+[FilmsController::class, 'edit'])->name('film.edit');
+
 Route::get('films/{film}', 
 [FilmsController::class, 'show'])->name('film.show');
 
 Route::post('films',
 [FilmsController::class, 'store'])->name('films.store');
 
+Route::patch('films/maj/{film}',
+[FilmsController::class, 'update'])->name('films.update');
+
 Route::get('relation',
 [FilmsController::class, 'createActeurFilm'])->name('films.createActeurFilm');
+
+Route::get('relation/film/{film}',
+[FilmsController::class, 'createActeurFilmShowFilm'])->name('film.createActeurFilmShowFilm');
 
 Route::post('relation',
 [FilmsController::class, 'storeActeurFilm'])->name('films.storeActeurFilm');
