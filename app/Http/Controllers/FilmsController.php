@@ -48,7 +48,7 @@ class FilmsController extends Controller
      */
     public function create()
     {
-        $personnes = Personne::All();
+        $personnes = Personne::orderby('nom')->get();
         return View('films.create', compact('personnes'));
     }
 
@@ -115,17 +115,40 @@ class FilmsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Film $film)
     {
-        //
+        $personnes = Personne::orderby('nom')->get();
+        return View('films.edit', compact('film', 'personnes'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(FilmRequest $request, Film $film)
     {
-        //
+        try {
+            $film->titre = $request->titre;
+            $film->resume = $request->resume;
+            $film->duree = $request->duree;
+            $film->annee_sortie = $request->annee_sortie;
+            $film->lien_film = $request->lien_film;
+            $film->lien_pochette = $request->lien_pochette;
+            $film->type = $request->type;
+            $film->genre = $request->genre;
+            $film->brand = $request->brand;
+            $film->cote = $request->cote;
+            $film->rating = $request->rating;
+            $film->realisateur_id = $request->realisateur_id;
+            $film->producteur_id = $request->producteur_id;
+            $film->acteurprincipal_id = $request->acteurprincipal_id;
+            $film->save();
+        }
+    
+        catch (\Throwable $e) {
+            //Gérer l'erreur
+            Log::debug($e);
+        }
+        return redirect()->route('films.index');
     }
 
     /**

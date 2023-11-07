@@ -237,6 +237,32 @@ iframe{
   text-align: center;
 }
 
+.lien-edit{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.lien-edit a{
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5em;
+}
+
+.lien-edit a ion-icon{
+  color: var(--citrine);
+}
+
+.lien-edit a data{
+  color: white;
+  margin-left: 5px;
+}
+.lien-edit a:hover data{
+  color: var(--citrine);
+}
+
 /**
  * BADGE
  */

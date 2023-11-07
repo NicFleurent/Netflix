@@ -76,6 +76,13 @@
                     </div>
                   </div>
 
+                  <div class="lien-edit">
+                    <a href="{{route('film.edit', [$film])}}">
+                      <ion-icon name="construct-outline"></ion-icon>
+                      <data>Mettre à jour</data>
+                    </a>
+                  </div>
+
                   <div class="type-contenu">{{$film->type}}</div>
   
                 </div>
@@ -153,6 +160,13 @@
 
                         <data>{{$film->cote}}</data>
                       </div>
+                    </div>
+                  
+                    <div class="lien-edit">
+                      <a href="{{route('film.edit', [$film])}}">
+                        <ion-icon name="construct-outline"></ion-icon>
+                        <data>Mettre à jour</data>
+                      </a>
                     </div>
 
                     <div class="type-contenu">{{$film->type}}</div>
@@ -233,6 +247,13 @@
                         <data>{{$film->cote}}</data>
                       </div>
                     </div>
+                  
+                    <div class="lien-edit">
+                      <a href="{{route('film.edit', [$film])}}">
+                        <ion-icon name="construct-outline"></ion-icon>
+                        <data>Mettre à jour</data>
+                      </a>
+                    </div>
 
                     <div class="type-contenu">{{$film->type}}</div>
 
@@ -291,6 +312,13 @@
 
                         <data>{{$film->cote}}</data>
                       </div>
+                    </div>
+                  
+                    <div class="lien-edit">
+                      <a href="{{route('film.edit', [$film])}}">
+                        <ion-icon name="construct-outline"></ion-icon>
+                        <data>Mettre à jour</data>
+                      </a>
                     </div>
 
                     <div class="type-contenu">{{$film->type}}</div>
@@ -370,6 +398,13 @@
 
                         <data>{{$film->cote}}</data>
                       </div>
+                    </div>
+                  
+                    <div class="lien-edit">
+                      <a href="{{route('film.edit', [$film])}}">
+                        <ion-icon name="construct-outline"></ion-icon>
+                        <data>Mettre à jour</data>
+                      </a>
                     </div>
 
                     <div class="type-contenu">{{$film->type}}</div>
