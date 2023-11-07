@@ -39,6 +39,9 @@ Route::patch('films/maj/{film}',
 Route::get('relation',
 [FilmsController::class, 'createActeurFilm'])->name('films.createActeurFilm');
 
+Route::get('relation/film/{film}',
+[FilmsController::class, 'createActeurFilmShowFilm'])->name('film.createActeurFilmShowFilm');
+
 Route::post('relation',
 [FilmsController::class, 'storeActeurFilm'])->name('films.storeActeurFilm');
 

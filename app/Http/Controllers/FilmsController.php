@@ -63,6 +63,16 @@ class FilmsController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     */
+    public function createActeurFilmShowFilm(Film $film)
+    {
+        $films = Film::orderby('titre')->get();
+        $personnes = Personne::orderby('nom')->get();
+        return View('films.createActeurFilmShowFilm', compact('personnes', 'films', 'film'));
+    }
+
+    /**
      * Store a newly created resource in storage.
      */
     public function store(FilmRequest $request)

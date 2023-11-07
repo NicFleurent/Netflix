@@ -12,6 +12,11 @@
                         <ion-icon name="construct-outline"></ion-icon>
                         <data>Mettre à jour</data>
                     </a>
+
+                    <a href="{{route('film.createActeurFilmShowFilm', [$film])}}">
+                        <ion-icon name="cloud-upload-outline"></ion-icon>
+                        <data>Ajouter un acteur</data>
+                    </a>
                 </div>
                 
                 <h1 class="h1 section-title">{{$film->titre}}</h1>

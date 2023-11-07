@@ -258,6 +258,7 @@ iframe{
 .lien-edit a data{
   color: white;
   margin-left: 5px;
+  margin-right: 15px;
 }
 .lien-edit a:hover data{
   color: var(--citrine);
