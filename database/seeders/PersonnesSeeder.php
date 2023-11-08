@@ -240,7 +240,7 @@ class PersonnesSeeder extends Seeder
              ],
              [
                 'id' => 33 ,
-                'nom' => 'Rupert Brint',
+                'nom' => 'Rupert Grint',
                 'date_naissance' => '1988-08-24',
                 'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/RupertGrint2018.jpg/220px-RupertGrint2018.jpg',
                 'role' => 'Acteur'
@@ -350,6 +350,13 @@ class PersonnesSeeder extends Seeder
                 'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ian_McDiarmid_Brussels_Comic_Con_2020.jpg/220px-Ian_McDiarmid_Brussels_Comic_Con_2020.jpg',
                 'role'=> 'Acteur'
             ],
+            [
+                'id' => 49 ,
+                'prenom' => 'Tim Miller',
+                'ddn' => '1964-10-10',
+                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Tim_Miller_by_Gage_Skidmore_2.jpg/220px-Tim_Miller_by_Gage_Skidmore_2.jpg',
+                'role' => 'Réalisateur'
+            ]
         ]);
     }
 }
