@@ -22,9 +22,22 @@ class PersonneRequest extends FormRequest
     public function rules()
     {
         return [
-            'nom' =>'required|min:2',
-            'date_naissance' => 'required'
-           
+            'nom' =>'required',
+            'date_naissance' => 'required|before:today',
+            'lien_photo' => 'required|URL',
+            'role' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return[
+            'nom.required' => 'Le nom est requis',
+            'date_naissance.required' => 'La date de naissance est requise.',
+            'date_naissance.before' => 'Veuillez entrer une date valide.',
+            'lien_photo.required' => 'Un lien pour la photo est requis.',
+            'lien_photo.u_r_l' => 'Veuillez entrer un lien valide.',
+            'role.required' => 'Veuillez choisir un rôle.'
         ];
     }
 }
