@@ -83,6 +83,10 @@
 
                 </ul>
 
+                <div class="section-bouton-singin">
+                    <button class="btn btn-primary">Sign in</button>
+                </div>
+
             </nav>
 
         </div>
