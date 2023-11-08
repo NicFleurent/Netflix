@@ -264,6 +264,12 @@ iframe{
   color: var(--citrine);
 }
 
+.section-bouton-singin{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 /**
  * BADGE
  */
@@ -1672,6 +1678,13 @@ figure:hover .pop-over-description{
     margin-bottom: 15px;
   }
 
+  .header-actions .btn-primary {
+    display: block;
+    --fs-11: 14px;
+    padding: 10px 35px;
+    letter-spacing: 1px;
+  }
+
   /* MOVIE CARD */
 
   .movies-list {
@@ -1730,6 +1743,10 @@ figure:hover .pop-over-description{
   .dropdown button{
     width: auto;
     text-align: center;
+  }
+
+  .section-bouton-singin{
+    display: none;
   }
 
 
@@ -1908,13 +1925,6 @@ figure:hover .pop-over-description{
 
   .navbar {
     margin-inline: auto;
-  }
-
-  .header-actions .btn-primary {
-    display: block;
-    --fs-11: 14px;
-    padding: 10px 35px;
-    letter-spacing: 1px;
   }
 
 

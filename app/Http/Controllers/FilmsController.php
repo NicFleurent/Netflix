@@ -18,7 +18,7 @@ class FilmsController extends Controller
     public function index()
     {
         $filmsDernieresSorties = Film::orderby('annee_sortie', 'desc')
-                                    ->take(8)
+                                    ->take(20)
                                     ->get();
 
         $filmsToutPublic = Film::where('rating', 'G')
