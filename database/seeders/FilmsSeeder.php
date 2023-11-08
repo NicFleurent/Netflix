@@ -220,7 +220,7 @@ class FilmsSeeder extends Seeder
             ],
             [
                 'id' => 13,
-                'titre' => 'Harry Potter : À l\'école des sorciers',
+                'titre' => 'Harry Potter à l\'école des sorciers',
                 'resume' => "Orphelin, Harry Potter a été recueilli à contrecœur par son oncle Vernon et sa tante Pétunia, aussi cruels que mesquins, qui n'hésitent pas à le faire dormir dans le placard sous l'escalier. Constamment maltraité, il doit en outre supporter les jérémiades de son cousin Dudley, garçon cupide et archi-gâté par ses parents. De leur côté, Vernon et Pétunia détestent leur neveu dont la présence leur rappelle sans cesse le tempérament \"imprévisible\" des parents du garçon et leur mort mystérieuse.",
                 'duree' => 152,
                 'annee_sortie' => '1998',
