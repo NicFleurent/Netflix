@@ -51,8 +51,15 @@ Route::get('personnes',
 Route::get('/personnes/ajouter',
 [PersonnesController::class, 'create'])->name('personnes.create');
 
-Route::get('/personnes/{personne}', 
+Route::get('personnes/modifier/{personne}',
+[PersonnesController::class, 'edit'])->name('personnes.edit');
+
+Route::patch('personnes/modifier/{personne}',
+[PersonnesController::class, 'update'])->name('personnes.update');
+
+Route::get('personnes/{personne}', 
 [PersonnesController::class, 'show'])->name('personnes.show');
 
-Route::post('/personnes',
+Route::post('personnes',
 [PersonnesController::class, 'store'])->name('personnes.store');
+
