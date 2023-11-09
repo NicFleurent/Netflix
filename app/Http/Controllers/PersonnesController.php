@@ -73,17 +73,21 @@ class PersonnesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Personne $personne)
     {
-        //
+        return View('personnes.edit',compact('personne'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(PersonneRequest $request, Personne $personne)
     {
-        //
+        $personne->nom = $request->nom;
+        $personne->date_naissance = $request->date_naissance;
+        $personne->lien_photo = $request->lien_photo;
+        $personne->role = $request->role;
+        $personne->save();
     }
 
     /**
