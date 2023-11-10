@@ -34,7 +34,8 @@ xpopup
   width: 90%;
   max-width: 400px;
   margin: 4em auto;
-  background: #FFF;
+  background: #171d21;
+  border: solid 2px var(--citrine);
   border-radius: .25em .25em .4em .4em;
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -54,6 +55,7 @@ xpopup
 }
 .cd-popup-container p {
   padding: 3em 1em;
+  color: white;
 }
 .cd-popup-container .cd-buttons:after {
   content: "";
@@ -87,18 +89,23 @@ xpopup
 .cd-popup-container .cd-buttons li:first-child form button {
   width: 100%;
   height: 60px;
-  color: white;
+  color: var(--citrine);
+  border-top: solid 1px var(--citrine);
+  border-right: solid 1px var(--citrine);
 }
 .cd-popup-container .cd-buttons li:first-child:hover form button {
-  background-color: #21282c;
-  color: var(--citrine);
+  background-color: var(--citrine);
+  color: #171d21;
 }
 .cd-popup-container .cd-buttons li:last-child a {
-  background: #b6bece;
+  background: #171d21;
   border-radius: 0 0 .25em 0;
+  color: #c5ccd8;
+  border-top: solid 1px var(--citrine);
 }
 .cd-popup-container .cd-buttons li:last-child a:hover {
   background-color: #c5ccd8;
+  color: #171d21;
 }
 .cd-popup-container .cd-popup-close {
   position: absolute;
