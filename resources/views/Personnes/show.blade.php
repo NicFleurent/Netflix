@@ -36,7 +36,7 @@
                 @foreach ($personne->filmsJoues as $listefilms)
                 <tr>
                     <td>{{ $listefilms->annee_sortie }}</td>
-                    <td> <a href="{{ route('film.show', ['film' => $listefilms->id]) }}">
+                    <td> <a href="{{ route('films.show', ['film' => $listefilms->id]) }}">
                             <span> {{ $listefilms->titre }}</span>
                             <img class="img" src="{{ $listefilms->lien_pochette }}" alt="Poster de {{ $listefilms->titre }}">
                         </a>
@@ -76,7 +76,7 @@
                 <tr>
                     <td>{{ $filmProduit->annee_sortie }}</td>
                     <td>
-                        <a href="{{ route('film.show', ['film' => $filmProduit->id]) }}">
+                        <a href="{{ route('films.show', ['film' => $filmProduit->id]) }}">
                             {{ $filmProduit->titre }}
                             <img class="img" src="{{ $filmProduit->lien_pochette }}" alt="Poster de {{ $filmProduit->titre }}">
                         </a>
@@ -115,7 +115,7 @@
                 @foreach ($personne->filmsRealises as $filmRealise)
                 <tr>
                     <td>{{ $filmRealise->annee_sortie }}</td>
-                    <td> <a href="{{ route('film.show', ['film' => $filmRealise->id]) }}">
+                    <td> <a href="{{ route('films.show', ['film' => $filmRealise->id]) }}">
                             {{ $filmRealise->titre }}
                             <img class="img" src="{{ $filmRealise->lien_pochette }}" alt="Poster de {{ $filmRealise->titre }}">
                         </a>
