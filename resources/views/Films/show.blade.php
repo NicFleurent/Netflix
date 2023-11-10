@@ -13,8 +13,8 @@
                         <data>Mettre à jour</data>
                     </a>
                     
-                    <a href="{{route('films.destroy', [$film->id])}}">
-                        <ion-icon name="remove-circle-outline"></ion-icon>
+                    <a href="#0" class="cd-popup-trigger">
+                    <ion-icon name="remove-circle-outline"></ion-icon>
                         <data>Supprimer</data>
                     </a>
 
@@ -69,5 +69,25 @@
                 </div>
             </div>
         </section>
+
+        <!-- Modal Suppresion Film -->
+        <div class="cd-popup" role="alert">
+            <div class="cd-popup-container">
+                <p>Voulez-vous vraiment supprimer ce film?</p>
+                <ul class="cd-buttons">
+                    <li>
+                        <form action="{{route('films.destroy', [$film->id])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">
+                                <data>Oui</data>
+                            </button>    
+                        </form>
+                    </li>
+                    <li><a href="#0" class="cd-popup-non">Non</a></li>
+                </ul>
+                <a href="#0" class="cd-popup-close img-replace"></a>
+            </div> <!-- cd-popup-container -->
+        </div> <!-- cd-popup -->
     @endif
 @endsection
