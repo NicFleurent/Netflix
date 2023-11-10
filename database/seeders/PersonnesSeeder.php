@@ -18,70 +18,70 @@ class PersonnesSeeder extends Seeder
                 'id' => 1,
                 'nom' => 'Tom Cruise',
                 'date_naissance' => '1962-07-03',
-                'lien_photo' => 'https://images.mubicdn.net/images/cast_member/2184/cache-2992-1547409411/image-w856.jpg',
+                'lien_photo' => 'https://i.pinimg.com/originals/39/af/74/39af745176aeb9583f504da4cfe3a9e0.png',
                 'role' => 'Acteur'
             ],
             [
                 'id' => 2,
                 'nom' => 'Christopher McQuarrie',
                 'date_naissance' => '1968-10-25',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Christopher_McQuarrie_2022.jpg/220px-Christopher_McQuarrie_2022.jpg',
+                'lien_photo' => 'http://www.btlnews.com/wp-content/uploads/2020/09/ChristopherMcQuarrieLMGI.jpg',
                 'role' => 'Réalisateur'
             ],
             [
                 'id' => 3,
                 'nom' => 'James Cameron',
                 'date_naissance' => '1954-08-16',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/James_Cameron_by_Gage_Skidmore.jpg/290px-James_Cameron_by_Gage_Skidmore.jpg',
+                'lien_photo' => 'https://static.hollywoodreporter.com/sites/default/files/2014/04/james_cameron_-_h_-_2014.jpg.jpg',
                 'role' => 'Réalisateur'
             ],
             [
                 'id' => 4,
                 'nom' => 'Sam Worthington',
                 'date_naissance' => '1976-08-02',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Avatar_The_Way_of_Water_Tokyo_Press_Conference_Sam_Worthington_%2852563252594%29_%28cropped%29.jpg/220px-Avatar_The_Way_of_Water_Tokyo_Press_Conference_Sam_Worthington_%2852563252594%29_%28cropped%29.jpg',
+                'lien_photo' => 'http://static1.dienanh.net/upload/2015/03/15/sam-worthington-22941.jpg',
                 'role' => 'Acteur'
             ],
             [
                 'id' => 5,
                 'nom' => 'Dennis Dugan',
                 'date_naissance' => '1946-11-05',
-                'lien_photo' => 'https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcRoLYikryCjcZgftaJpfyDNBL5Tt0V2h1_JZ79YyLOVa23uL0d4gUj8GfnDJP4Ufyph',
+                'lien_photo' => 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/3QH2wJ1eVBLT3Vi2GNVO5TayXEB.jpg',
                 'role' => 'Réalisateur'
             ],
             [
                 'id' => 6,
                 'nom' => 'Adam Sandler',
                 'date_naissance' => '1966-09-09',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Adam_Sandler_2018_%28Lc9jYc07e54%29.jpg/220px-Adam_Sandler_2018_%28Lc9jYc07e54%29.jpg',
+                'lien_photo' => 'https://www.themoviedb.org/t/p/original/rKviEgBCe5mYoyQuWvBzNpYHPko.jpg',
                 'role' => 'Producteur'
             ],
             [
                 'id' => 7,
                 'nom' => 'Rob Schneider',
                 'date_naissance' => '1963-10-31',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Rob_Schneider_Photo_Op_GalaxyCon_Raleigh_2019.jpg/220px-Rob_Schneider_Photo_Op_GalaxyCon_Raleigh_2019.jpg',
+                'lien_photo' => 'https://live.staticflickr.com/7847/40595353293_bcdd667f84_b.jpg',
                 'role' => 'Acteur'
             ],
             [
                 'id' => 8,
                 'nom' => 'George Lucas',
                 'date_naissance' => '1944-05-14',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/George_Lucas_cropped_2009.jpg/290px-George_Lucas_cropped_2009.jpg',
+                'lien_photo' => 'https://www.hollywoodreporter.com/wp-content/uploads/2012/02/lucas_replace.jpg',
                 'role' => 'Réalisateur'
             ],
             [
                 'id' => 9,
                 'nom' => 'Ewan McGregor',
                 'date_naissance' => '1971-03-31',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Ewan_McGregor_%282013_Citro%C3%ABn_advertisement%29.png/220px-Ewan_McGregor_%282013_Citro%C3%ABn_advertisement%29.png',
+                'lien_photo' => 'https://i.pinimg.com/736x/48/59/c8/4859c86093dd34782d4d7fd5884f41a6.jpg',
                 'role' => 'Acteur'
             ],
             [
                 'id' => 10,
                 'nom' => 'Gorō Taniguchi',
                 'date_naissance' => '1966-10-18',
-                'lien_photo' => 'https://www.nautiljon.com/images/people/00/34/taniguchi_goro_3643.webp',
+                'lien_photo' => 'https://www.themoviedb.org/t/p/w500/ivwYu0E0k2zVvhmkZDIDC1K0A2g.jpg',
                 'role' => 'Réalisateur'
             ],
             [
@@ -95,7 +95,7 @@ class PersonnesSeeder extends Seeder
                 'id' => 12,
                 'nom' => 'Mayumi Tanaka',
                 'date_naissance' => '1955-01-15',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Mayumi_Tanaka_2023.jpg/260px-Mayumi_Tanaka_2023.jpg',
+                'lien_photo' => 'https://i.redd.it/ljqbdxj4mla21.jpg',
                 'role' => 'Doubleuse'
             ],
             [
