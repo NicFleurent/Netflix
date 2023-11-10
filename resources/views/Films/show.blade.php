@@ -80,11 +80,11 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit">
-                                <data>Oui</data>
+                                <data>OUI</data>
                             </button>    
                         </form>
                     </li>
-                    <li><a href="#0" class="cd-popup-non">Non</a></li>
+                    <li><a href="#0" class="cd-popup-non">NON</a></li>
                 </ul>
                 <a href="#0" class="cd-popup-close img-replace"></a>
             </div> <!-- cd-popup-container -->
