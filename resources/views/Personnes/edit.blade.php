@@ -10,7 +10,12 @@
 <section class="upcoming">
     <div class="container">
         <div class="container">
-
+            @if(isset($errors) && $errors->any())
+            <div>
+                @foreach($errors->all() as $error)
+                <p>{{$message}}</p>
+                @endforeach
+            </div>
             <form class="form " method="post" action="{{ route('personnes.update', [$personne]) }}">
                 <div class="title">Modifier une personne</div>
                 @csrf
@@ -61,9 +66,16 @@
                     <p>{{ $errors->first('role') }}</p>
                     @endif
                 </div>
-
                 <button type="submit" class="btn btn-primary">Modifier</button>
             </form>
         </div>
+
+
+        <form method="POST" action="{{route('personnes.destroy', [$personne->id]) }}">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-primary">Supprimer</button>
+        </form>
+
 </section>
 @endsection

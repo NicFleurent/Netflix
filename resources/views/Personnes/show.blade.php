@@ -59,7 +59,6 @@
                     @endphp
                     @endif
 
-                    <!-- deuxieme role n'apparait pas pour acteur et autre role -->
                     {{-- Affichage du rôle dans le tableau --}}
                     @if ($roleProducteur != '' || $roleRealisateur != '')
                     <td>{{ $personne->role . ($roleProducteur ? ', ' . $roleProducteur : '') . ($roleRealisateur ? ', ' . $roleRealisateur : '') }}

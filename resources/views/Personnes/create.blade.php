@@ -41,7 +41,7 @@
                 <p>{{ $errors->first('lien_photo') }}</p>
                 @endif
 
-                <div class="select-subgroup">
+                <div class="select-subgroup bloc-resume">
                     <label for="role">Choisir un rôle</label>
                     <div class="select select-role">
                         <select class="form-control" id="rating" name="role">
@@ -60,8 +60,9 @@
                     <p>{{ $errors->first('role') }}</p>
                     @endif
                 </div>
-
-                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <div class="filter-list lien-edit">
+                    <button type="submit" class="btn btn-primary ">Ajouter</button>
+                </div>
             </form>
         </div>
 </section>
