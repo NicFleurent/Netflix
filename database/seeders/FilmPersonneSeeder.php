@@ -67,7 +67,7 @@ class FilmPersonneSeeder extends Seeder
             [
                 'id' => 35,
                 'film_id' => 15,
-                'personne_id' => 27,
+                'personne_id' => 29,
             ],
             [
                 'id' => 36,
