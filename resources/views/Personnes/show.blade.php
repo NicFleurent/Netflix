@@ -34,13 +34,9 @@
             <tbody>
                 {{-- acteurs/actrices --}}
                 @foreach ($personne->filmsJoues as $listefilms)
-                {{-- @php
-                                dd($personne->roles);
-                            @endphp --}}
-
                 <tr>
                     <td>{{ $listefilms->annee_sortie }}</td>
-                    <td> <a href="#">
+                    <td> <a href="{{route('film.show', [$film])}}">
                             {{ $listefilms->titre }}
                             <img class="img" src="{{ $listefilms->lien_pochette }}" alt="Poster de {{ $listefilms->titre }}">
                     </td>
@@ -51,20 +47,18 @@
                     $roleProducteur = '';
                     $roleRealisateur = '';
                     @endphp
-
-                    {{-- Recherche des rôles dans les films --}}
-                    @foreach ($personne->roles as $role)
-                    @if ($role->id === $listefilms->producteur_id)
+                    @if ($personne->id === $listefilms->producteur_id)
                     @php
                     $roleProducteur = 'Producteur';
                     @endphp
-                    @elseif($role->id === $listefilms->realisateur_id)
+
+                    @elseif($personne->id === $listefilms->realisateur_id)
                     @php
                     $roleRealisateur = 'Réalisateur';
                     @endphp
                     @endif
-                    @endforeach
 
+                    <!-- deuxieme role n'apparait pas pour acteur et autre role -->
                     {{-- Affichage du rôle dans le tableau --}}
                     @if ($roleProducteur != '' || $roleRealisateur != '')
                     <td>{{ $personne->role . ($roleProducteur ? ', ' . $roleProducteur : '') . ($roleRealisateur ? ', ' . $roleRealisateur : '') }}
@@ -81,7 +75,8 @@
                 @if (!$personne->filmsJoues->contains($filmProduit) && !$personne->filmsRealises->contains($filmProduit))
                 <tr>
                     <td>{{ $filmProduit->annee_sortie }}</td>
-                    <td> <a href="#">
+                    <td>
+                        <a href="{{route('film.show', [$film])}}">
                             {{ $filmProduit->titre }}
                             <img class="img" src="{{ $filmProduit->lien_pochette }}" alt="Poster de {{ $filmProduit->titre }}">
                         </a>
@@ -120,10 +115,11 @@
                 @foreach ($personne->filmsRealises as $filmRealise)
                 <tr>
                     <td>{{ $filmRealise->annee_sortie }}</td>
-                    <a href="#">
-                        <td>{{ $filmRealise->titre }}</td>
-                        <img class="img" src="{{ $filmRealise->lien_pochette }}" alt="Poster de {{ $filmRealise->titre }}">
-                    </a>
+                    <td> <a href="{{route('film.show', [$film])}}">
+                            {{ $filmRealise->titre }}
+                            <img class="img" src="{{ $filmRealise->lien_pochette }}" alt="Poster de {{ $filmRealise->titre }}">
+                        </a>
+                    </td>
                     {{-- Initialisation des variables de rôle --}}
                     @php
                     $roleProducteur = '';
