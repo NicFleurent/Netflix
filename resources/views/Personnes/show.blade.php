@@ -36,11 +36,12 @@
                 @foreach ($personne->filmsJoues as $listefilms)
                 <tr>
                     <td>{{ $listefilms->annee_sortie }}</td>
-                    <td> <a href="{{route('film.show', [$film])}}">
-                            {{ $listefilms->titre }}
+                    <td> <a href="{{ route('film.show', ['film' => $listefilms->id]) }}">
+                            <span> {{ $listefilms->titre }}</span>
                             <img class="img" src="{{ $listefilms->lien_pochette }}" alt="Poster de {{ $listefilms->titre }}">
+                        </a>
                     </td>
-                    </a>
+
 
                     {{-- Initialisation des variables de rôle --}}
                     @php
@@ -76,7 +77,7 @@
                 <tr>
                     <td>{{ $filmProduit->annee_sortie }}</td>
                     <td>
-                        <a href="{{route('film.show', [$film])}}">
+                        <a href="{{ route('film.show', ['film' => $filmProduit->id]) }}">
                             {{ $filmProduit->titre }}
                             <img class="img" src="{{ $filmProduit->lien_pochette }}" alt="Poster de {{ $filmProduit->titre }}">
                         </a>
@@ -115,7 +116,7 @@
                 @foreach ($personne->filmsRealises as $filmRealise)
                 <tr>
                     <td>{{ $filmRealise->annee_sortie }}</td>
-                    <td> <a href="{{route('film.show', [$film])}}">
+                    <td> <a href="{{ route('film.show', ['film' => $filmRealise->id]) }}">
                             {{ $filmRealise->titre }}
                             <img class="img" src="{{ $filmRealise->lien_pochette }}" alt="Poster de {{ $filmRealise->titre }}">
                         </a>
