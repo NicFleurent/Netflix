@@ -14,7 +14,7 @@
                     </a>
                     
                     <a href="#0" class="cd-popup-trigger">
-                    <ion-icon name="remove-circle-outline"></ion-icon>
+                        <ion-icon name="remove-circle-outline"></ion-icon>
                         <data>Supprimer</data>
                     </a>
 
@@ -61,7 +61,12 @@
                         <div class="bloc-acteur">
                             <p>Acteurs :</p>
                             @foreach($film->acteurs as $acteurDuFilm)
-                                <p>{{$acteurDuFilm->nom}}</p>
+                                <p class="acteur">
+                                    {{$acteurDuFilm->nom}}
+                                    <a href="#" class="cd-popup-trigger-acteur">
+                                        <ion-icon name="remove-circle-outline"></ion-icon>
+                                    </a>
+                                </p>
                             @endforeach
                         </div>
                         
@@ -84,9 +89,29 @@
                             </button>    
                         </form>
                     </li>
-                    <li><a href="#0" class="cd-popup-non">NON</a></li>
+                    <li><a href="#" class="cd-popup-non">NON</a></li>
                 </ul>
-                <a href="#0" class="cd-popup-close img-replace"></a>
+                <a href="#" class="cd-popup-close img-replace"></a>
+            </div> <!-- cd-popup-container -->
+        </div> <!-- cd-popup -->
+
+        <!-- Modal Suppresion Acteur -->
+        <div class="cd-popup-acteur" role="alert">
+            <div class="cd-popup-container">
+                <p>Voulez-vous vraiment supprimer cet acteur?</p>
+                <ul class="cd-buttons">
+                    <li>
+                        <form action="{{route('films.destroy', [$film->id])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">
+                                <data>OUI</data>
+                            </button>    
+                        </form>
+                    </li>
+                    <li><a href="#" class="cd-popup-non">NON</a></li>
+                </ul>
+                <a href="#" class="cd-popup-close img-replace"></a>
             </div> <!-- cd-popup-container -->
         </div> <!-- cd-popup -->
     @endif

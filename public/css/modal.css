@@ -5,7 +5,7 @@
 xpopup 
 
 -------------------------------- */
-.cd-popup {
+.cd-popup, .cd-popup-acteur {
   position: fixed;
   left: 0;
   top: 0;
@@ -21,7 +21,7 @@ xpopup
   -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
   transition: opacity 0.3s 0s, visibility 0s 0.3s;
 }
-.cd-popup.is-visible {
+.cd-popup.is-visible, .cd-popup-acteur.is-visible {
   opacity: 1;
   visibility: visible;
   -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;

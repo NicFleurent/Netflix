@@ -191,6 +191,16 @@ iframe{
   margin-bottom: 15px;
 }
 
+.acteur{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.acteur .cd-popup-trigger-acteur{
+  margin-left: 5px;
+  color: var(--citrine);
+}
+
 
 /*-----------------------------------*\
  * #REUSED STYLE
