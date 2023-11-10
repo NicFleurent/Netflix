@@ -264,9 +264,9 @@ class FilmsSeeder extends Seeder
                 'producteur_id' => 31,
                 'acteurprincipal_id' => 29,
                 'type' => 'film',
-                'genre' => 'Comédie',
+                'genre' => 'Drame',
                 'brand' => 'Summit Entertainment',
-                'cote' => 8.5,
+                'cote' => 9.9,
                 'rating' => 'PG-13'
             ],
             [
