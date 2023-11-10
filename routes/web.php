@@ -36,6 +36,9 @@ Route::post('films',
 Route::patch('films/maj/{film}',
 [FilmsController::class, 'update'])->name('films.update');
 
+Route::delete('films/del/{film}',
+[FilmsController::class, 'destroy'])->name('film.destroy');
+
 Route::get('relation',
 [FilmsController::class, 'createActeurFilm'])->name('films.createActeurFilm');
 
