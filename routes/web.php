@@ -25,10 +25,10 @@ Route::get('films/ajouter',
 [FilmsController::class, 'create'])->name('films.create');
 
 Route::get('films/maj/{film}',
-[FilmsController::class, 'edit'])->name('film.edit');
+[FilmsController::class, 'edit'])->name('films.edit');
 
 Route::get('films/{film}', 
-[FilmsController::class, 'show'])->name('film.show');
+[FilmsController::class, 'show'])->name('films.show');
 
 Route::post('films',
 [FilmsController::class, 'store'])->name('films.store');
@@ -37,13 +37,13 @@ Route::patch('films/maj/{film}',
 [FilmsController::class, 'update'])->name('films.update');
 
 Route::delete('films/del/{film}',
-[FilmsController::class, 'destroy'])->name('film.destroy');
+[FilmsController::class, 'destroy'])->name('films.destroy');
 
 Route::get('relation',
 [FilmsController::class, 'createActeurFilm'])->name('films.createActeurFilm');
 
-Route::get('relation/film/{film}',
-[FilmsController::class, 'createActeurFilmShowFilm'])->name('film.createActeurFilmShowFilm');
+Route::get('relation/films/{film}',
+[FilmsController::class, 'createActeurFilmShowFilm'])->name('films.createActeurFilmShowFilm');
 
 Route::post('relation',
 [FilmsController::class, 'storeActeurFilm'])->name('films.storeActeurFilm');

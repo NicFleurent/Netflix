@@ -12,9 +12,7 @@ function myFunction() {
 
 // Close the dropdown if the user clicks outside of it
 window.addEventListener("click", function(event){
-  console.log("test window");
   if (!event.target.matches('.dropbtn')) {
-    console.log("test not dropdown");
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
@@ -136,11 +134,8 @@ sectionsContenu.forEach(section => {
  * Modification Durée pour durée par épisode
  */
 let pageZoom = document.querySelector(".zoomFilm");
-console.log(pageZoom);
 let typeContenu = pageZoom.querySelector('.type-contenu span').innerHTML;
-console.log(typeContenu);
 let duree = pageZoom.querySelector('.bloc-info #duree');
-console.log(duree);
 
 let dureeSplit = duree.innerHTML.split(':');
 if(typeContenu === "anime"){

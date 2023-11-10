@@ -8,12 +8,17 @@
             <div class="container">
 
                 <div class="lien-edit">
-                    <a href="{{route('film.edit', [$film])}}">
+                    <a href="{{route('films.edit', [$film])}}">
                         <ion-icon name="construct-outline"></ion-icon>
                         <data>Mettre à jour</data>
                     </a>
+                    
+                    <a href="#0" class="cd-popup-trigger">
+                    <ion-icon name="remove-circle-outline"></ion-icon>
+                        <data>Supprimer</data>
+                    </a>
 
-                    <a href="{{route('film.createActeurFilmShowFilm', [$film])}}">
+                    <a href="{{route('films.createActeurFilmShowFilm', [$film])}}">
                         <ion-icon name="cloud-upload-outline"></ion-icon>
                         <data>Ajouter un acteur</data>
                     </a>
@@ -64,5 +69,25 @@
                 </div>
             </div>
         </section>
+
+        <!-- Modal Suppresion Film -->
+        <div class="cd-popup" role="alert">
+            <div class="cd-popup-container">
+                <p>Voulez-vous vraiment supprimer ce film?</p>
+                <ul class="cd-buttons">
+                    <li>
+                        <form action="{{route('films.destroy', [$film->id])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">
+                                <data>Oui</data>
+                            </button>    
+                        </form>
+                    </li>
+                    <li><a href="#0" class="cd-popup-non">Non</a></li>
+                </ul>
+                <a href="#0" class="cd-popup-close img-replace"></a>
+            </div> <!-- cd-popup-container -->
+        </div> <!-- cd-popup -->
     @endif
 @endsection

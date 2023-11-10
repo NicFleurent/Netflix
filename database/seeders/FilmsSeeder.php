@@ -262,7 +262,7 @@ class FilmsSeeder extends Seeder
                 'lien_pochette' => 'https://th.bing.com/th/id/R.3d44e2c03a7f234f008ef2f87b90152e?rik=XZXDfjjtBo4wKg&riu=http%3a%2f%2ffr.web.img6.acsta.net%2fmedias%2fnmedia%2f18%2f93%2f52%2f64%2f20261429.jpg&ehk=mFxWdmRzbuO%2bmcxKkgf9qXOQEyOAR7YUM8jQz2FIdCE%3d&risl=&pid=ImgRaw&r=0',
                 'realisateur_id' => 30,
                 'producteur_id' => 31,
-                'acteurprincipal_id' => 29,
+                'acteurprincipal_id' => 27,
                 'type' => 'film',
                 'genre' => 'Drame',
                 'brand' => 'Summit Entertainment',
