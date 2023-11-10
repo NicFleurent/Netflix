@@ -16,6 +16,7 @@
                 <p>{{$message}}</p>
                 @endforeach
             </div>
+            @endif
             <form class="form " method="post" action="{{ route('personnes.update', [$personne]) }}">
                 <div class="title">Modifier une personne</div>
                 @csrf

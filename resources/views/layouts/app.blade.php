@@ -13,6 +13,7 @@
     <!-- custom css link-->
     <link rel="stylesheet" href="{{ asset('css/films.css') }}">
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/toast.css') }}">
     @yield('css')
     <!-- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,9 +219,9 @@
     <!-- Scripts modal -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('js/toast.js') }}"></script>
     
-    <!-- Nos scripts -->
-    <script src="{{ asset('js/films.js') }}"></script>
+ 
 
 
 </body>
