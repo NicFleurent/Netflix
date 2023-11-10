@@ -66,3 +66,5 @@ Route::get('personnes/{personne}',
 Route::post('personnes',
 [PersonnesController::class, 'store'])->name('personnes.store');
 
+Route::delete('personnes/{id}',
+[PersonnesController::class, 'destroy'])->name('personnes.destroy');
