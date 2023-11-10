@@ -8,12 +8,17 @@
             <div class="container">
 
                 <div class="lien-edit">
-                    <a href="{{route('film.edit', [$film])}}">
+                    <a href="{{route('films.edit', [$film])}}">
                         <ion-icon name="construct-outline"></ion-icon>
                         <data>Mettre à jour</data>
                     </a>
+                    
+                    <a href="{{route('films.destroy', [$film->id])}}">
+                        <ion-icon name="remove-circle-outline"></ion-icon>
+                        <data>Supprimer</data>
+                    </a>
 
-                    <a href="{{route('film.createActeurFilmShowFilm', [$film])}}">
+                    <a href="{{route('films.createActeurFilmShowFilm', [$film])}}">
                         <ion-icon name="cloud-upload-outline"></ion-icon>
                         <data>Ajouter un acteur</data>
                     </a>
