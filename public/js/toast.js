@@ -1,30 +1,48 @@
-const button = document.querySelector("button"),
-  toast = document.querySelector(".toast");
-(closeIcon = document.querySelector(".close")),
-  (progress = document.querySelector(".progress"));
+'use strict';
 
-let timer1, timer2;
+// let toast = document.querySelector(".toast");
+// let closeIcon = document.querySelector(".close");
+// let progress = document.querySelector(".progress");
 
-button.addEventListener("click", () => {
-  toast.classList.add("active");
-  progress.classList.add("active");
+// let timer1, timer2;
 
-  timer1 = setTimeout(() => {
-    toast.classList.remove("active");
-  }, 5000); //1s = 1000 milliseconds
+// button.addEventListener("click", () => {
+//   toast.classList.add("active");
+//   progress.classList.add("active");
 
-  timer2 = setTimeout(() => {
-    progress.classList.remove("active");
-  }, 5300);
-});
+//   timer1 = setTimeout(() => {
+//     toast.classList.remove("active");
+//   }, 5000); //1s = 1000 milliseconds
 
-closeIcon.addEventListener("click", () => {
+//   timer2 = setTimeout(() => {
+//     progress.classList.remove("active");
+//   }, 5300);
+// });
+
+// closeIcon.addEventListener("click", () => {
+//   toast.classList.remove("active");
+
+//   setTimeout(() => {
+//     progress.classList.remove("active");
+//   }, 300);
+
+//   clearTimeout(timer1);
+//   clearTimeout(timer2);
+// });
+
+
+
+let toast = document.querySelector(".toast");
+let progress = document.querySelector(".progress");
+
+let timer;
+
+
+toast.classList.add("active");
+progress.classList.add("active");
+
+
+timer = setTimeout(() => {
   toast.classList.remove("active");
-
-  setTimeout(() => {
-    progress.classList.remove("active");
-  }, 300);
-
-  clearTimeout(timer1);
-  clearTimeout(timer2);
-});
+  progress.classList.remove("active");
+}, 3000); 
