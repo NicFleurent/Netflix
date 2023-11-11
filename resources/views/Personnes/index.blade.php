@@ -188,27 +188,42 @@
         </div>
     </section>
 
-    {{-- TOAST RÉUSSI --}}
-   
-    <!-- Remove 'active' class, this is just to show in Codepen thumbnail -->
+    {{-- TOAST RÉUSSI SUPPRIMÉ --}}
+    @if(session('message'))
     <div class="toast ">
-
         <div class="toast-content">
-            <i class="fas fa-solid fa-check check"></i>
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
             <div class="message">
-                <span class="text text-1">Success</span>
-                <span class="text text-2">Your changes has been saved</span>
+                <span class="text text-1">Réussi</span>
+                <span class="text text-2">{{session('message')}}</span>
             </div>
         </div>
-        <i class="fa-solid fa-xmark close"></i>
-
-        <!-- Remove 'active' class, this is just to show in Codepen thumbnail -->
         <div class="progress "></div>
     </div>
-
-    <button>Show Toast</button>
-
-    <small style="position: absolute; bottom: 40px">Remove 'active' classes, this is just to show in Codepen thumbnail</small>
-  
+    @elseif(session('ajouter'))
+    {{-- TOAST RÉUSSI AJOUTÉ --}}
+    <div class="toast">
+        <div class="toast-content">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <div class="message">
+                <span class="text text-1">Réussi</span>
+                <span class="text text-2">{{session('ajouter')}}</span>
+            </div>
+        </div>
+        <div class="progress "></div>
+    </div>
+    @elseif(session('modifier'))
+    {{-- TOAST RÉUSSI Modifé --}}
+    <div class="toast">
+        <div class="toast-content">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <div class="message">
+                <span class="text text-1">Réussi</span>
+                <span class="text text-2">{{session('modifier')}}</span>
+            </div>
+        </div>
+        <div class="progress "></div>
+    </div>
+    @endif
 </main>
 @endsection
