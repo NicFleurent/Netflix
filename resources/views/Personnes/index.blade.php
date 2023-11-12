@@ -127,7 +127,6 @@
             <ul class="movies-list has-scrollbar">
                 @if (count($doubleurs))
                 @foreach ($doubleurs as $doubleur)
-
                 <li>
                     <div class="movie-card">
                         <a href="{{ route('personnes.show', [$doubleur]) }}">
@@ -169,8 +168,8 @@
                         <a href="{{ route('personnes.show', [$dateAnniversaire]) }}">
                             <figure class="card-banner">
                                 <img class="img" src="{{ $dateAnniversaire->lien_photo }}" alt="Image de {{ $dateAnniversaire->nom }} ">
+                            </figure>
                         </a>
-                        </figure>
 
                         <div class="title-wrapper">
                             <a href="{{ route('personnes.show', [$dateAnniversaire]) }}">
