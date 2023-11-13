@@ -16,7 +16,7 @@ jQuery(document).ready(function($){
 	//open popup acteur
 	$('.cd-popup-trigger-acteur').on('click', function(event){
 		event.preventDefault();
-		$('.cd-popup-acteur').addClass('is-visible');
+		$('#'+$(this).attr('id')+'.cd-popup-acteur').addClass('is-visible');
 	});
 	
 	//close popup acteur

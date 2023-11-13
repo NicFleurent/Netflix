@@ -63,10 +63,30 @@
                             @foreach($film->acteurs as $acteurDuFilm)
                                 <p class="acteur">
                                     {{$acteurDuFilm->nom}}
-                                    <a href="#" class="cd-popup-trigger-acteur">
+                                    <a id="{{$acteurDuFilm->id}}" href="#" class="cd-popup-trigger-acteur">
                                         <ion-icon name="remove-circle-outline"></ion-icon>
                                     </a>
                                 </p>
+
+                                <!-- Modal Suppresion Acteur -->
+                                <div id="{{$acteurDuFilm->id}}" class="cd-popup-acteur" role="alert">
+                                    <div class="cd-popup-container">
+                                        <p>Voulez-vous vraiment supprimer cet acteur?</p>
+                                        <ul class="cd-buttons">
+                                            <li>
+                                                <form action="{{route('films.destroyActeurFilm', [$film,$acteurDuFilm])}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit">
+                                                        <data>OUI</data>
+                                                    </button>    
+                                                </form>
+                                            </li>
+                                            <li><a href="#" class="cd-popup-non">NON</a></li>
+                                        </ul>
+                                        <a href="#" class="cd-popup-close img-replace"></a>
+                                    </div> <!-- cd-popup-container -->
+                                </div> <!-- cd-popup -->
                             @endforeach
                         </div>
                         
@@ -79,26 +99,6 @@
         <div class="cd-popup" role="alert">
             <div class="cd-popup-container">
                 <p>Voulez-vous vraiment supprimer ce film?</p>
-                <ul class="cd-buttons">
-                    <li>
-                        <form action="{{route('films.destroy', [$film->id])}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">
-                                <data>OUI</data>
-                            </button>    
-                        </form>
-                    </li>
-                    <li><a href="#" class="cd-popup-non">NON</a></li>
-                </ul>
-                <a href="#" class="cd-popup-close img-replace"></a>
-            </div> <!-- cd-popup-container -->
-        </div> <!-- cd-popup -->
-
-        <!-- Modal Suppresion Acteur -->
-        <div class="cd-popup-acteur" role="alert">
-            <div class="cd-popup-container">
-                <p>Voulez-vous vraiment supprimer cet acteur?</p>
                 <ul class="cd-buttons">
                     <li>
                         <form action="{{route('films.destroy', [$film->id])}}" method="post">

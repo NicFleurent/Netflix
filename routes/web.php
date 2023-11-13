@@ -48,6 +48,9 @@ Route::get('relation/films/{film}',
 Route::post('relation',
 [FilmsController::class, 'storeActeurFilm'])->name('films.storeActeurFilm');
 
+Route::delete('relation/del/{film}/{personne}',
+[FilmsController::class, 'destroyActeurFilm'])->name('films.destroyActeurFilm');
+
 Route::get('personnes', 
 [PersonnesController::class, 'index'])->name('personnes.index');
 
