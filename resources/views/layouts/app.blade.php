@@ -40,7 +40,7 @@
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
 
-                <button class="btn btn-primary">Sign in</button>
+                <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connection</a>
 
             </div>
 
@@ -85,10 +85,10 @@
 
                 </ul>
 
-                <div class="section-bouton-singin">
-                    <button class="btn btn-primary">Sign in</button>
+                <div class="section-bouton-singin"> 
+                    <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connection</a>
                 </div>
-
+             
             </nav>
 
         </div>

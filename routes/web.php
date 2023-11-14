@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmsController;
 use App\Http\Controllers\PersonnesController;
+use App\Http\Controllers\UsagersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,3 +72,12 @@ Route::post('personnes',
 
 Route::delete('personnes/{id}',
 [PersonnesController::class, 'destroy'])->name('personnes.destroy');
+
+Route::get('login',
+[UsagersController::class, 'showLoginForm'])->name('usagers.showLogin');
+
+Route::post('login',
+[UsagersController::class, 'login'])->name('login');
+
+Route::post('logout',
+[UsagersController::class, 'logout']) ->name('logout');

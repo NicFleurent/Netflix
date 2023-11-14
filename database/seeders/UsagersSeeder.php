@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\facades\DB;
+use Illuminate\Support\facades\Hash;
 
 class UsagersSeeder extends Seeder
 {
