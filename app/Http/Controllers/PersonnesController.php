@@ -54,7 +54,7 @@ class PersonnesController extends Controller
             $personne = new Personne($request->all());
             $personne->save();
             $nomPersonne = $request->input('nom');
-            return redirect()->route('personnes.index')->with('ajouter', "Vous avez bien ajouté " . $nomPersonne . " !");
+            return redirect()->route('personnes.index')->with('message', "Vous avez bien ajouté " . $nomPersonne . " !");
         } catch (\Throwable $e) {
             //Permet de gérer l'erreur
             Log::debug($e);
@@ -92,7 +92,7 @@ class PersonnesController extends Controller
             $personne->save();
             $nomPersonne = $personne->nom;
 
-            return redirect()->route('personnes.index')->with('modifier', "Vous avez bien modifé " . $nomPersonne . " !");
+            return redirect()->route('personnes.index')->with('message', "Vous avez bien modifé " . $nomPersonne . " !");
         } catch (\Throwable $e) {
             //Gérer l'erreur
             Log::debug($e);

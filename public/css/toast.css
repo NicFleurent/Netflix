@@ -124,4 +124,12 @@
   font-size: 32px;
 }
 
+.text-erreur{
+  color: red !important;
+}
+
+.progress-erreur:before {
+  background-color: red !important;
+}
+
 /* Reste a modifier quand lecran plus petit */

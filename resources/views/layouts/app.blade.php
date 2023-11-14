@@ -204,6 +204,34 @@
         <ion-icon name="chevron-up"></ion-icon>
     </a>
 
+    {{-- TOAST RÉUSSI --}}
+    @if(session('message'))
+    <div class="toast ">
+        <div class="toast-content">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <div class="message">
+                <span class="text text-1">Réussi</span>
+                <span class="text text-2">{{session('message')}}</span>
+            </div>
+        </div>
+        <div class="progress "></div>
+    </div>
+    @elseif(isset($errors) && $errors->any())
+    {{-- TOAST ERREUR --}}
+    <div class="toast">
+        <div class="toast-content">
+            <ion-icon class="text-erreur" name="close-circle-outline"></ion-icon>
+            <div class="message">
+                <span class="text text-1 text-erreur">Erreur</span>
+                @foreach($errors->all() as $error)
+                <span class="text text-2">{{$error}}</span>
+                @endforeach
+            </div>
+        </div>
+        <div class="progress progress-erreur"></div>
+    </div>
+    @endif
+
     <!-- custom js link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">

@@ -80,13 +80,14 @@ class FilmsController extends Controller
         try {
             $film = new Film($request->all());
             $film->save();
+            return redirect()->route('films.index')->with('message', "Vous avez bien ajouté " . $film->titre . " !");
         }
     
         catch (\Throwable $e) {
             //Gérer l'erreur
             Log::debug($e);
+            return redirect()->route('films.index')->withErrors('L\'ajout n\'a pas fonctionné');
         }
-        return redirect()->route('films.index');
     }
 
     /**
@@ -100,18 +101,20 @@ class FilmsController extends Controller
 
             if($film->acteurs->contains($personne)){
                 Log::debug("La relation existe déjà");
+                return redirect()->route('films.index')->withErrors("La relation existe déjà");
             }
             else{
                 $film->acteurs()->attach($personne);
                 $film->save();
+                return redirect()->route('films.index')->with('message', "La relation entre le film " . $film->titre . " et l'acteur " . $personne->nom . " a été ajouté!");
             }
         }
     
         catch (\Throwable $e) {
             //Gérer l'erreur
             Log::debug($e);
+            return redirect()->route('films.index')->withErrors('L\'ajout n\'a pas fonctionné');
         }
-        return redirect()->route('films.index');
     }
 
     /**
@@ -152,13 +155,14 @@ class FilmsController extends Controller
             $film->producteur_id = $request->producteur_id;
             $film->acteurprincipal_id = $request->acteurprincipal_id;
             $film->save();
+            return redirect()->route('films.index')->with('message', "Vous avez bien modifié " . $film->titre . " !");
         }
     
         catch (\Throwable $e) {
             //Gérer l'erreur
             Log::debug($e);
+            return redirect()->route('films.index')->withErrors('La modification n\'a pas fonctionné');
         }
-        return redirect()->route('films.index');
     }
 
     /**

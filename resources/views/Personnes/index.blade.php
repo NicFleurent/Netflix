@@ -186,43 +186,5 @@
             </ul>
         </div>
     </section>
-
-    {{-- TOAST RÉUSSI SUPPRIMÉ --}}
-    @if(session('message'))
-    <div class="toast ">
-        <div class="toast-content">
-            <ion-icon name="checkmark-circle-outline"></ion-icon>
-            <div class="message">
-                <span class="text text-1">Réussi</span>
-                <span class="text text-2">{{session('message')}}</span>
-            </div>
-        </div>
-        <div class="progress "></div>
-    </div>
-    @elseif(session('ajouter'))
-    {{-- TOAST RÉUSSI AJOUTÉ --}}
-    <div class="toast">
-        <div class="toast-content">
-            <ion-icon name="checkmark-circle-outline"></ion-icon>
-            <div class="message">
-                <span class="text text-1">Réussi</span>
-                <span class="text text-2">{{session('ajouter')}}</span>
-            </div>
-        </div>
-        <div class="progress "></div>
-    </div>
-    @elseif(session('modifier'))
-    {{-- TOAST RÉUSSI Modifé --}}
-    <div class="toast">
-        <div class="toast-content">
-            <ion-icon name="checkmark-circle-outline"></ion-icon>
-            <div class="message">
-                <span class="text text-1">Réussi</span>
-                <span class="text text-2">{{session('modifier')}}</span>
-            </div>
-        </div>
-        <div class="progress "></div>
-    </div>
-    @endif
 </main>
 @endsection
