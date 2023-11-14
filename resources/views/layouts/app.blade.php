@@ -40,8 +40,12 @@
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
 
-                <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connection</a>
+                <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connexion</a>
 
+                <form action="{{route('logout')}}" method="post">
+                    @csrf
+                    <button class="btn btn-primary" type="submit">Déconnexion</button>
+                </form>
             </div>
 
             <button class="menu-open-btn" data-menu-open-btn>
@@ -86,7 +90,7 @@
                 </ul>
 
                 <div class="section-bouton-singin"> 
-                    <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connection</a>
+                    <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connexion</a>
                 </div>
              
             </nav>

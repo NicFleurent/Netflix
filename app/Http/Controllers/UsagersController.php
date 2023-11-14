@@ -9,6 +9,11 @@ use Auth;
 
 class UsagersController extends Controller
 {
+     public function showLoginForm()
+    {
+        return View('usagers.login');
+    } 
+    
     public function login(Request $request)
     {
         $reussi=Auth::attempt(['nomUsager' => $request->nomUsager,'password' => $request->password]);
@@ -20,8 +25,17 @@ class UsagersController extends Controller
         }
     }
 
-    public function showLoginForm()
+    /**
+     * Log the user out of the application.
+     */
+    public function logout(Request $request)
     {
-        return View('usagers.login');
-    }
+        Auth::logout();
+    
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+    
+        return redirect()->route('usagers.showLogin')->with('message',"Déconnexion réussie");
+    }    
 }
