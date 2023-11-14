@@ -21,16 +21,21 @@
 
                 @if (count($acteurs))
                 @foreach ($acteurs as $acteur)
-                <a href="{{ route('personnes.show', [$acteur]) }}">
-                    <li>
-                        <div class="movie-card">
-                            <img class="img" src="{{ $acteur->lien_photo }}" alt="Image de {{ $acteur->nom }} ">
-                            <div class="title-wrapper">
+                <li>
+                    <div class="movie-card">
+                        <a href="{{ route('personnes.show', [$acteur]) }}">
+                            <figure class="card-banner">
+                                <img class="img" src="{{ $acteur->lien_photo }}" alt="Image de {{ $acteur->nom }} ">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="{{ route('personnes.show', [$acteur]) }}">
                                 <h3 class="card-title">{{ $acteur->nom }}</h3>
-                            </div>
+                            </a>
                         </div>
-                    </li>
-                </a>
+                    </div>
+                </li>
                 @endforeach
                 @else
                 <p> Pas d'acteurs </p>
@@ -51,16 +56,22 @@
             <ul class="movies-list  has-scrollbar">
                 @if (count($realisateurs))
                 @foreach ($realisateurs as $realisateur)
-                <a href="{{ route('personnes.show', [$realisateur]) }}">
-                    <li>
-                        <div class="movie-card">
-                            <img class="img" src="{{ $realisateur->lien_photo }}" alt="Image de {{ $realisateur->nom }} ">
-                            <div class="title-wrapper">
+                <li>
+                    <div class="movie-card">
+                        <a href="{{ route('personnes.show', [$realisateur]) }}">
+                            <figure class="card-banner">
+                                <img class="img" src="{{ $realisateur->lien_photo }}" alt="Image de {{ $realisateur->nom }} ">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="{{ route('personnes.show', [$realisateur]) }}">
                                 <h3 class="card-title">{{ $realisateur->nom }}</h3>
-                            </div>
+                            </a>
                         </div>
-                    </li>
-                </a>
+                    </div>
+                </li>
+
                 @endforeach
                 @else
                 <p> Pas de réalisateurs </p>
@@ -81,16 +92,21 @@
             <ul class="movies-list  has-scrollbar">
                 @if (count($producteurs))
                 @foreach ($producteurs as $producteur)
-                <a href="{{ route('personnes.show', [$producteur]) }}">
-                    <li>
-                        <div class="movie-card">
-                            <img class="img" src="{{ $producteur->lien_photo }}" alt="Image de {{ $producteur->nom }} ">
-                            <div class="title-wrapper">
+                <li>
+                    <div class="movie-card">
+                        <a href="{{ route('personnes.show', [$producteur]) }}">
+                            <figure class="card-banner">
+                                <img class="img" src="{{ $producteur->lien_photo }}" alt="Image de {{ $producteur->nom }} ">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="{{ route('personnes.show', [$producteur]) }}">
                                 <h3 class="card-title">{{ $producteur->nom }}</h3>
-                            </div>
+                            </a>
                         </div>
-                    </li>
-                </a>
+                    </div>
+                </li>
                 @endforeach
                 @else
                 <p> Pas de réalisateurs </p>
@@ -108,19 +124,25 @@
                     <h2 class="h2 section-title">Doubleurs/Doubleuses</h2>
                 </div>
             </div>
-            <ul class="movies-list  has-scrollbar">
+            <ul class="movies-list has-scrollbar">
                 @if (count($doubleurs))
                 @foreach ($doubleurs as $doubleur)
-                <a href="{{ route('personnes.show', [$doubleur]) }}">
-                    <li>
-                        <div class="movie-card">
-                            <img class="img" src="{{ $doubleur->lien_photo }}" alt="Image de {{ $doubleur->nom }} ">
-                            <div class="title-wrapper">
+                <li>
+                    <div class="movie-card">
+                        <a href="{{ route('personnes.show', [$doubleur]) }}">
+                            <figure class="card-banner">
+                                <img class="img" src="{{ $doubleur->lien_photo }}" alt="Image de {{ $doubleur->nom }} ">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="{{ route('personnes.show', [$doubleur]) }}">
                                 <h3 class="card-title">{{ $doubleur->nom }}</h3>
-                            </div>
+                            </a>
                         </div>
-                    </li>
-                </a>
+                    </div>
+                </li>
+
                 @endforeach
                 @else
                 <p> Pas de doubleurs </p>
@@ -141,16 +163,21 @@
             <ul class="movies-list  has-scrollbar">
                 @if (count($dateAnniversaires))
                 @foreach ($dateAnniversaires as $dateAnniversaire)
-                <a href="{{ route('personnes.show', [$dateAnniversaire]) }}">
-                    <li>
-                        <div class="movie-card">
-                            <img class="img" src="{{ $dateAnniversaire->lien_photo }}" alt="Image de {{ $dateAnniversaire->nom }} ">
-                            <div class="title-wrapper">
+                <li>
+                    <div class="movie-card">
+                        <a href="{{ route('personnes.show', [$dateAnniversaire]) }}">
+                            <figure class="card-banner">
+                                <img class="img" src="{{ $dateAnniversaire->lien_photo }}" alt="Image de {{ $dateAnniversaire->nom }} ">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="{{ route('personnes.show', [$dateAnniversaire]) }}">
                                 <h3 class="card-title">{{ $dateAnniversaire->nom }}</h3>
-                            </div>
+                            </a>
                         </div>
-                    </li>
-                </a>
+                    </div>
+                </li>
                 @endforeach
                 @else
                 <p> Aucun vieillissent ce mois-ci. </p>
@@ -160,5 +187,42 @@
         </div>
     </section>
 
+    {{-- TOAST RÉUSSI SUPPRIMÉ --}}
+    @if(session('message'))
+    <div class="toast ">
+        <div class="toast-content">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <div class="message">
+                <span class="text text-1">Réussi</span>
+                <span class="text text-2">{{session('message')}}</span>
+            </div>
+        </div>
+        <div class="progress "></div>
+    </div>
+    @elseif(session('ajouter'))
+    {{-- TOAST RÉUSSI AJOUTÉ --}}
+    <div class="toast">
+        <div class="toast-content">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <div class="message">
+                <span class="text text-1">Réussi</span>
+                <span class="text text-2">{{session('ajouter')}}</span>
+            </div>
+        </div>
+        <div class="progress "></div>
+    </div>
+    @elseif(session('modifier'))
+    {{-- TOAST RÉUSSI Modifé --}}
+    <div class="toast">
+        <div class="toast-content">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <div class="message">
+                <span class="text text-1">Réussi</span>
+                <span class="text text-2">{{session('modifier')}}</span>
+            </div>
+        </div>
+        <div class="progress "></div>
+    </div>
+    @endif
 </main>
 @endsection

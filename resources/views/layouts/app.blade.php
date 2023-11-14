@@ -12,6 +12,8 @@
 
     <!-- custom css link-->
     <link rel="stylesheet" href="{{ asset('css/films.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/toast.css') }}">
     @yield('css')
     <!-- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,6 +84,10 @@
                     </li>
 
                 </ul>
+
+                <div class="section-bouton-singin">
+                    <button class="btn btn-primary">Sign in</button>
+                </div>
 
             </nav>
 
@@ -202,11 +208,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="{{ asset('js/films.js') }}"></script>
 
     <!-- ionicon link -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Nos scripts -->
+    <script src="{{ asset('js/films.js') }}"></script>
+
+    <!-- Scripts modal -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('js/toast.js') }}"></script>
+    
+ 
+
 
 </body>
 

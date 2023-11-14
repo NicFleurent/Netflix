@@ -15,26 +15,6 @@ class FilmPersonneSeeder extends Seeder
     {
         DB::table('film_personne')->insert([
             [
-                'id' => 1,
-                'film_id' => 1,
-                'personne_id' => 1,
-            ],
-            [
-                'id' => 2,
-                'film_id' => 1,
-                'personne_id' => 2,
-            ],
-            [
-                'id' => 3,
-                'film_id' => 2,
-                'personne_id' => 3,
-            ],
-            [
-                'id' => 4,
-                'film_id' => 2,
-                'personne_id' => 4,
-            ],
-            [
                 'id' => 5,
                 'film_id' => 3,
                 'personne_id' => 40,
@@ -60,101 +40,6 @@ class FilmPersonneSeeder extends Seeder
                 'personne_id' => 46,
             ],
             [
-                'id' => 10,
-                'film_id' => 5,
-                'personne_id' => 10,
-            ],
-            [
-                'id' => 11,
-                'film_id' => 5,
-                'personne_id' => 11,
-            ],
-            [
-                'id' => 12,
-                'film_id' => 5,
-                'personne_id' => 12,
-            ],
-            [
-                'id' => 13,
-                'film_id' => 6,
-                'personne_id' => 13,
-            ],
-            [
-                'id' => 14,
-                'film_id' => 6,
-                'personne_id' => 14,
-            ],
-            [
-                'id' => 15,
-                'film_id' => 6,
-                'personne_id' => 15,
-            ],
-            [
-                'id' => 17,
-                'film_id' => 7,
-                'personne_id' => 16,
-            ],
-            [
-                'id' => 18,
-                'film_id' => 7,
-                'personne_id' => 17,
-            ],
-            [
-                'id' => 19,
-                'film_id' => 7,
-                'personne_id' => 18,
-            ],
-            [
-                'id' => 20,
-                'film_id' =>8,
-                'personne_id' => 19,
-            ],
-            [
-                'id' => 21,
-                'film_id' => 8,
-                'personne_id' => 20,
-            ],
-            [
-                'id' => 22,
-                'film_id' => 9,
-                'personne_id' => 20,
-            ],
-            [
-                'id' => 23,
-                'film_id' => 9,
-                'personne_id' => 21,
-            ],
-            [
-                'id' => 24,
-                'film_id' => 9,
-                'personne_id' => 22,
-            ],
-            [
-                'id' => 25,
-                'film_id' => 10,
-                'personne_id' => 20,
-            ],
-            [
-                'id' => 26,
-                'film_id' => 10,
-                'personne_id' => 23,
-            ],
-            [
-                'id' => 27,
-                'film_id' => 11,
-                'personne_id' => 24,
-            ],
-            [
-                'id' => 28,
-                'film_id' => 11,
-                'personne_id' => 25,
-            ],
-            [
-                'id' => 29,
-                'film_id' => 11,
-                'personne_id' => 26,
-            ],
-            [
                 'id' => 30,
                 'film_id' => 3,
                 'personne_id' => 43,
@@ -174,6 +59,46 @@ class FilmPersonneSeeder extends Seeder
                 'film_id' => 4,
                 'personne_id' => 47,
             ],
+            [
+                'id' => 34,
+                'film_id' => 13,
+                'personne_id' => 28,
+            ],
+            [
+                'id' => 35,
+                'film_id' => 15,
+                'personne_id' => 29,
+            ],
+            [
+                'id' => 36,
+                'film_id' => 15,
+                'personne_id' => 28,
+            ],
+            [
+                'id' => 37,
+                'film_id' => 13,
+                'personne_id' => 33,
+            ],
+            [
+                'id' => 38,
+                'film_id' => 16,
+                'personne_id' => 28,
+            ],
+            [
+                'id' => 39,
+                'film_id' => 16,
+                'personne_id' => 33,
+            ],
+            [
+                'id' => 40,
+                'film_id' => 17,
+                'personne_id' => 28,
+            ],
+            [
+                'id' => 41,
+                'film_id' => 17,
+                'personne_id' => 33,
+            ]
         ]);
     }
 }

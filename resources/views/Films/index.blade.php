@@ -44,7 +44,7 @@
               <li>
                 <div class="movie-card">
   
-                  <a href="{{route('film.show', [$film])}}">
+                  <a href="{{route('films.show', [$film])}}">
                     <figure class="card-banner">
                       <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
 
@@ -55,7 +55,7 @@
                   </a>
   
                   <div class="title-wrapper">
-                    <a href="{{route('film.show', [$film])}}">
+                    <a href="{{route('films.show', [$film])}}">
                       <h3 class="card-title">{{$film->titre}}</h3>
                     </a>
   
@@ -77,7 +77,7 @@
                   </div>
 
                   <div class="lien-edit">
-                    <a href="{{route('film.edit', [$film])}}">
+                    <a href="{{route('films.edit', [$film])}}">
                       <ion-icon name="construct-outline"></ion-icon>
                       <data>Mettre à jour</data>
                     </a>
@@ -130,7 +130,7 @@
                 <li>
                   <div class="movie-card">
 
-                    <a href="{{route('film.show', [$film])}}">
+                    <a href="{{route('films.show', [$film])}}">
                       <figure class="card-banner">
                         <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
                       
@@ -141,7 +141,7 @@
                     </a>
 
                     <div class="title-wrapper">
-                      <a href="{{route('film.show', [$film])}}">
+                      <a href="{{route('films.show', [$film])}}">
                         <h3 class="card-title">{{$film->titre}}</h3>
                       </a>
 
@@ -163,7 +163,7 @@
                     </div>
                   
                     <div class="lien-edit">
-                      <a href="{{route('film.edit', [$film])}}">
+                      <a href="{{route('films.edit', [$film])}}">
                         <ion-icon name="construct-outline"></ion-icon>
                         <data>Mettre à jour</data>
                       </a>
@@ -216,7 +216,7 @@
                 <li>
                   <div class="movie-card">
 
-                    <a href="{{route('film.show', [$film])}}">
+                    <a href="{{route('films.show', [$film])}}">
                       <figure class="card-banner">
                         <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
                       
@@ -227,7 +227,7 @@
                     </a>
 
                     <div class="title-wrapper">
-                      <a href="{{route('film.show', [$film])}}">
+                      <a href="{{route('films.show', [$film])}}">
                         <h3 class="card-title">{{$film->titre}}</h3>
                       </a>
 
@@ -249,7 +249,7 @@
                     </div>
                   
                     <div class="lien-edit">
-                      <a href="{{route('film.edit', [$film])}}">
+                      <a href="{{route('films.edit', [$film])}}">
                         <ion-icon name="construct-outline"></ion-icon>
                         <data>Mettre à jour</data>
                       </a>
@@ -282,7 +282,7 @@
                 <li>
                   <div class="movie-card">
 
-                    <a href="{{route('film.show', [$film])}}">
+                    <a href="{{route('films.show', [$film])}}">
                       <figure class="card-banner">
                         <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
                       
@@ -293,7 +293,7 @@
                     </a>
 
                     <div class="title-wrapper">
-                      <a href="{{route('film.show', [$film])}}">
+                      <a href="{{route('films.show', [$film])}}">
                         <h3 class="card-title">{{$film->titre}}</h3>
                       </a>
 
@@ -315,7 +315,7 @@
                     </div>
                   
                     <div class="lien-edit">
-                      <a href="{{route('film.edit', [$film])}}">
+                      <a href="{{route('films.edit', [$film])}}">
                         <ion-icon name="construct-outline"></ion-icon>
                         <data>Mettre à jour</data>
                       </a>
@@ -368,7 +368,7 @@
                 <li>
                   <div class="movie-card">
 
-                    <a href="{{route('film.show', [$film])}}">
+                    <a href="{{route('films.show', [$film])}}">
                       <figure class="card-banner">
                         <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
                       
@@ -379,7 +379,7 @@
                     </a>
 
                     <div class="title-wrapper">
-                      <a href="{{route('film.show', [$film])}}">
+                      <a href="{{route('films.show', [$film])}}">
                         <h3 class="card-title">{{$film->titre}}</h3>
                       </a>
 
@@ -401,7 +401,7 @@
                     </div>
                   
                     <div class="lien-edit">
-                      <a href="{{route('film.edit', [$film])}}">
+                      <a href="{{route('films.edit', [$film])}}">
                         <ion-icon name="construct-outline"></ion-icon>
                         <data>Mettre à jour</data>
                       </a>

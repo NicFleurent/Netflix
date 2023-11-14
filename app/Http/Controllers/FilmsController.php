@@ -18,7 +18,7 @@ class FilmsController extends Controller
     public function index()
     {
         $filmsDernieresSorties = Film::orderby('annee_sortie', 'desc')
-                                    ->take(8)
+                                    ->take(20)
                                     ->get();
 
         $filmsToutPublic = Film::where('rating', 'G')
@@ -166,6 +166,41 @@ class FilmsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try{
+            $film = Film::findOrFail($id);
+
+            //Si un film a des acteurs, on ne peut pas le supprimer.
+            $film->acteurs()->detach();
+            $film->delete();
+
+            return redirect()->route('films.index')->with('message', "Suppression de " . $film->titre . " réussi!");
+        }
+        catch(\Throwable $e){
+            //Gérer l'erreur
+            Log::debug($e);
+            return redirect()->route('films.index')->withErrors(['la suppression n\'a pas fonctionné']); 
+        }
+        return redirect()->route('films.index');
+            
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroyActeurFilm(Film $film, Personne $personne)
+    {
+        try{
+            //Si un film a des acteurs, on ne peut pas le supprimer.
+            $film->acteurs()->detach($personne->id);
+
+            return redirect()->route('films.show',[$film])->with('message', "Suppression de l'acteur ". $personne->nom . " pour le film " . $film->titre . " a réussi!");
+        }
+        catch(\Throwable $e){
+            //Gérer l'erreur
+            Log::debug($e);
+            return redirect()->route('films.index')->withErrors(['la suppression n\'a pas fonctionné']); 
+        }
+        return redirect()->route('films.show',[$film]);
+            
     }
 }

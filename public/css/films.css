@@ -191,6 +191,16 @@ iframe{
   margin-bottom: 15px;
 }
 
+.acteur{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.acteur .cd-popup-trigger-acteur{
+  margin-left: 5px;
+  color: var(--citrine);
+}
+
 
 /*-----------------------------------*\
  * #REUSED STYLE
@@ -243,25 +253,34 @@ iframe{
   flex-direction: row;
   justify-content: center;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
-.lien-edit a{
+.lien-edit a, .lien-edit form button{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   font-size: 1.5em;
+  width: 100%;
 }
 
-.lien-edit a ion-icon{
+.lien-edit a ion-icon, .lien-edit form button ion-icon{
   color: var(--citrine);
 }
 
-.lien-edit a data{
+.lien-edit a data, .lien-edit form button data{
   color: white;
   margin-left: 5px;
   margin-right: 15px;
 }
-.lien-edit a:hover data{
+.lien-edit a:hover data, .lien-edit form button:hover data{
   color: var(--citrine);
+}
+
+.section-bouton-singin{
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 /**
@@ -1370,6 +1389,13 @@ figure:hover .pop-over-description{
     height: 225px;
   }
 
+  .lien-edit a, .lien-edit form button{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5em;
+    width: auto;
+  }
+
   /* MOVIE CARD */
 
   .movies-list {
@@ -1672,6 +1698,13 @@ figure:hover .pop-over-description{
     margin-bottom: 15px;
   }
 
+  .header-actions .btn-primary {
+    display: block;
+    --fs-11: 14px;
+    padding: 10px 35px;
+    letter-spacing: 1px;
+  }
+
   /* MOVIE CARD */
 
   .movies-list {
@@ -1730,6 +1763,10 @@ figure:hover .pop-over-description{
   .dropdown button{
     width: auto;
     text-align: center;
+  }
+
+  .section-bouton-singin{
+    display: none;
   }
 
 
@@ -1908,13 +1945,6 @@ figure:hover .pop-over-description{
 
   .navbar {
     margin-inline: auto;
-  }
-
-  .header-actions .btn-primary {
-    display: block;
-    --fs-11: 14px;
-    padding: 10px 35px;
-    letter-spacing: 1px;
   }
 
 

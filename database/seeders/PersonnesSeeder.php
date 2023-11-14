@@ -18,70 +18,70 @@ class PersonnesSeeder extends Seeder
                 'id' => 1,
                 'nom' => 'Tom Cruise',
                 'date_naissance' => '1962-07-03',
-                'lien_photo' => 'https://images.mubicdn.net/images/cast_member/2184/cache-2992-1547409411/image-w856.jpg',
+                'lien_photo' => 'https://i.pinimg.com/originals/39/af/74/39af745176aeb9583f504da4cfe3a9e0.png',
                 'role' => 'Acteur'
             ],
             [
                 'id' => 2,
                 'nom' => 'Christopher McQuarrie',
                 'date_naissance' => '1968-10-25',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Christopher_McQuarrie_2022.jpg/220px-Christopher_McQuarrie_2022.jpg',
+                'lien_photo' => 'http://www.btlnews.com/wp-content/uploads/2020/09/ChristopherMcQuarrieLMGI.jpg',
                 'role' => 'Réalisateur'
             ],
             [
                 'id' => 3,
                 'nom' => 'James Cameron',
                 'date_naissance' => '1954-08-16',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/James_Cameron_by_Gage_Skidmore.jpg/290px-James_Cameron_by_Gage_Skidmore.jpg',
+                'lien_photo' => 'https://static.hollywoodreporter.com/sites/default/files/2014/04/james_cameron_-_h_-_2014.jpg.jpg',
                 'role' => 'Réalisateur'
             ],
             [
                 'id' => 4,
                 'nom' => 'Sam Worthington',
                 'date_naissance' => '1976-08-02',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Avatar_The_Way_of_Water_Tokyo_Press_Conference_Sam_Worthington_%2852563252594%29_%28cropped%29.jpg/220px-Avatar_The_Way_of_Water_Tokyo_Press_Conference_Sam_Worthington_%2852563252594%29_%28cropped%29.jpg',
+                'lien_photo' => 'http://static1.dienanh.net/upload/2015/03/15/sam-worthington-22941.jpg',
                 'role' => 'Acteur'
             ],
             [
                 'id' => 5,
                 'nom' => 'Dennis Dugan',
                 'date_naissance' => '1946-11-05',
-                'lien_photo' => 'https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcRoLYikryCjcZgftaJpfyDNBL5Tt0V2h1_JZ79YyLOVa23uL0d4gUj8GfnDJP4Ufyph',
+                'lien_photo' => 'https://m.media-amazon.com/images/M/MV5BY2YwY2FjYzQtNzg4My00MTRjLWI5YWQtMDJiYjU1ZTgzY2QxXkEyXkFqcGdeQXVyMjg1MjAwMA@@._V1_.jpg',
                 'role' => 'Réalisateur'
             ],
             [
                 'id' => 6,
                 'nom' => 'Adam Sandler',
                 'date_naissance' => '1966-09-09',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Adam_Sandler_2018_%28Lc9jYc07e54%29.jpg/220px-Adam_Sandler_2018_%28Lc9jYc07e54%29.jpg',
+                'lien_photo' => 'https://www.themoviedb.org/t/p/original/rKviEgBCe5mYoyQuWvBzNpYHPko.jpg',
                 'role' => 'Producteur'
             ],
             [
                 'id' => 7,
                 'nom' => 'Rob Schneider',
                 'date_naissance' => '1963-10-31',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Rob_Schneider_Photo_Op_GalaxyCon_Raleigh_2019.jpg/220px-Rob_Schneider_Photo_Op_GalaxyCon_Raleigh_2019.jpg',
+                'lien_photo' => 'https://live.staticflickr.com/7847/40595353293_bcdd667f84_b.jpg',
                 'role' => 'Acteur'
             ],
             [
                 'id' => 8,
                 'nom' => 'George Lucas',
                 'date_naissance' => '1944-05-14',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/George_Lucas_cropped_2009.jpg/290px-George_Lucas_cropped_2009.jpg',
+                'lien_photo' => 'https://www.hollywoodreporter.com/wp-content/uploads/2012/02/lucas_replace.jpg',
                 'role' => 'Réalisateur'
             ],
             [
                 'id' => 9,
                 'nom' => 'Ewan McGregor',
                 'date_naissance' => '1971-03-31',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Ewan_McGregor_%282013_Citro%C3%ABn_advertisement%29.png/220px-Ewan_McGregor_%282013_Citro%C3%ABn_advertisement%29.png',
+                'lien_photo' => 'https://i.pinimg.com/736x/48/59/c8/4859c86093dd34782d4d7fd5884f41a6.jpg',
                 'role' => 'Acteur'
             ],
             [
                 'id' => 10,
                 'nom' => 'Gorō Taniguchi',
                 'date_naissance' => '1966-10-18',
-                'lien_photo' => 'https://www.nautiljon.com/images/people/00/34/taniguchi_goro_3643.webp',
+                'lien_photo' => 'https://www.themoviedb.org/t/p/w500/ivwYu0E0k2zVvhmkZDIDC1K0A2g.jpg',
                 'role' => 'Réalisateur'
             ],
             [
@@ -95,35 +95,35 @@ class PersonnesSeeder extends Seeder
                 'id' => 12,
                 'nom' => 'Mayumi Tanaka',
                 'date_naissance' => '1955-01-15',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Mayumi_Tanaka_2023.jpg/260px-Mayumi_Tanaka_2023.jpg',
+                'lien_photo' => 'https://i.redd.it/ljqbdxj4mla21.jpg',
                 'role' => 'Doubleuse'
             ],
             [
                 'id' => 13,
                 'nom' => 'Chris Buck',
                 'date_naissance' => '1958-02-24',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Frozenfeverdirectors_%28cropped%29.JPG/220px-Frozenfeverdirectors_%28cropped%29.JPG',
+                'lien_photo' => 'https://m.media-amazon.com/images/M/MV5BMTQ1ODk1Njg5M15BMl5BanBnXkFtZTcwMTIxNzUzOA@@._V1_FMjpg_UX1000_.jpg',
                 'role' => 'Réalisateur'
             ],
             [
                 'id' => 14,
                 'nom' => 'Peter Del Vecho',
                 'date_naissance' => '1958-04-06',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Frozen_premier_Peter_Del_Vecho.jpg/220px-Frozen_premier_Peter_Del_Vecho.jpg',
+                'lien_photo' => 'https://m.media-amazon.com/images/M/MV5BMTUwNTEyMjg4Nl5BMl5BanBnXkFtZTcwNTMwODIyMw@@._V1_.jpg',
                 'role' => 'Producteur'
             ],
             [
                 'id' => 15,
                 'nom' => 'Kristen Bell',
                 'date_naissance' => '1980-07-18',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Kristen_Bell_Paris_Fashion_Week_Spring_Summer_2020_%28cropped%29.jpg/220px-Kristen_Bell_Paris_Fashion_Week_Spring_Summer_2020_%28cropped%29.jpg',
+                'lien_photo' => 'https://openingact.org/wp-content/uploads/2015/02/F2_Kristen_Seamless_1255_CR3_Photo-by-Ricky-Middlesworth-5-2-3-2-1-1-1-732x915.jpg',
                 'role' => 'Actrice'
             ],
             [
                 'id' => 16,
                 'nom' => 'Cal Brunker',
                 'date_naissance' => '1978-11-16',
-                'lien_photo' => 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR4Thnr-qo0vSLC1rmIOY2zlI6-55JCmIdZ2_hDvvy6-7zCdHgd',
+                'lien_photo' => 'https://m.media-amazon.com/images/M/MV5BM2E1OTNhMTEtOTM4NC00NzdkLThkMDAtYmI4NDVkZDNhMWJiXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg',
                 'role' => 'Réalisateur'
             ],
             [
@@ -137,28 +137,28 @@ class PersonnesSeeder extends Seeder
                 'id' => 18,
                 'nom' => 'Mckenna Grace',
                 'date_naissance' => '2006-06-25',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/I_Tonya_14_%2836989840836%29_%28cropped%29.jpg/220px-I_Tonya_14_%2836989840836%29_%28cropped%29.jpg',
+                'lien_photo' => 'https://wwd.com/wp-content/uploads/2021/07/DSC06074.jpeg?w=640',
                 'role' => 'Actrice'
             ],
             [
                 'id' => 19,
                 'nom' => 'Frank Darabont',
                 'date_naissance' => '1959-01-28',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Frank_Darabont_at_the_PaleyFest_2011_-_The_Walking_Dead_panel.jpg/260px-Frank_Darabont_at_the_PaleyFest_2011_-_The_Walking_Dead_panel.jpg',
+                'lien_photo' => 'https://imgsrc.cineserie.com/1959/01/415211.jpg?ver=1',
                 'role' => 'Réalisateur'
             ],
             [
                 'id' => 20,
                 'nom' => 'Tom Hanks',
                 'date_naissance' => '1956-07-09',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Tom_Hanks_at_the_Elvis_Premiere_2022.jpg/220px-Tom_Hanks_at_the_Elvis_Premiere_2022.jpg',
+                'lien_photo' => 'https://i.pinimg.com/originals/be/29/2f/be292f53bb1d4d50a2729e5519ee7bc8.jpg',
                 'role' => 'Acteur'
             ],
             [
                 'id' => 21,
                 'nom' => 'Robert Zemeckis',
                 'date_naissance' => '1952-05-14',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Robert_Zemeckis_%22The_Walk%22_at_Opening_Ceremony_of_the_28th_Tokyo_International_Film_Festival_%2821835891403%29_%28cropped%29.jpg/220px-Robert_Zemeckis_%22The_Walk%22_at_Opening_Ceremony_of_the_28th_Tokyo_International_Film_Festival_%2821835891403%29_%28cropped%29.jpg',
+                'lien_photo' => 'https://www.hollywoodreporter.com/wp-content/uploads/2012/11/zemeckis_a_0.jpg',
                 'role' => 'Réalisateur'
             ],
             [
@@ -172,7 +172,7 @@ class PersonnesSeeder extends Seeder
                 'id' => 23,
                 'nom' => 'Steven Spielberg',
                 'date_naissance' => '1946-12-18',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/MKr25402_Steven_Spielberg_%28Berlinale_2023%29.jpg/260px-MKr25402_Steven_Spielberg_%28Berlinale_2023%29.jpg',
+                'lien_photo' => 'https://www.archivesfoundation.org/site/uploads/2013/09/Spielberg-Steven_1_CB2356.jpg',
                 'role' => 'Réalisateur'
             ],
             [
@@ -193,21 +193,21 @@ class PersonnesSeeder extends Seeder
                 'id' => 26,
                 'nom' => 'Natsuki Hanae',
                 'date_naissance' => '1991-06-26',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Natsuki_Hanae_%E8%8A%B1%E6%B1%9F%E5%A4%8F%E6%A8%B9_2020.jpg/260px-Natsuki_Hanae_%E8%8A%B1%E6%B1%9F%E5%A4%8F%E6%A8%B9_2020.jpg',
+                'lien_photo' => 'https://m.media-amazon.com/images/M/MV5BNDYxNGM5MDktMGRjOC00ZTRlLTllNDgtMDkyMTUzZWQ4Y2U3XkEyXkFqcGdeQXVyNDQxNjcxNQ@@._V1_.jpg',
                 'role' => 'Doubleur'
             ],
             [
                 'id' => 27,
                 'nom' => 'Logan Lerman',
                 'date_naissance' => '1992-01-19',
-                'lien_photo' => 'https://pisco.meaww.com/138e7544-9186-4423-a2b9-0695a8e3cba7.jpg',
+                'lien_photo' => 'https://media.gq.com/photos/5e60208eae81da0009cda97b/master/w_1600%2Cc_limit/logan-lerman-gq1707.jpg',
                 'role' => 'Acteur'
             ],
             [
                 'id' => 28,
                 'nom' => 'Emma Watson',
                 'date_naissance' => '1990-04-15',
-                'lien_photo' => 'https://4.bp.blogspot.com/-R6uIXcosewA/Uzf0cDaS8yI/AAAAAAAAUWQ/HOiv3NdG64w/s3300/Emma+Watson+photo.filmcelebritiesactresses.blogspot-517.jpg',
+                'lien_photo' => 'https://www.designscene.net/wp-content/uploads/2023/07/5-Times-Emma-Watson-Showed-Us-That-Sustainability-Can-Be-Stylish-2.jpg',
                 'role' => 'Actrice'
             ],
             [
@@ -228,128 +228,135 @@ class PersonnesSeeder extends Seeder
                 'id' => 31,
                 'nom' => 'John Malkovich',
                 'date_naissance' => '1953-12-09',
-                'lien_photo' => 'https://www.ecranlarge.com/uploads/image/000/979/j3kjurh51bolb4wnqx4egabepv7-168.jpg',
+                'lien_photo' => 'https://i.pinimg.com/originals/96/94/b8/9694b87ad5a4c1c6589c8d7f892497e1.jpg',
                 'role' => 'Producteur'
             ],
             [
                 'id' => 32,
                 'nom' => 'Daniel Radcliffe' ,                
                 'date_naissance' => '1989-07-23',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/DanielRadcliffe.jpg/220px-DanielRadcliffe.jpg',
+                'lien_photo' => 'https://images.squarespace-cdn.com/content/v1/5ca2aca0ebfc7fb8582ecd8c/1565384366105-0NIBVF2G0JMAIO5WSXQE/Dan-Headshot-1Smll_Crppd.jpg?format=1500w',
                 'role' => 'Acteur'
              ],
              [
                 'id' => 33 ,
-                'nom' => 'Rupert Brint',
+                'nom' => 'Rupert Grint',
                 'date_naissance' => '1988-08-24',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/RupertGrint2018.jpg/220px-RupertGrint2018.jpg',
+                'lien_photo' => 'https://i.pinimg.com/736x/d4/3f/62/d43f6224afaea6420dacca086eee8eee.jpg',
                 'role' => 'Acteur'
             ],
              [
                 'id' => 34 ,
                 'nom' => 'Chris Columbus',
                 'date_naissance' => '1958-09-10',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Chris_Columbus.jpg/220px-Chris_Columbus.jpg',
+                'lien_photo' => 'https://tisch.nyu.edu/content/dam/tisch/external-affairs/Gala2018/Chris-Columbus-headshot.png',
                 'role' => 'Réalisateur' 
             ],
              [
                 'id' => 35 ,
                 'nom' => 'Alfonso Cuarón',
                 'date_naissance' => '1961-11-28',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Alfonso_Cuar%C3%B3n_%282013%29_cropped.jpg/220px-Alfonso_Cuar%C3%B3n_%282013%29_cropped.jpg',
+                'lien_photo' => 'https://deadline.com/wp-content/uploads/2023/01/Alfonso-Cuaron_White_00266.jpg?w=768',
                 'role' => 'Réalisateur'
             ],
              [
                 'id' => 36 ,
                 'nom' => 'Mike Newell',
                 'date_naissance' => '1942-03-28',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Mike_Newell.jpg/200px-Mike_Newell.jpg',
+                'lien_photo' => 'https://m.media-amazon.com/images/M/MV5BMTgzNDI1ODc4N15BMl5BanBnXkFtZTYwNjg3NTc1._V1_.jpg',
                 'role' => 'Réalisateur'
             ],
              [
                 'id' => 37,
                 'nom' => 'David Yates',
                 'date_naissance' => '1963-10-08',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Alfonso_Cuar%C3%B3n_%282013%29_cropped.jpg/220px-Alfonso_Cuar%C3%B3n_%282013%29_cropped.jpg',
+                'lien_photo' => 'https://www.hollywoodreporter.com/wp-content/uploads/2011/07/yates_a.jpg',
                 'role' => 'Réalisateur'
             ],
              [
                 'id' => 38,
                 'nom' => 'David Heyman',
                 'date_naissance' => '1961-07-26',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/David_Heyman1.jpg/220px-David_Heyman1.jpg',
+                'lien_photo' => 'https://m.media-amazon.com/images/M/MV5BMTYwNzE2MDgxM15BMl5BanBnXkFtZTcwMTIwMDY4NQ@@._V1_.jpg',
                 'role' => 'Producteur' 
             ],
             [
                 'id' => 39 ,
                 'prenom' => 'Ryan Reynolds',
                 'ddn' => '1976-10-23',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Deadpool_2_Japan_Premiere_Red_Carpet_Ryan_Reynolds_%28cropped%29.jpg/220px-Deadpool_2_Japan_Premiere_Red_Carpet_Ryan_Reynolds_%28cropped%29.jpg',
+                'lien_photo' => 'https://image.tmdb.org/t/p/original/52GxBTYdLLc3x3UVSplZdHqj4RR.jpg',
                 'role' => 'Acteur'
             ],
             [
                 'id' => 40,
                 'nom' => 'David Spade',
                 'date_naissance' => '1964-07-22',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/David_Spade2_%28cropped%29.jpg/220px-David_Spade2_%28cropped%29.jpg',
+                'lien_photo' => 'https://www.discovernepa.com/wp-content/uploads/2023/07/DN-Hero-FMKirbyCenter-DavidSpade.jpg',
                 'role'=> 'Acteur'
             ],
             [
                 'id' => 41,
                 'nom' => 'Jon Heder',
                 'date_naissance' => '1977-10-26',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Jon_Heder_by_Gage_Skidmore_2.jpg/220px-Jon_Heder_by_Gage_Skidmore_2.jpg',
+                'lien_photo' => 'https://d2c0db5b8fb27c1c9887-9b32efc83a6b298bb22e7a1df0837426.ssl.cf2.rackcdn.com/19476427-jon-heder-headshot-400x400.jpeg',
                 'role'=> 'Acteur'
             ],
             [
                 'id' => 42,
                 'nom' => 'Jon Lovitz',
                 'date_naissance' => '1957-07-21',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Jon_Lovitz_Mercedes-Benz_Carousel_of_Hope_Gala_2014_%28cropped%29.jpg/220px-Jon_Lovitz_Mercedes-Benz_Carousel_of_Hope_Gala_2014_%28cropped%29.jpg',
+                'lien_photo' => 'https://www.itsalldowntown.com/wp-content/uploads/2023/06/Jon-Lovitz.png',
                 'role'=> 'Acteur'
             ],
             [
                 'id' => 43,
                 'nom' => 'Craig Kilborn',
                 'date_naissance' => '1962-08-24',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Kilborn_in_Beverly_Hills%2C_2019.jpg/220px-Kilborn_in_Beverly_Hills%2C_2019.jpg',
+                'lien_photo' => 'https://m.media-amazon.com/images/M/MV5BMjAwNzA3MDg4OF5BMl5BanBnXkFtZTcwMTM0Mjk2Mw@@._V1_.jpg',
                 'role'=> 'Acteur'
             ],
             [
                 'id' => 44,
                 'nom' => 'Terry Crews',
                 'date_naissance' => '1968-06-30',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Terry_Crews_by_Gage_Skidmore_5.jpg/220px-Terry_Crews_by_Gage_Skidmore_5.jpg',
+                'lien_photo' => 'https://hips.hearstapps.com/hmg-prod/images/upfront-portrait-studio-pictured-terry-crews-brooklyn-nine-news-photo-1144009858-1558454704.jpg?crop=0.393xw:0.277xh;0.284xw,0.0170xh&resize=1200:*',
                 'role'=> 'Acteur'
             ],
             [
                 'id' => 45,
                 'nom' => 'Liam Neeson',
                 'date_naissance' => '1952-06-07',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Liam_Neeson_Deauville_2012.jpg/240px-Liam_Neeson_Deauville_2012.jpg',
+                'lien_photo' => 'https://i.pinimg.com/originals/47/3a/17/473a173f170c74bd4954583e756944a9.jpg',
                 'role'=> 'Acteur'
             ],
             [
                 'id' => 46,
                 'nom' => 'Natalie Portman',
                 'date_naissance' => '1981-06-09',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Natalie_Portman_%2848470988352%29_%28cropped%29.jpg/220px-Natalie_Portman_%2848470988352%29_%28cropped%29.jpg',
+                'lien_photo' => 'https://images.mubicdn.net/images/cast_member/3138/cache-488404-1615052280/image-w856.jpg',
                 'role'=> 'Acteur'
             ],
             [
                 'id' => 47,
                 'nom' => 'Jake Lloyd',
                 'date_naissance' => '1989-03-05',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/10.2.10JakeLloydByLuigiNovi.jpg/220px-10.2.10JakeLloydByLuigiNovi.jpg',
+                'lien_photo' => 'https://m.media-amazon.com/images/M/MV5BMTk2MDExNzQwN15BMl5BanBnXkFtZTgwMzM2NzQwNjE@._V1_.jpg',
                 'role'=> 'Acteur'
             ],
             [
                 'id' => 48,
                 'nom' => 'Ian McDiarmid',
                 'date_naissance' => '1944-08-11',
-                'lien_photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ian_McDiarmid_Brussels_Comic_Con_2020.jpg/220px-Ian_McDiarmid_Brussels_Comic_Con_2020.jpg',
+                'lien_photo' => 'https://i.guim.co.uk/img/media/ddaf393fb3194b1849ef6b2f87b9c712f1828c72/0_448_6720_4032/master/6720.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=c96e63dce93ebec4d69cbd0c87d8c69c',
                 'role'=> 'Acteur'
             ],
+            [
+                'id' => 49 ,
+                'prenom' => 'Tim Miller',
+                'ddn' => '1964-10-10',
+                'lien_photo' => 'https://m.media-amazon.com/images/M/MV5BOGFlZTUwYmMtOGEyYy00ZmFlLThlZGEtYzcxZjNiMjQzMzE1XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg',
+                'role' => 'Réalisateur'
+            ]
         ]);
     }
 }

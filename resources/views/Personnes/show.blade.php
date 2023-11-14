@@ -1,10 +1,16 @@
 @extends('layouts.app')
 
-@section('title', 'Netflix - ' . $personne->nom )
+@section('title', 'Netflix - ' . $personne->nom)
 
 @section('contenu')
 @if (isset($personne))
-<section>
+<section class="zoomFilm">
+    <div class="lien-edit">
+        <a href="{{route('personnes.edit', [$personne])}}">
+            <ion-icon name="construct-outline"></ion-icon>
+            <data>Modifier</data>
+        </a>
+    </div>
     <div class="container">
         <h1 class="h1 section-title">{{ $personne->nom }}</h1>
         <div class="presentation">
@@ -15,8 +21,6 @@
             </div>
         </div>
         <p>{{ $personne->date_naissance }}</p>
-        {{-- Affichage des rôles de la personne --}}
-        <p>{{ $personne->role }}</p>
 
         {{-- Tableau filmographie --}}
         <table>
@@ -24,94 +28,119 @@
                 <tr>
                     <th>Année</th>
                     <th>Titre</th>
-                    <th>Rôle</th>
+                    <th>Rôle(s)</th>
                 </tr>
             </thead>
             <tbody>
                 {{-- acteurs/actrices --}}
-                @foreach($personne->filmsJoues as $listefilms)
+                @foreach ($personne->filmsJoues as $listefilms)
                 <tr>
                     <td>{{ $listefilms->annee_sortie }}</td>
-                    <a href="#">
-                        <td>{{ $listefilms->titre }}</td>
-                        <img class="img" src="{{ $listefilms->lien_pochette }}" alt="Poster de {{ $listefilms->titre }}">
-                    </a>
+                    <td> <a href="{{ route('films.show', ['film' => $listefilms->id]) }}">
+                            <span> {{ $listefilms->titre }}</span>
+                            <img class="img" src="{{ $listefilms->lien_pochette }}" alt="Poster de {{ $listefilms->titre }}">
+                        </a>
+                    </td>
+
 
                     {{-- Initialisation des variables de rôle --}}
                     @php
-                    $roleProducteur = "";
-                    $roleRealisateur = "";
+                    $roleProducteur = '';
+                    $roleRealisateur = '';
+                    @endphp
+                    @if ($personne->id === $listefilms->producteur_id)
+                    @php
+                    $roleProducteur = 'Producteur';
                     @endphp
 
-                    {{-- Recherche des rôles dans les films --}}
-                    @foreach ($personne->roles as $role)
-                    @if ($role->id === $listefilms->producteur_id)
+                    @elseif($personne->id === $listefilms->realisateur_id)
                     @php
-                    $roleProducteur = "Producteur";
-                    @endphp
-                    @elseif($role->id === $listefilms->realisateur_id)
-                    @php
-                    $roleRealisateur = "Réalisateur";
+                    $roleRealisateur = 'Réalisateur';
                     @endphp
                     @endif
-                    @endforeach
 
                     {{-- Affichage du rôle dans le tableau --}}
-                    @if ($roleProducteur != "" || $roleRealisateur != "")
-                    <td>{{ $personne->role . ($roleProducteur ? ', ' . $roleProducteur : '') . ($roleRealisateur ? ', ' . $roleRealisateur : '') }}</td>
+                    @if ($roleProducteur != '' || $roleRealisateur != '')
+                    <td>{{ $personne->role . ($roleProducteur ? ', ' . $roleProducteur : '') . ($roleRealisateur ? ', ' . $roleRealisateur : '') }}
+                    </td>
                     @else
                     <td>{{ $personne->role }}</td>
                     @endif
-                    {{-- Rajouter les if ici pour realisateurs, producteurs --}}
                 </tr>
                 </tr>
                 @endforeach
 
+                {{-- producteurs/productrices --}}
+                @foreach ($personne->filmsProduits as $filmProduit)
+                @if (!$personne->filmsJoues->contains($filmProduit) && !$personne->filmsRealises->contains($filmProduit))
+                <tr>
+                    <td>{{ $filmProduit->annee_sortie }}</td>
+                    <td>
+                        <a href="{{ route('films.show', ['film' => $filmProduit->id]) }}">
+                            {{ $filmProduit->titre }}
+                            <img class="img" src="{{ $filmProduit->lien_pochette }}" alt="Poster de {{ $filmProduit->titre }}">
+                        </a>
+                    </td>
+                </tr>
+
+                {{-- Initialisation des variables de rôle --}}
+                @php
+                $roleActeur = '';
+                $roleRealisateur = '';
+                @endphp
+
+                @foreach ($personne->roles as $role)
+                @if ($role->id === $listefilms->realisateur_id)
+                @php
+                $roleRealisateur = 'Réalisateur';
+                @endphp
+                @elseif($role->id === $listefilms->acteurprincipal_id)
+                @php
+                $roleActeur = 'Acteur';
+                @endphp
+                @endif
+                @endforeach
+
+                {{-- Affichage du rôle dans le tableau --}}
+                @if ($roleActeur != '' || $roleRealisateur != '')
+                <td>{{ $personne->role . ($roleActeur ? ', ' . $roleActeur : '') . ($roleRealisateur ? ', ' . $roleRealisateur : '') }}
+                </td>
+                @else
+                <td>{{ $personne->role }}</td>
+                @endif
+                @endif
+                @endforeach
+
                 {{-- réalisateur/réalisatrice --}}
-                @foreach($personne->filmsRealises as $filmRealise)
+                @foreach ($personne->filmsRealises as $filmRealise)
                 <tr>
                     <td>{{ $filmRealise->annee_sortie }}</td>
-                    <a href="#">
-                        <td>{{ $filmRealise->titre }}</td>
-                        <img class="img" src="{{ $filmRealise->lien_pochette }}" alt="Poster de {{ $filmRealise->titre }}">
-                    </a>
+                    <td> <a href="{{ route('films.show', ['film' => $filmRealise->id]) }}">
+                            {{ $filmRealise->titre }}
+                            <img class="img" src="{{ $filmRealise->lien_pochette }}" alt="Poster de {{ $filmRealise->titre }}">
+                        </a>
+                    </td>
                     {{-- Initialisation des variables de rôle --}}
                     @php
-                    $roleProducteur = "";
-                    $roleRealisateur = "";
+                    $roleProducteur = '';
+                    $roleRealisateur = '';
                     @endphp
 
                     {{-- Recherche des rôles dans les films --}}
-                    @foreach ($personne->roles as $role)                 
                     @if ($personne->id === $filmRealise->producteur_id)
                     @php
-                    $roleProducteur = "Producteur";
+                    $roleProducteur = 'Producteur';
                     @endphp
                     @endif
-                    @endforeach
 
                     {{-- Affichage du rôle dans le tableau --}}
-                    @if ($roleProducteur != "")
+                    @if ($roleProducteur != '')
                     <td>{{ $personne->role . ($roleProducteur ? ', ' . $roleProducteur : '') }}</td>
                     @else
                     <td>{{ $personne->role }}</td>
                     @endif
                 </tr>
                 @endforeach
-
-                {{-- producteurs/productrices --}}
-                @if ($personne->filmsProduits->where('producteur_id', '!=', $personne->id)->isNotEmpty())
-                @foreach ($personne->filmsProduits as $filmProduit)
-                <tr>
-                    <td>{{ $filmProduit->annee_sortie }}</td>
-                    <a href="#">
-                        <td>{{ $filmProduit->titre }}</td>
-                        <img class="img" src="{{ $filmProduit->lien_pochette }}" alt="Poster de {{ $filmProduit->titre }}">
-                    </a>
-                    <td>{{ $personne->role }}</td>
-                </tr>
-                @endforeach
-                @endif
             </tbody>
         </table>
     </div>
