@@ -64,11 +64,14 @@
                             @foreach($film->acteurs as $acteurDuFilm)
                                 <p class="acteur">
                                     {{$acteurDuFilm->nom}}
+                                    @role('admin')
                                     <a id="{{$acteurDuFilm->id}}" href="#" class="cd-popup-trigger-acteur">
                                         <ion-icon name="remove-circle-outline"></ion-icon>
                                     </a>
+                                    @endrole
                                 </p>
 
+                                @role('admin')
                                 <!-- Modal Suppresion Acteur -->
                                 <div id="{{$acteurDuFilm->id}}" class="cd-popup-acteur" role="alert">
                                     <div class="cd-popup-container">
@@ -88,6 +91,7 @@
                                         <a href="#" class="cd-popup-close img-replace"></a>
                                     </div> <!-- cd-popup-container -->
                                 </div> <!-- cd-popup -->
+                                @endrole
                             @endforeach
                         </div>
                         
@@ -96,6 +100,7 @@
             </div>
         </section>
 
+        @role('admin')
         <!-- Modal Suppresion Film -->
         <div class="cd-popup" role="alert">
             <div class="cd-popup-container">
@@ -115,5 +120,6 @@
                 <a href="#" class="cd-popup-close img-replace"></a>
             </div> <!-- cd-popup-container -->
         </div> <!-- cd-popup -->
+        @endrole
     @endif
 @endsection

@@ -26,31 +26,31 @@ Route::get('films/ajouter',
 [FilmsController::class, 'create'])->name('films.create')->middleware('CheckRole:admin');
 
 Route::get('films/maj/{film}',
-[FilmsController::class, 'edit'])->name('films.edit');
+[FilmsController::class, 'edit'])->name('films.edit')->middleware('CheckRole:admin');
 
 Route::get('films/{film}', 
 [FilmsController::class, 'show'])->name('films.show');
 
 Route::post('films',
-[FilmsController::class, 'store'])->name('films.store');
+[FilmsController::class, 'store'])->name('films.store')->middleware('CheckRole:admin');
 
 Route::patch('films/maj/{film}',
-[FilmsController::class, 'update'])->name('films.update');
+[FilmsController::class, 'update'])->name('films.update')->middleware('CheckRole:admin');
 
 Route::delete('films/del/{film}',
-[FilmsController::class, 'destroy'])->name('films.destroy');
+[FilmsController::class, 'destroy'])->name('films.destroy')->middleware('CheckRole:admin');
 
 Route::get('relation',
-[FilmsController::class, 'createActeurFilm'])->name('films.createActeurFilm');
+[FilmsController::class, 'createActeurFilm'])->name('films.createActeurFilm')->middleware('CheckRole:admin');
 
 Route::get('relation/films/{film}',
-[FilmsController::class, 'createActeurFilmShowFilm'])->name('films.createActeurFilmShowFilm');
+[FilmsController::class, 'createActeurFilmShowFilm'])->name('films.createActeurFilmShowFilm')->middleware('CheckRole:admin');
 
 Route::post('relation',
-[FilmsController::class, 'storeActeurFilm'])->name('films.storeActeurFilm');
+[FilmsController::class, 'storeActeurFilm'])->name('films.storeActeurFilm')->middleware('CheckRole:admin');
 
 Route::delete('relation/del/{film}/{personne}',
-[FilmsController::class, 'destroyActeurFilm'])->name('films.destroyActeurFilm');
+[FilmsController::class, 'destroyActeurFilm'])->name('films.destroyActeurFilm')->middleware('CheckRole:admin');
 
 Route::get('personnes', 
 [PersonnesController::class, 'index'])->name('personnes.index');

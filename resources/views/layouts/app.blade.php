@@ -40,12 +40,14 @@
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
 
-                <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connexion</a>
-
+                @Auth
                 <form action="{{route('logout')}}" method="post">
                     @csrf
                     <button class="btn btn-primary" type="submit">Déconnexion</button>
                 </form>
+                @else
+                <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connexion</a>
+                @endAuth
             </div>
 
             <button class="menu-open-btn" data-menu-open-btn>
@@ -76,6 +78,7 @@
                         <a href="{{ route('personnes.index') }}" class="navbar-link">Personnes</a>
                     </li>
 
+                    @role('admin')
                     <li>
                         <div class="dropdown">
                             <button onclick="myFunction()" class="dropbtn navbar-link">Admin</button>
@@ -86,11 +89,19 @@
                             </div>
                         </div>
                     </li>
+                    @endrole
 
                 </ul>
 
                 <div class="section-bouton-singin"> 
+                    @Auth
+                    <form action="{{route('logout')}}" method="post">
+                        @csrf
+                        <button class="btn btn-primary" type="submit">Déconnexion</button>
+                    </form>
+                    @else
                     <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connexion</a>
+                    @endAuth
                 </div>
              
             </nav>
