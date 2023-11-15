@@ -78,5 +78,25 @@
             <button type="submit" class="btn btn-primary">Supprimer</button>
         </form>
 
+        <!-- Modal Suppresion Film -->
+        <div class="cd-popup" role="alert">
+            <div class="cd-popup-container">
+                <p>Voulez-vous vraiment supprimer ce film?</p>
+                <ul class="cd-buttons">
+                    <li>
+                        <form action="{{route('films.destroy', [$film->id])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">
+                                <data>OUI</data>
+                            </button>
+                        </form>
+                    </li>
+                    <li><a href="#" class="cd-popup-non">NON</a></li>
+                </ul>
+                <a href="#" class="cd-popup-close img-replace"></a>
+            </div> <!-- cd-popup-container -->
+        </div> <!-- cd-popup -->
+
 </section>
 @endsection

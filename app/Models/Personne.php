@@ -9,9 +9,14 @@ class Personne extends Model
 {
     use HasFactory;
 
-    public function filmsJoues()
+    public function filmsJouesAP()
     {
         return $this->hasMany(Film::class, 'acteurprincipal_id');
+    }
+
+    public function filmsJoues()
+    {
+       return $this->belongsToMany(Film::class, 'film_personne','personne_id','film_id');
     }
 
     public function filmsRealises()

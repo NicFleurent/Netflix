@@ -33,12 +33,12 @@
             </thead>
             <tbody>
                 {{-- acteurs/actrices --}}
-                @foreach ($personne->filmsJoues as $listefilms)
+                @foreach ($personne->filmsJouesAP->merge($personne->filmsJoues)->sortBy('annee_sortie') as $filmJoue)
                 <tr>
-                    <td>{{ $listefilms->annee_sortie }}</td>
-                    <td> <a href="{{ route('films.show', ['film' => $listefilms->id]) }}">
-                            <span> {{ $listefilms->titre }}</span>
-                            <img class="img" src="{{ $listefilms->lien_pochette }}" alt="Poster de {{ $listefilms->titre }}">
+                    <td>{{ $filmJoue->annee_sortie }}</td>
+                    <td> <a href="{{ route('films.show', ['film' => $filmJoue->id]) }}">
+                            <span> {{ $filmJoue->titre }}</span>
+                            <img class="img" src="{{ $filmJoue->lien_pochette }}" alt="Poster de {{ $filmJoue->titre }}">
                         </a>
                     </td>
 
@@ -48,12 +48,12 @@
                     $roleProducteur = '';
                     $roleRealisateur = '';
                     @endphp
-                    @if ($personne->id === $listefilms->producteur_id)
+                    @if ($personne->id === $filmJoue->producteur_id)
                     @php
                     $roleProducteur = 'Producteur';
                     @endphp
 
-                    @elseif($personne->id === $listefilms->realisateur_id)
+                    @elseif($personne->id === $filmJoue->realisateur_id)
                     @php
                     $roleRealisateur = 'Réalisateur';
                     @endphp
