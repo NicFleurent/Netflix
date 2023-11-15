@@ -23,7 +23,7 @@ Route::get('films',
 [FilmsController::class, 'index'])->name('films.index');
 
 Route::get('films/ajouter',
-[FilmsController::class, 'create'])->name('films.create');
+[FilmsController::class, 'create'])->name('films.create')->middleware('CheckRole:admin');
 
 Route::get('films/maj/{film}',
 [FilmsController::class, 'edit'])->name('films.edit');

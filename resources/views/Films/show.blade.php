@@ -6,7 +6,7 @@
     @if(isset($film))
         <section class="zoomFilm">
             <div class="container">
-
+                @role('admin')
                 <div class="lien-edit">
                     <a href="{{route('films.edit', [$film])}}">
                         <ion-icon name="construct-outline"></ion-icon>
@@ -23,6 +23,7 @@
                         <data>Ajouter un acteur</data>
                     </a>
                 </div>
+                @endrole
                 
                 <h1 class="h1 section-title">{{$film->titre}}</h1>
                 <div class="presentation">
