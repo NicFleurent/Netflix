@@ -291,7 +291,7 @@ class PersonnesSeeder extends Seeder
                 'id' => 40,
                 'nom' => 'David Spade',
                 'date_naissance' => '1964-07-22',
-                'lien_photo' => 'https://www.discovernepa.com/wp-content/uploads/2023/07/DN-Hero-FMKirbyCenter-DavidSpade.jpg',
+                'lien_photo' => 'https://hips.hearstapps.com/hmg-prod/images/rsz-spade-headshot-bbs-high-res-1650926384.jpg',
                 'role'=> 'Acteur'
             ],
             [

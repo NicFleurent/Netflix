@@ -72,19 +72,17 @@
         </div>
 
 
-        <form method="POST" action="{{route('personnes.destroy', [$personne->id]) }}">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-primary">Supprimer</button>
-        </form>
+        <a href="#0" class=" btn btn-primary cd-popup-trigger">
+            Supprimer
+        </a>
 
         <!-- Modal Suppresion Film -->
         <div class="cd-popup" role="alert">
             <div class="cd-popup-container">
-                <p>Voulez-vous vraiment supprimer ce film?</p>
+                <p>Voulez-vous vraiment supprimer cette personne?</p>
                 <ul class="cd-buttons">
                     <li>
-                        <form action="{{route('films.destroy', [$film->id])}}" method="post">
+                        <form action="{{route('personnes.destroy', [$personne->id]) }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit">

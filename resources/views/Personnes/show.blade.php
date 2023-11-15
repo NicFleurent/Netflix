@@ -1,26 +1,34 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/acteurs.css') }}">
+@endsection
+
 @section('title', 'Netflix - ' . $personne->nom)
 
 @section('contenu')
 @if (isset($personne))
 <section class="zoomFilm">
+    @auth
     <div class="lien-edit">
         <a href="{{route('personnes.edit', [$personne])}}">
             <ion-icon name="construct-outline"></ion-icon>
             <data>Modifier</data>
         </a>
     </div>
+    @endauth
     <div class="container">
         <h1 class="h1 section-title">{{ $personne->nom }}</h1>
         <div class="presentation">
             <div class="image">
-                <img class="img" src="{{ $personne->lien_photo }}" alt="Image de {{ $personne->nom }} ">
+                <img  src="{{ $personne->lien_photo }}" alt="Image de {{ $personne->nom }} ">
             </div>
-            <div class="title-wrapper">
-            </div>
+    <div>
+    <div class="text-info">Date de naissance : <span>{{$personne->date_naissance}}</span></div>
+    </div>
+            
         </div>
-        <p>{{ $personne->date_naissance }}</p>
+
 
         {{-- Tableau filmographie --}}
         <table>
@@ -72,7 +80,7 @@
 
                 {{-- producteurs/productrices --}}
                 @foreach ($personne->filmsProduits as $filmProduit)
-                @if (!$personne->filmsJoues->contains($filmProduit) && !$personne->filmsRealises->contains($filmProduit))
+                @if (!$personne->filmsJouesAP->contains($filmProduit) && !$personne->filmsRealises->contains($filmProduit))
                 <tr>
                     <td>{{ $filmProduit->annee_sortie }}</td>
                     <td>
