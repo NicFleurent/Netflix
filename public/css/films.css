@@ -201,6 +201,12 @@ iframe{
   color: var(--citrine);
 }
 
+.section-sans-film{
+  color: var(--citrine) !important;
+  text-align: center !important;
+  grid-column: 1 / span 4;
+}
+
 
 /*-----------------------------------*\
  * #REUSED STYLE

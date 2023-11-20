@@ -27,5 +27,13 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('endrole', function () {
             return "<?php endif; ?>";
         }); 
+
+        Blade::directive('notenfant', function () {
+            return "<?php if(!(auth()->check() && auth()->user()->role === 'enfant')): ?>";
+        });
+
+        Blade::directive('endnotenfant', function () {
+            return "<?php endif; ?>";
+        }); 
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Netflix - $film')
+@section('title', 'Netflix - ' . $film->titre)
 
 @section('contenu')
     @if(isset($film))
