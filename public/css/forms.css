@@ -109,6 +109,16 @@ span{
 .cut-lien{
     width: 158px;
 }
+.cut-user{
+    width: 95px;
+}
+.cut-user-confirm-mdp{
+    width: 160px;
+}
+.cut-prenom{
+    width: 62px;
+}
+
 .input:focus ~ .cut, .input:not(:placeholder-shown) ~ .cut {
     transform: translateY(13px);
 }

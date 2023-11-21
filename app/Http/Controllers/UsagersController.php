@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usager;
-use Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\facades\Hash;
+use Illuminate\Support\facades\Auth;
+use App\Http\Requests\UsagerRequest;
 
 
 class UsagersController extends Controller
@@ -37,5 +40,32 @@ class UsagersController extends Controller
         $request->session()->regenerateToken();
     
         return redirect()->route('usagers.showLogin')->with('message',"Déconnexion réussie");
-    }    
+    }  
+    
+    /**
+    * Show the form for creating a new resource.
+    */
+   public function create()
+   {
+       return View('usagers.create');
+   }  
+
+   /**
+    * Store a newly created resource in storage.
+    */
+   public function store(UsagerRequest $request)
+   {
+       try {
+           $usager = new Usager($request->all());
+           $usager->password = Hash::make($request->password);
+           $usager->save();
+           return redirect()->route('login')->with('message', "Vous avez bien ajouté " . $usager->nomUsager . " !");
+       }
+   
+       catch (\Throwable $e) {
+           //Gérer l'erreur
+           Log::debug($e);
+           return redirect()->route('films.index')->withErrors('L\'ajout n\'a pas fonctionné');
+       }
+   }
 }

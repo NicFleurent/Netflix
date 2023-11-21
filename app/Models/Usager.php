@@ -23,6 +23,7 @@ class Usager extends Authenticatable
         'prenom',
         'role',
         'password',
+        'confirmPassword',
     ];
 
     /**
@@ -32,6 +33,7 @@ class Usager extends Authenticatable
      */
     protected $hidden = [
         'password',
+        'confirmPassword',
         'remember_token',
     ];
 }
