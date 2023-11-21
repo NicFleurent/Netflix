@@ -136,6 +136,13 @@ body.active {
   flex-direction: row;
 }
 
+.presentation-compte{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .presentation .image img{
   display: none;
   width: 30vw;

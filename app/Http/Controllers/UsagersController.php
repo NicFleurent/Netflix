@@ -7,6 +7,7 @@ use App\Models\Usager;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\facades\Hash;
 use Illuminate\Support\facades\Auth;
+use Illuminate\Support\facades\Session;
 use App\Http\Requests\UsagerRequest;
 
 
@@ -21,7 +22,8 @@ class UsagersController extends Controller
     {
         $reussi=Auth::attempt(['nomUsager' => $request->nomUsager,'password' => $request->password]);
         if($reussi){
-                return redirect()->route('films.index')->with('message',"Connexion réussie");
+            Session::put('nomUsager', $request->nomUsager);
+            return redirect()->route('films.index')->with('message',"Connexion réussie");
         }
          else{
             return redirect()->route('login')->withErrors(['Votre courriel ou mot de passe est invalide']);
@@ -38,6 +40,8 @@ class UsagersController extends Controller
         $request->session()->invalidate();
     
         $request->session()->regenerateToken();
+
+        Session::forget('usager');
     
         return redirect()->route('usagers.showLogin')->with('message',"Déconnexion réussie");
     }  
@@ -67,5 +71,15 @@ class UsagersController extends Controller
            Log::debug($e);
            return redirect()->route('films.index')->withErrors('L\'ajout n\'a pas fonctionné');
        }
+   }
+
+   /**
+    * Display the specified resource.
+    */
+   public function show()
+   {
+        $nomUsagerSession = Session::get('nomUsager');
+        $usagers = Usager::where('nomUsager', $nomUsagerSession)->get();
+        return View('Usagers.show', compact('usagers'));
    }
 }

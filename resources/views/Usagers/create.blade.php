@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/forms.css') }}">
 @endsection
 
-@section('title', 'Netflix - Connexion')
+@section('title', 'Netflix - Créer un compte')
 
 @section('contenu')
 <section class="upcoming">

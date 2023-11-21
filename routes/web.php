@@ -87,3 +87,6 @@ Route::get('compte/creation',
 
 Route::post('compte/store',
 [UsagersController::class, 'store'])->name('usagers.store');
+
+Route::get('compte/monCompte',
+[UsagersController::class, 'show'])->name('usagers.show');

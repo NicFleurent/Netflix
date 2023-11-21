@@ -41,10 +41,11 @@
                 </button>
 
                 @Auth
-                <form action="{{route('logout')}}" method="post">
-                    @csrf
-                    <button class="btn btn-primary" type="submit">Déconnexion</button>
-                </form>
+                <a href="{{route('usagers.show')}}" class=" btn btn-primary ">Mon compte</a>
+                    <!--<form action="{{route('logout')}}" method="post">
+                        @csrf
+                        <button class="btn btn-primary" type="submit">Déconnexion</button>
+                    </form>-->
                 @else
                 <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connexion</a>
                 @endAuth
@@ -95,10 +96,11 @@
 
                 <div class="section-bouton-singin"> 
                     @Auth
-                    <form action="{{route('logout')}}" method="post">
+                    <a href="{{route('usagers.show')}}" class=" btn btn-primary ">Mon compte</a>
+                    <!--<form action="{{route('logout')}}" method="post">
                         @csrf
                         <button class="btn btn-primary" type="submit">Déconnexion</button>
-                    </form>
+                    </form>-->
                     @else
                     <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connexion</a>
                     @endAuth
