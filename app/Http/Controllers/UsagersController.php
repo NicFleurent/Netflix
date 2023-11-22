@@ -177,4 +177,43 @@ class UsagersController extends Controller
        return redirect()->route('films.index');
            
    }
+   
+   /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $usagers = Usager::All();
+        return View('usagers.index', compact('usagers'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroyAdmin(string $id)
+    {
+        try{
+            $usager = Usager::findOrFail($id);
+ 
+            $nomUsagerSession = Session::get('nomUsager');
+            $usagersSession = Usager::where('nomUsager', $nomUsagerSession)->get();
+            
+            foreach($usagersSession as $usagerSession){
+                if($usager->nomUsager === $usagerSession->nomUsager){
+                    return redirect()->route('usagers.index')->withErrors(['Vous ne pouvez pas supprimer votre propre compte ici']); 
+                }
+            }
+
+            $usager->delete();
+ 
+            return redirect()->route('usagers.index')->with('message', "Suppression de " . $usager->nomUsager . " réussi!");
+        }
+        catch(\Throwable $e){
+            //Gérer l'erreur
+            Log::debug($e);
+            return redirect()->route('usagers.index')->withErrors(['la suppression n\'a pas fonctionné']); 
+        }
+        return redirect()->route('usagers.index');
+            
+    }
 }

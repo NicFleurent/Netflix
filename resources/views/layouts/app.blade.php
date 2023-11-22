@@ -42,10 +42,6 @@
 
                 @Auth
                 <a href="{{route('usagers.show')}}" class=" btn btn-primary ">Mon compte</a>
-                    <!--<form action="{{route('logout')}}" method="post">
-                        @csrf
-                        <button class="btn btn-primary" type="submit">Déconnexion</button>
-                    </form>-->
                 @else
                 <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connexion</a>
                 @endAuth
@@ -87,6 +83,7 @@
                                 <a href="{{ route('films.create') }}">Ajouter un contenu</a>
                                 <a href="{{ route('personnes.create') }}">Ajouter une personne</a>
                                 <a href="{{ route('films.createActeurFilm') }}">Ajouter une relation</a>
+                                <a href="{{ route('usagers.index') }}">Liste des comptes</a>
                             </div>
                         </div>
                     </li>
@@ -97,10 +94,6 @@
                 <div class="section-bouton-singin"> 
                     @Auth
                     <a href="{{route('usagers.show')}}" class=" btn btn-primary ">Mon compte</a>
-                    <!--<form action="{{route('logout')}}" method="post">
-                        @csrf
-                        <button class="btn btn-primary" type="submit">Déconnexion</button>
-                    </form>-->
                     @else
                     <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connexion</a>
                     @endAuth

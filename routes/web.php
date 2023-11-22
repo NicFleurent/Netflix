@@ -82,6 +82,9 @@ Route::post('login',
 Route::post('logout',
 [UsagersController::class, 'logout']) ->name('logout');
 
+Route::get('compte',
+[UsagersController::class, 'index'])->name('usagers.index')->middleware('CheckRole:admin');
+
 Route::get('compte/creation',
 [UsagersController::class, 'create'])->name('usagers.create');
 
@@ -105,3 +108,6 @@ Route::patch('compte/monCompte/modifier/password/{usager}',
 
 Route::delete('compte/del/{usager}',
 [UsagersController::class, 'destroy'])->name('usagers.destroy')->middleware('auth');
+
+Route::delete('compte/admin/del/{usager}',
+[UsagersController::class, 'destroyAdmin'])->name('usagers.destroyAdmin')->middleware('CheckRole:admin');
