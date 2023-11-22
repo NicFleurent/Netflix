@@ -23,7 +23,7 @@
                             <button class="btn btn-primary" type="submit">Déconnexion</button>
                         </form>
                         <a href="{{route('usagers.edit', [$usager])}}" class=" btn btn-primary ">Modifier mes informations</a>
-                        <a href="#" class=" btn btn-primary ">Changer mon mot de passe</a>
+                        <a href="{{route('usagers.editPassword', [$usager])}}" class=" btn btn-primary ">Changer mon mot de passe</a>
                         <a href="#" class=" btn btn-primary ">Supprimer mon compte</a>
                     </div>
                 </div>

@@ -10,6 +10,7 @@ use Illuminate\Support\facades\Auth;
 use Illuminate\Support\facades\Session;
 use App\Http\Requests\UsagerRequest;
 use App\Http\Requests\UsagerModifInfoRequest;
+use App\Http\Requests\UsagerModifPasswordRequest;
 
 
 class UsagersController extends Controller
@@ -107,6 +108,37 @@ class UsagersController extends Controller
            $usager->save();
            Session::put('nomUsager', $request->nomUsager);
            return redirect()->route('films.index')->with('message', "Vous avez bien modifié votre compte !");
+       }
+   
+       catch (\Throwable $e) {
+           //Gérer l'erreur
+           Log::debug($e);
+           return redirect()->route('films.index')->withErrors('La modification n\'a pas fonctionné');
+       }
+   }
+
+   /**
+    * Show the form for editing the specified resource.
+    */
+   public function editPassword(Usager $usager)
+   {
+       return View('usagers.editPassword', compact('usager'));
+   }
+
+   /**
+    * Update the specified resource in storage.
+    */
+   public function updatePassword(UsagerModifPasswordRequest $request, Usager $usager)
+   {
+       try {
+           $usager->nomUsager = $request->nomUsager;
+           $usager->email = $request->email;
+           $usager->nom = $request->nom;
+           $usager->prenom = $request->prenom;
+           $usager->password = Hash::make($request->password);
+           $usager->role = $request->role;
+           $usager->save();
+           return redirect()->route('films.index')->with('message', "Vous avez bien modifié votre mot de passe !");
        }
    
        catch (\Throwable $e) {

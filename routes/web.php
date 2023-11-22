@@ -94,5 +94,11 @@ Route::get('compte/monCompte',
 Route::get('compte/monCompte/modifier/{usager}',
 [UsagersController::class, 'edit'])->name('usagers.edit')->middleware('auth');
 
+Route::get('compte/monCompte/modifier/password/{usager}',
+[UsagersController::class, 'editPassword'])->name('usagers.editPassword')->middleware('auth');
+
 Route::patch('compte/monCompte/modifier/{usager}',
 [UsagersController::class, 'update'])->name('usagers.update')->middleware('auth');
+
+Route::patch('compte/monCompte/modifier/password/{usager}',
+[UsagersController::class, 'updatePassword'])->name('usagers.updatePassword')->middleware('auth');

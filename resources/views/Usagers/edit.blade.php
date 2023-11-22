@@ -48,11 +48,6 @@
                 @endif
                 <input type="hidden" class="input" id="password" placeholder=" " name="password" value="{{ $usager->password }}">
                 <input type="hidden" class="input" id="role" placeholder=" " name="role" value="{{ $usager->role }}">
-                <!--<div class="input-container ic2">
-                    <input type="password" class="input" id="password" placeholder=" " name="password" value="{{ old('password')}}">
-                    <div class="cut cut-user"></div>
-                    <label for="password" class="placeholder">Veuillez entrer votre mot de passe</label>
-                </div>-->
 
                 <div class="filter-list lien-edit">
                     <button type="submit" class="btn btn-primary ">Enregistrer</button>
