@@ -102,3 +102,6 @@ Route::patch('compte/monCompte/modifier/{usager}',
 
 Route::patch('compte/monCompte/modifier/password/{usager}',
 [UsagersController::class, 'updatePassword'])->name('usagers.updatePassword')->middleware('auth');
+
+Route::delete('compte/del/{usager}',
+[UsagersController::class, 'destroy'])->name('usagers.destroy')->middleware('auth');

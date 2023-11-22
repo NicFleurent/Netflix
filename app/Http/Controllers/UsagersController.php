@@ -147,4 +147,34 @@ class UsagersController extends Controller
            return redirect()->route('films.index')->withErrors('La modification n\'a pas fonctionné');
        }
    }
+
+   /**
+    * Remove the specified resource from storage.
+    */
+   public function destroy(string $id, Request $request)
+   {
+       try{
+           $usager = Usager::findOrFail($id);
+
+           //Si un film a des acteurs, on ne peut pas le supprimer.
+           $usager->delete();
+           
+           Auth::logout();
+        
+           $request->session()->invalidate();
+        
+           $request->session()->regenerateToken();
+
+           Session::forget('usager');
+
+           return redirect()->route('films.index')->with('message', "Suppression de votre compte réussi!");
+       }
+       catch(\Throwable $e){
+           //Gérer l'erreur
+           Log::debug($e);
+           return redirect()->route('films.index')->withErrors(['la suppression n\'a pas fonctionné']); 
+       }
+       return redirect()->route('films.index');
+           
+   }
 }
