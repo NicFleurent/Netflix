@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
+<link rel="stylesheet" href="{{ asset('css/forms.css') }}">
 <link rel="stylesheet" href="{{ asset('css/table.css') }}">
 <link rel="stylesheet" href="{{ asset('css/modalTable.css') }}">
 @endsection
@@ -54,5 +55,9 @@
             @endforeach
         </tbody>
     </table>
+
+    <div class="button-group button-ajout">
+        <a href="{{ route('usagers.create') }}"><button type="button" class="btn btn-primary">Créer un compte</button></a>
+    </div>
 </section>
 @endsection

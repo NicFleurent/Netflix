@@ -62,16 +62,48 @@ class UsagersController extends Controller
    public function store(UsagerRequest $request)
    {
        try {
-           $usager = new Usager($request->all());
-           $usager->password = Hash::make($request->password);
-           $usager->save();
-           return redirect()->route('login')->with('message', "Vous avez bien ajouté " . $usager->nomUsager . " !");
+            $usager = new Usager($request->all());
+            $usager->password = Hash::make($request->password);
+            $usager->save();
+    
+
+            if(null !== Session::get('nomUsager')){
+                $nomUsagerSession = Session::get('nomUsager');
+                $usagersSession = Usager::where('nomUsager', $nomUsagerSession)->get();
+                foreach($usagersSession as $usagerSession){
+                    if($usagerSession->role === 'admin'){
+                        return redirect()->route('usagers.index')->with('message', "Vous avez bien ajouté " . $usager->nomUsager . " !"); 
+                    }
+                    else{
+                        return redirect()->route('login')->with('message', "Vous avez bien ajouté " . $usager->nomUsager . " !");
+                    }
+                }
+            }
+            else{
+                return redirect()->route('login')->with('message', "Vous avez bien ajouté " . $usager->nomUsager . " !");
+            }
        }
    
        catch (\Throwable $e) {
-           //Gérer l'erreur
-           Log::debug($e);
-           return redirect()->route('films.index')->withErrors('L\'ajout n\'a pas fonctionné');
+            //Gérer l'erreur
+            Log::debug($e);
+    
+            $nomUsagerSession = Session::get('nomUsager');
+            $usagersSession = Usager::where('nomUsager', $nomUsagerSession)->get();
+
+            if(isset($usagersSession)){
+                foreach($usagersSession as $usagerSession){
+                    if($usagerSession->role === 'admin'){
+                        return redirect()->route('usagers.index')->withErrors('L\'ajout n\'a pas fonctionné'); 
+                    }
+                    else{
+                        return redirect()->route('login')->withErrors('L\'ajout n\'a pas fonctionné');
+                    }
+                }
+            }
+            else{
+                return redirect()->route('login')->withErrors('L\'ajout n\'a pas fonctionné');
+            }
        }
    }
 
