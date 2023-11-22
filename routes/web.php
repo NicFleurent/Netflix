@@ -89,4 +89,10 @@ Route::post('compte/store',
 [UsagersController::class, 'store'])->name('usagers.store');
 
 Route::get('compte/monCompte',
-[UsagersController::class, 'show'])->name('usagers.show');
+[UsagersController::class, 'show'])->name('usagers.show')->middleware('auth');
+
+Route::get('compte/monCompte/modifier/{usager}',
+[UsagersController::class, 'edit'])->name('usagers.edit')->middleware('auth');
+
+Route::patch('compte/monCompte/modifier/{usager}',
+[UsagersController::class, 'update'])->name('usagers.update')->middleware('auth');

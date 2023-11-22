@@ -17,10 +17,15 @@
                             <div class="text-info">Prénom: <span>{{$usager->prenom}}</span></div>
                         </div>
                     </div>
-                    <form action="{{route('logout')}}" method="post">
-                        @csrf
-                        <button class="btn btn-primary" type="submit">Déconnexion</button>
-                    </form>
+                    <div class="section-bouton-compte">
+                        <form action="{{route('logout')}}" method="post">
+                            @csrf
+                            <button class="btn btn-primary" type="submit">Déconnexion</button>
+                        </form>
+                        <a href="{{route('usagers.edit', [$usager])}}" class=" btn btn-primary ">Modifier mes informations</a>
+                        <a href="#" class=" btn btn-primary ">Changer mon mot de passe</a>
+                        <a href="#" class=" btn btn-primary ">Supprimer mon compte</a>
+                    </div>
                 </div>
             </div>
         </section>

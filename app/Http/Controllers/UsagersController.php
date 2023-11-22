@@ -9,6 +9,7 @@ use Illuminate\Support\facades\Hash;
 use Illuminate\Support\facades\Auth;
 use Illuminate\Support\facades\Session;
 use App\Http\Requests\UsagerRequest;
+use App\Http\Requests\UsagerModifInfoRequest;
 
 
 class UsagersController extends Controller
@@ -81,5 +82,37 @@ class UsagersController extends Controller
         $nomUsagerSession = Session::get('nomUsager');
         $usagers = Usager::where('nomUsager', $nomUsagerSession)->get();
         return View('Usagers.show', compact('usagers'));
+   }
+
+   /**
+    * Show the form for editing the specified resource.
+    */
+   public function edit(Usager $usager)
+   {
+       return View('usagers.edit', compact('usager'));
+   }
+
+   /**
+    * Update the specified resource in storage.
+    */
+   public function update(UsagerModifInfoRequest $request, Usager $usager)
+   {
+       try {
+           $usager->nomUsager = $request->nomUsager;
+           $usager->email = $request->email;
+           $usager->nom = $request->nom;
+           $usager->prenom = $request->prenom;
+           $usager->password = $request->password;
+           $usager->role = $request->role;
+           $usager->save();
+           Session::put('nomUsager', $request->nomUsager);
+           return redirect()->route('films.index')->with('message', "Vous avez bien modifié votre compte !");
+       }
+   
+       catch (\Throwable $e) {
+           //Gérer l'erreur
+           Log::debug($e);
+           return redirect()->route('films.index')->withErrors('La modification n\'a pas fonctionné');
+       }
    }
 }

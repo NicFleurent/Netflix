@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UsagerRequest extends FormRequest
+class UsagerModifInfoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,8 @@ class UsagerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nomUsager' => 'required|unique:usagers',
-            'password' => 'required|confirmed',
-            'password_confirmation' => 'required',
+            'nomUsager' => 'required',
+            'password' => 'required',
             'email' => 'required|email',
             'nom' => 'required',
             'prenom' => 'required',
@@ -35,10 +34,7 @@ class UsagerRequest extends FormRequest
     public function messages(){
         return[
             'nomUsager.required' => 'Le nom d\'usager est requis',
-            'nomUsager.unique' => 'Ce nom d\'usager est déjà pris',
             'password.required' => 'Le mot de passe est requis',
-            'password.confirmed' => 'Les deux mots de passe de correspondent pas',
-            'password_confirmation.required' => 'La confirmation du mot de passe est requise',
             'email.required' => 'L\'adresse courriel est requise',
             'email.email' => 'Entrer une adresse courriel valide',
             'nom.required' => 'Le nom est requis',

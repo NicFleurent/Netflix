@@ -296,6 +296,18 @@ iframe{
   justify-content: center;
 }
 
+.section-bouton-compte{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.section-bouton-compte form, .section-bouton-compte a{
+  margin: 10px;
+}
+
 /**
  * BADGE
  */
