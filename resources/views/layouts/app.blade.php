@@ -144,15 +144,15 @@
                         </li>
 
                         <li>
-                            <a href="#" class="quicklink-link">Help center</a>
+                            <a href="#" class="quicklink-link">Aide</a>
                         </li>
 
                         <li>
-                            <a href="#" class="quicklink-link">Terms of use</a>
+                            <a href="#" class="quicklink-link">Conditions</a>
                         </li>
 
                         <li>
-                            <a href="#" class="quicklink-link">Privacy</a>
+                            <a href="#" class="quicklink-link">Confidentialité</a>
                         </li>
 
                     </ul>
@@ -192,20 +192,14 @@
 
         <div class="footer-bottom">
             <div class="container">
-
                 <p class="copyright">
                     &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
                 </p>
                 <p class="copyright">
                     Réalisé par <a href="#">Nicolas Fleurent et Mirolie Théroux</a>. 
                 </p>
-
-                <img src="{{ asset('img/footer-bottom-img.png') }}" alt="Online banking companies logo"
-                    class="footer-bottom-img">
-
             </div>
         </div>
-
     </footer>
 
     <!-- #GO TO TOP -->
