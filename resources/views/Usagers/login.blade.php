@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="filter-list lien-edit">
-                    <button type="submit" class="btn btn-primary ">Connection</button>
+                    <button type="submit" class="btn btn-primary ">Connexion</button>
                 </div>
             </form>
         </div>

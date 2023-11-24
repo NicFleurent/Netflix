@@ -56,22 +56,22 @@ Route::get('personnes',
 [PersonnesController::class, 'index'])->name('personnes.index');
 
 Route::get('/personnes/ajouter',
-[PersonnesController::class, 'create'])->name('personnes.create');
+[PersonnesController::class, 'create'])->name('personnes.create')->middleware('CheckRole:admin');
 
 Route::get('personnes/modifier/{personne}',
-[PersonnesController::class, 'edit'])->name('personnes.edit');
+[PersonnesController::class, 'edit'])->name('personnes.edit')->middleware('CheckRole:admin');
 
 Route::patch('personnes/modifier/{personne}',
-[PersonnesController::class, 'update'])->name('personnes.update');
+[PersonnesController::class, 'update'])->name('personnes.update')->middleware('CheckRole:admin');
 
 Route::get('personnes/{personne}', 
 [PersonnesController::class, 'show'])->name('personnes.show');
 
 Route::post('personnes',
-[PersonnesController::class, 'store'])->name('personnes.store');
+[PersonnesController::class, 'store'])->name('personnes.store')->middleware('CheckRole:admin');
 
 Route::delete('personnes/{id}',
-[PersonnesController::class, 'destroy'])->name('personnes.destroy');
+[PersonnesController::class, 'destroy'])->name('personnes.destroy')->middleware('CheckRole:admin');
 
 Route::get('login',
 [UsagersController::class, 'showLoginForm'])->name('usagers.showLogin');

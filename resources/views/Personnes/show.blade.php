@@ -9,27 +9,24 @@
 @section('contenu')
 @if (isset($personne))
 <section class="zoomFilm">
-    @auth
+    @role('admin')
     <div class="lien-edit">
         <a href="{{route('personnes.edit', [$personne])}}">
             <ion-icon name="construct-outline"></ion-icon>
             <data>Modifier</data>
         </a>
     </div>
-    @endauth
+    @endrole
     <div class="container">
         <h1 class="h1 section-title">{{ $personne->nom }}</h1>
         <div class="presentation">
             <div class="image">
-                <img  src="{{ $personne->lien_photo }}" alt="Image de {{ $personne->nom }} ">
+                <img src="{{ $personne->lien_photo }}" alt="Image de {{ $personne->nom }} ">
             </div>
-    <div>
-    <div class="text-info">Date de naissance : <span>{{$personne->date_naissance}}</span></div>
-    </div>
-            
+            <div>
+                <div class="text-info">Date de naissance : <span>{{$personne->date_naissance}}</span></div>
+            </div>
         </div>
-
-
         {{-- Tableau filmographie --}}
         <table>
             <thead>

@@ -95,6 +95,6 @@
                 <a href="#" class="cd-popup-close img-replace"></a>
             </div> <!-- cd-popup-container -->
         </div> <!-- cd-popup -->
-
+//DETACHER
 </section>
 @endsection
