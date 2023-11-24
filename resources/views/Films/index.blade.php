@@ -39,59 +39,117 @@
  
           <ul class="movies-list has-scrollbar">
  
-          @if(count($filmsDernieresSorties))
-            @foreach($filmsDernieresSorties as $film)
-              <li>
-                <div class="movie-card">
-  
-                  <a href="{{route('films.show', [$film])}}">
-                    <figure class="card-banner">
-                      <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
-
-                      <div class="pop-over-description">
-                        <span>{{$film->resume}}</span>
-                      </div>
-                    </figure>
-                  </a>
-  
-                  <div class="title-wrapper">
+          @role('enfant')
+          @if(count($filmsToutPublic))
+              @foreach($filmsToutPublic as $film)
+                <li>
+                  <div class="movie-card">
+    
                     <a href="{{route('films.show', [$film])}}">
-                      <h3 class="card-title">{{$film->titre}}</h3>
-                    </a>
-  
-                    <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
-                  </div>
-  
-                  <div class="card-meta">
-                    <div class="duration">
-                      <ion-icon name="time-outline"></ion-icon>
-  
-                      <time datetime="PT{{$film->annee_sortie}}M">{{$film->duree}} min</time>
-                    </div>
-  
-                    <div class="rating">
-                      <ion-icon name="star"></ion-icon>
-  
-                      <data>{{$film->cote}}</data>
-                    </div>
-                  </div>
+                      <figure class="card-banner">
+                        <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
 
-                  <div class="lien-edit">
-                    <a href="{{route('films.edit', [$film])}}">
-                      <ion-icon name="construct-outline"></ion-icon>
-                      <data>Mettre à jour</data>
+                        <div class="pop-over-description">
+                          <span>{{$film->resume}}</span>
+                        </div>
+                      </figure>
                     </a>
-                  </div>
+    
+                    <div class="title-wrapper">
+                      <a href="{{route('films.show', [$film])}}">
+                        <h3 class="card-title">{{$film->titre}}</h3>
+                      </a>
+    
+                      <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
+                    </div>
+    
+                    <div class="card-meta">
+                      <div class="duration">
+                        <ion-icon name="time-outline"></ion-icon>
+    
+                        <time datetime="PT{{$film->annee_sortie}}M">{{$film->duree}} min</time>
+                      </div>
+    
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+    
+                        <data>{{$film->cote}}</data>
+                      </div>
+                    </div>
 
-                  <div class="type-contenu">{{$film->type}}</div>
-  
-                </div>
-              </li>
-            @endforeach
+                    @role('admin')
+                    <div class="lien-edit">
+                      <a href="{{route('films.edit', [$film])}}">
+                        <ion-icon name="construct-outline"></ion-icon>
+                        <data>Mettre à jour</data>
+                      </a>
+                    </div>
+                    @endrole
+
+                    <div class="type-contenu">{{$film->type}}</div>
+    
+                  </div>
+                </li>
+              @endforeach
+            @else
+                <h3 class="section-sans-film">Il n'y a pas de film dans cette section présentement</h3>
+            @endif
           @else
-            <p>Il n'y a pas de film</p>
-          @endif
+            @if(count($filmsDernieresSorties))
+              @foreach($filmsDernieresSorties as $film)
+                <li>
+                  <div class="movie-card">
+    
+                    <a href="{{route('films.show', [$film])}}">
+                      <figure class="card-banner">
+                        <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
 
+                        <div class="pop-over-description">
+                          <span>{{$film->resume}}</span>
+                        </div>
+                      </figure>
+                    </a>
+    
+                    <div class="title-wrapper">
+                      <a href="{{route('films.show', [$film])}}">
+                        <h3 class="card-title">{{$film->titre}}</h3>
+                      </a>
+    
+                      <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
+                    </div>
+    
+                    <div class="card-meta">
+                      <div class="duration">
+                        <ion-icon name="time-outline"></ion-icon>
+    
+                        <time datetime="PT{{$film->annee_sortie}}M">{{$film->duree}} min</time>
+                      </div>
+    
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+    
+                        <data>{{$film->cote}}</data>
+                      </div>
+                    </div>
+
+                    @role('admin')
+                    <div class="lien-edit">
+                      <a href="{{route('films.edit', [$film])}}">
+                        <ion-icon name="construct-outline"></ion-icon>
+                        <data>Mettre à jour</data>
+                      </a>
+                    </div>
+                    @endrole
+
+                    <div class="type-contenu">{{$film->type}}</div>
+    
+                  </div>
+                </li>
+              @endforeach
+            @else
+                <h3 class="section-sans-film">Il n'y a pas de film dans cette section présentement</h3>
+            @endif
+          @endrole
           </ul>
  
         </div>
@@ -125,59 +183,117 @@
 
           <ul class="movies-list">
 
-            @if(count($filmsMeilleur))
-              @foreach($filmsMeilleur as $film)
-                <li>
-                  <div class="movie-card">
+            @role('enfant')
+            @if(count($filmsMeilleurEnfant))
+                @foreach($filmsMeilleurEnfant as $film)
+                  <li>
+                    <div class="movie-card">
 
-                    <a href="{{route('films.show', [$film])}}">
-                      <figure class="card-banner">
-                        <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
-                      
-                        <div class="pop-over-description">
-                          <span>{{$film->resume}}</span>
-                        </div>
-                      </figure>
-                    </a>
-
-                    <div class="title-wrapper">
                       <a href="{{route('films.show', [$film])}}">
-                        <h3 class="card-title">{{$film->titre}}</h3>
+                        <figure class="card-banner">
+                          <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
+                        
+                          <div class="pop-over-description">
+                            <span>{{$film->resume}}</span>
+                          </div>
+                        </figure>
                       </a>
 
-                      <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
-                    </div>
+                      <div class="title-wrapper">
+                        <a href="{{route('films.show', [$film])}}">
+                          <h3 class="card-title">{{$film->titre}}</h3>
+                        </a>
 
-                    <div class="card-meta">
-                      <div class="duration">
-                        <ion-icon name="time-outline"></ion-icon>
-
-                        <time datetime="PT{{$film->duree}}M">{{$film->duree}} min</time>
+                        <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
                       </div>
 
-                      <div class="rating">
-                        <ion-icon name="star"></ion-icon>
+                      <div class="card-meta">
+                        <div class="duration">
+                          <ion-icon name="time-outline"></ion-icon>
 
-                        <data>{{$film->cote}}</data>
+                          <time datetime="PT{{$film->duree}}M">{{$film->duree}} min</time>
+                        </div>
+
+                        <div class="rating">
+                          <ion-icon name="star"></ion-icon>
+
+                          <data>{{$film->cote}}</data>
+                        </div>
                       </div>
-                    </div>
-                  
-                    <div class="lien-edit">
-                      <a href="{{route('films.edit', [$film])}}">
-                        <ion-icon name="construct-outline"></ion-icon>
-                        <data>Mettre à jour</data>
-                      </a>
-                    </div>
+                    
+                      @role('admin')
+                      <div class="lien-edit">
+                        <a href="{{route('films.edit', [$film])}}">
+                          <ion-icon name="construct-outline"></ion-icon>
+                          <data>Mettre à jour</data>
+                        </a>
+                      </div>
+                      @endrole
 
-                    <div class="type-contenu">{{$film->type}}</div>
+                      <div class="type-contenu">{{$film->type}}</div>
 
-                  </div>
-                </li>
-              @endforeach
+                    </div>
+                  </li>
+                @endforeach
+              @else
+                <h3 class="section-sans-film">Il n'y a pas de film dans cette section présentement</h3>
+              @endif
             @else
-              <p>Il n'y a pas de film</p>
-            @endif
+              @if(count($filmsMeilleur))
+                @foreach($filmsMeilleur as $film)
+                  <li>
+                    <div class="movie-card">
 
+                      <a href="{{route('films.show', [$film])}}">
+                        <figure class="card-banner">
+                          <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
+                        
+                          <div class="pop-over-description">
+                            <span>{{$film->resume}}</span>
+                          </div>
+                        </figure>
+                      </a>
+
+                      <div class="title-wrapper">
+                        <a href="{{route('films.show', [$film])}}">
+                          <h3 class="card-title">{{$film->titre}}</h3>
+                        </a>
+
+                        <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
+                      </div>
+
+                      <div class="card-meta">
+                        <div class="duration">
+                          <ion-icon name="time-outline"></ion-icon>
+
+                          <time datetime="PT{{$film->duree}}M">{{$film->duree}} min</time>
+                        </div>
+
+                        <div class="rating">
+                          <ion-icon name="star"></ion-icon>
+
+                          <data>{{$film->cote}}</data>
+                        </div>
+                      </div>
+                    
+                      @role('admin')
+                      <div class="lien-edit">
+                        <a href="{{route('films.edit', [$film])}}">
+                          <ion-icon name="construct-outline"></ion-icon>
+                          <data>Mettre à jour</data>
+                        </a>
+                      </div>
+                      @endrole
+
+                      <div class="type-contenu">{{$film->type}}</div>
+
+                    </div>
+                  </li>
+                @endforeach
+              @else
+                <h3 class="section-sans-film">Il n'y a pas de film dans cette section présentement</h3>
+              @endif
+            @endrole
           </ul>
 
         </div>
@@ -211,58 +327,117 @@
 
           <ul class="movies-list">
 
-            @if(count($filmsCourt))
-              @foreach($filmsCourt as $film)
-                <li>
-                  <div class="movie-card">
+            @role('enfant')
+              @if(count($filmsCourtEnfant))
+                @foreach($filmsCourtEnfant as $film)
+                  <li>
+                    <div class="movie-card">
 
-                    <a href="{{route('films.show', [$film])}}">
-                      <figure class="card-banner">
-                        <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
-                      
-                        <div class="pop-over-description">
-                          <span>{{$film->resume}}</span>
-                        </div>
-                      </figure>
-                    </a>
-
-                    <div class="title-wrapper">
                       <a href="{{route('films.show', [$film])}}">
-                        <h3 class="card-title">{{$film->titre}}</h3>
+                        <figure class="card-banner">
+                          <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
+                        
+                          <div class="pop-over-description">
+                            <span>{{$film->resume}}</span>
+                          </div>
+                        </figure>
                       </a>
 
-                      <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
-                    </div>
+                      <div class="title-wrapper">
+                        <a href="{{route('films.show', [$film])}}">
+                          <h3 class="card-title">{{$film->titre}}</h3>
+                        </a>
 
-                    <div class="card-meta">
-                      <div class="duration">
-                        <ion-icon name="time-outline"></ion-icon>
-
-                        <time datetime="PT{{$film->duree}}M">{{$film->duree}} min</time>
+                        <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
                       </div>
 
-                      <div class="rating">
-                        <ion-icon name="star"></ion-icon>
+                      <div class="card-meta">
+                        <div class="duration">
+                          <ion-icon name="time-outline"></ion-icon>
 
-                        <data>{{$film->cote}}</data>
+                          <time datetime="PT{{$film->duree}}M">{{$film->duree}} min</time>
+                        </div>
+
+                        <div class="rating">
+                          <ion-icon name="star"></ion-icon>
+
+                          <data>{{$film->cote}}</data>
+                        </div>
                       </div>
-                    </div>
-                  
-                    <div class="lien-edit">
-                      <a href="{{route('films.edit', [$film])}}">
-                        <ion-icon name="construct-outline"></ion-icon>
-                        <data>Mettre à jour</data>
-                      </a>
-                    </div>
+                    
+                      @role('admin')
+                      <div class="lien-edit">
+                        <a href="{{route('films.edit', [$film])}}">
+                          <ion-icon name="construct-outline"></ion-icon>
+                          <data>Mettre à jour</data>
+                        </a>
+                      </div>
+                      @endrole
 
-                    <div class="type-contenu">{{$film->type}}</div>
+                      <div class="type-contenu">{{$film->type}}</div>
 
-                  </div>
-                </li>
-              @endforeach
+                    </div>
+                  </li>
+                @endforeach
+              @else
+                <h3 class="section-sans-film">Il n'y a pas de film dans cette section présentement</h3>
+              @endif
             @else
-              <p>Il n'y a pas de film</p>
-            @endif
+              @if(count($filmsCourt))
+                @foreach($filmsCourt as $film)
+                  <li>
+                    <div class="movie-card">
+
+                      <a href="{{route('films.show', [$film])}}">
+                        <figure class="card-banner">
+                          <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
+                        
+                          <div class="pop-over-description">
+                            <span>{{$film->resume}}</span>
+                          </div>
+                        </figure>
+                      </a>
+
+                      <div class="title-wrapper">
+                        <a href="{{route('films.show', [$film])}}">
+                          <h3 class="card-title">{{$film->titre}}</h3>
+                        </a>
+
+                        <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
+                      </div>
+
+                      <div class="card-meta">
+                        <div class="duration">
+                          <ion-icon name="time-outline"></ion-icon>
+
+                          <time datetime="PT{{$film->duree}}M">{{$film->duree}} min</time>
+                        </div>
+
+                        <div class="rating">
+                          <ion-icon name="star"></ion-icon>
+
+                          <data>{{$film->cote}}</data>
+                        </div>
+                      </div>
+                    
+                      @role('admin')
+                      <div class="lien-edit">
+                        <a href="{{route('films.edit', [$film])}}">
+                          <ion-icon name="construct-outline"></ion-icon>
+                          <data>Mettre à jour</data>
+                        </a>
+                      </div>
+                      @endrole
+
+                      <div class="type-contenu">{{$film->type}}</div>
+
+                    </div>
+                  </li>
+                @endforeach
+              @else
+                <h3 class="section-sans-film">Il n'y a pas de film dans cette section présentement</h3>
+              @endif
+            @endrole
 
           </ul>
 
@@ -277,149 +452,218 @@
  
           <ul class="movies-list">
  
-          @if(count($filmsComedie))
-              @foreach($filmsComedie as $film)
-                <li>
-                  <div class="movie-card">
+          @role('enfant')
+            @if(count($filmsComedieEnfant))
+                @foreach($filmsComedieEnfant as $film)
+                  <li>
+                    <div class="movie-card">
 
-                    <a href="{{route('films.show', [$film])}}">
-                      <figure class="card-banner">
-                        <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
-                      
-                        <div class="pop-over-description">
-                          <span>{{$film->resume}}</span>
-                        </div>
-                      </figure>
-                    </a>
-
-                    <div class="title-wrapper">
                       <a href="{{route('films.show', [$film])}}">
-                        <h3 class="card-title">{{$film->titre}}</h3>
+                        <figure class="card-banner">
+                          <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
+                        
+                          <div class="pop-over-description">
+                            <span>{{$film->resume}}</span>
+                          </div>
+                        </figure>
                       </a>
 
-                      <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
-                    </div>
+                      <div class="title-wrapper">
+                        <a href="{{route('films.show', [$film])}}">
+                          <h3 class="card-title">{{$film->titre}}</h3>
+                        </a>
 
-                    <div class="card-meta">
-                      <div class="duration">
-                        <ion-icon name="time-outline"></ion-icon>
-
-                        <time datetime="PT{{$film->duree}}M">{{$film->duree}} min</time>
+                        <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
                       </div>
 
-                      <div class="rating">
-                        <ion-icon name="star"></ion-icon>
+                      <div class="card-meta">
+                        <div class="duration">
+                          <ion-icon name="time-outline"></ion-icon>
 
-                        <data>{{$film->cote}}</data>
+                          <time datetime="PT{{$film->duree}}M">{{$film->duree}} min</time>
+                        </div>
+
+                        <div class="rating">
+                          <ion-icon name="star"></ion-icon>
+
+                          <data>{{$film->cote}}</data>
+                        </div>
                       </div>
+                    
+                      @role('admin')
+                      <div class="lien-edit">
+                        <a href="{{route('films.edit', [$film])}}">
+                          <ion-icon name="construct-outline"></ion-icon>
+                          <data>Mettre à jour</data>
+                        </a>
+                      </div>
+                      @endrole
+
+                      <div class="type-contenu">{{$film->type}}</div>
+
                     </div>
-                  
-                    <div class="lien-edit">
-                      <a href="{{route('films.edit', [$film])}}">
-                        <ion-icon name="construct-outline"></ion-icon>
-                        <data>Mettre à jour</data>
+                  </li>
+                @endforeach
+              @else
+                <h3 class="section-sans-film">Il n'y a pas de film dans cette section présentement</h3>
+              @endif
+          @else
+            @if(count($filmsComedie))
+                @foreach($filmsComedie as $film)
+                  <li>
+                    <div class="movie-card">
+
+                      <a href="{{route('films.show', [$film])}}">
+                        <figure class="card-banner">
+                          <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
+                        
+                          <div class="pop-over-description">
+                            <span>{{$film->resume}}</span>
+                          </div>
+                        </figure>
                       </a>
+
+                      <div class="title-wrapper">
+                        <a href="{{route('films.show', [$film])}}">
+                          <h3 class="card-title">{{$film->titre}}</h3>
+                        </a>
+
+                        <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
+                      </div>
+
+                      <div class="card-meta">
+                        <div class="duration">
+                          <ion-icon name="time-outline"></ion-icon>
+
+                          <time datetime="PT{{$film->duree}}M">{{$film->duree}} min</time>
+                        </div>
+
+                        <div class="rating">
+                          <ion-icon name="star"></ion-icon>
+
+                          <data>{{$film->cote}}</data>
+                        </div>
+                      </div>
+                    
+                      @role('admin')
+                      <div class="lien-edit">
+                        <a href="{{route('films.edit', [$film])}}">
+                          <ion-icon name="construct-outline"></ion-icon>
+                          <data>Mettre à jour</data>
+                        </a>
+                      </div>
+                      @endrole
+
+                      <div class="type-contenu">{{$film->type}}</div>
+
                     </div>
-
-                    <div class="type-contenu">{{$film->type}}</div>
-
-                  </div>
-                </li>
-              @endforeach
-            @else
-              <p>Il n'y a pas de film</p>
-            @endif
+                  </li>
+                @endforeach
+              @else
+                <h3 class="section-sans-film">Il n'y a pas de film dans cette section présentement</h3>
+              @endif
+            @endrole
  
           </ul>
  
         </div>
       </section>
- 
-      <!-- #Famille-->
-      <section id="famille" class="top-rated section-contenu">
-        <div class="container">
-
-          <h2 class="h2 section-title">Pour toute la famille</h2>
-
-          <ul class="filter-list">
-
-            <li>
-              <button class="filter-btn">Tous</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Films</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Séries TV</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Anime</button>
-            </li>
-
-          </ul>
-
-          <ul class="movies-list">
-
+      
+      @notenfant('enfant')
+        <!-- #Famille -->
+        <section class="upcoming section-contenu">
+          <div class="container">
+  
+            <div class="flex-wrapper">
+  
+              <div class="title-wrapper">
+                <h2 class="h2 section-title">Pour toute la famille</h2>
+              </div>
+  
+              <ul class="filter-list">
+  
+                <li>
+                  <button class="filter-btn">Tous</button>
+                </li>
+  
+                <li>
+                  <button class="filter-btn">Films</button>
+                </li>
+  
+                <li>
+                  <button class="filter-btn">Séries TV</button>
+                </li>
+  
+                <li>
+                  <button class="filter-btn">Anime</button>
+                </li>
+  
+              </ul>
+  
+            </div>
+  
+            <ul class="movies-list has-scrollbar">
+  
             @if(count($filmsToutPublic))
               @foreach($filmsToutPublic as $film)
                 <li>
                   <div class="movie-card">
-
+    
                     <a href="{{route('films.show', [$film])}}">
                       <figure class="card-banner">
                         <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
-                      
+
                         <div class="pop-over-description">
                           <span>{{$film->resume}}</span>
                         </div>
                       </figure>
                     </a>
-
+    
                     <div class="title-wrapper">
                       <a href="{{route('films.show', [$film])}}">
                         <h3 class="card-title">{{$film->titre}}</h3>
                       </a>
-
+    
                       <time datetime="{{$film->annee_sortie}}">{{$film->annee_sortie}}</time>
                     </div>
-
+    
                     <div class="card-meta">
                       <div class="duration">
                         <ion-icon name="time-outline"></ion-icon>
-
-                        <time datetime="PT{{$film->duree}}M">{{$film->duree}} min</time>
+    
+                        <time datetime="PT{{$film->annee_sortie}}M">{{$film->duree}} min</time>
                       </div>
-
+    
                       <div class="rating">
                         <ion-icon name="star"></ion-icon>
-
+    
                         <data>{{$film->cote}}</data>
                       </div>
                     </div>
-                  
+
+                    @role('admin')
                     <div class="lien-edit">
                       <a href="{{route('films.edit', [$film])}}">
                         <ion-icon name="construct-outline"></ion-icon>
                         <data>Mettre à jour</data>
                       </a>
                     </div>
+                    @endrole
 
                     <div class="type-contenu">{{$film->type}}</div>
-
+    
                   </div>
                 </li>
               @endforeach
             @else
-              <p>Il n'y a pas de film</p>
+                  <h3 class="section-sans-film">Il n'y a pas de film dans cette section présentement</h3>
             @endif
 
-          </ul>
-
-        </div>
-      </section>
+            </ul>
+  
+          </div>
+        </section>
+      @endnotenfant
 
     </article>
   </main>

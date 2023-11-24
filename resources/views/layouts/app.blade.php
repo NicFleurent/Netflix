@@ -40,12 +40,11 @@
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
 
+                @Auth
+                <a href="{{route('usagers.show')}}" class=" btn btn-primary ">Mon compte</a>
+                @else
                 <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connexion</a>
-
-                <form action="{{route('logout')}}" method="post">
-                    @csrf
-                    <button class="btn btn-primary" type="submit">Déconnexion</button>
-                </form>
+                @endAuth
             </div>
 
             <button class="menu-open-btn" data-menu-open-btn>
@@ -76,6 +75,7 @@
                         <a href="{{ route('personnes.index') }}" class="navbar-link">Personnes</a>
                     </li>
 
+                    @role('admin')
                     <li>
                         <div class="dropdown">
                             <button onclick="myFunction()" class="dropbtn navbar-link">Admin</button>
@@ -83,14 +83,20 @@
                                 <a href="{{ route('films.create') }}">Ajouter un contenu</a>
                                 <a href="{{ route('personnes.create') }}">Ajouter une personne</a>
                                 <a href="{{ route('films.createActeurFilm') }}">Ajouter une relation</a>
+                                <a href="{{ route('usagers.index') }}">Liste des comptes</a>
                             </div>
                         </div>
                     </li>
+                    @endrole
 
                 </ul>
 
                 <div class="section-bouton-singin"> 
+                    @Auth
+                    <a href="{{route('usagers.show')}}" class=" btn btn-primary ">Mon compte</a>
+                    @else
                     <a href="{{route('usagers.showLogin')}}" class=" btn btn-primary ">Connexion</a>
+                    @endAuth
                 </div>
              
             </nav>

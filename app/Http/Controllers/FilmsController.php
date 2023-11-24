@@ -24,23 +24,42 @@ class FilmsController extends Controller
         $filmsToutPublic = Film::where('rating', 'G')
                                 ->orwhere('rating', 'PG')
                                 ->orderby('annee_sortie', 'desc')
-                                ->take(4)
+                                ->take(20)
                                 ->get();
 
         $filmsMeilleur = Film::orderby('cote', 'desc')
-                            ->take(4)
-                            ->get();
+                                ->take(4)
+                                ->get();
+
+        $filmsMeilleurEnfant = Film::where('rating', 'G')
+                                    ->orwhere('rating', 'PG')
+                                    ->orderby('cote', 'desc')
+                                    ->take(4)
+                                    ->get();
 
         $filmsCourt = Film::orderby('duree', 'asc')
                             ->take(4)
                             ->get();
+
+        $filmsCourtEnfant = Film::where('rating', 'G')
+                                ->orwhere('rating', 'PG')
+                                ->orderby('duree', 'asc')
+                                ->take(4)
+                                ->get();
 
         $filmsComedie = Film::where('genre', 'Comédie')
                             ->orderby('cote', 'desc')
                             ->take(4)
                             ->get();
 
-        return View('Films.index', compact('filmsDernieresSorties', 'filmsToutPublic', 'filmsMeilleur', 'filmsCourt','filmsComedie'));
+        $filmsComedieEnfant = Film::where('rating', 'G')
+                                    ->orwhere('rating', 'PG')
+                                    ->where('genre', 'Comédie')
+                                    ->orderby('cote', 'desc')
+                                    ->take(4)
+                                    ->get();
+
+        return View('Films.index', compact('filmsDernieresSorties', 'filmsToutPublic', 'filmsMeilleur', 'filmsMeilleurEnfant', 'filmsCourt', 'filmsCourtEnfant', 'filmsComedie', 'filmsComedieEnfant'));
     }
 
     /**

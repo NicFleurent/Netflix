@@ -15,12 +15,12 @@
                 @csrf
                 <div class="input-container ic1">
                     <input type="text" class="input" id="nomUsager" placeholder=" " name="nomUsager" value="{{ old('nomUsager')}}">
-                    <div class="cut cut-short"></div>
+                    <div class="cut cut-user"></div>
                     <label for="nomUsager" class="placeholder">Nom d'usager</label>
                 </div>
                 <div class="input-container ic2">
                     <input type="password" class="input" id="password" placeholder=" " name="password" value="{{ old('password')}}">
-                    <div class="cut cut-ddn"></div>
+                    <div class="cut cut-user"></div>
                     <label for="password" class="placeholder">Mot de passe</label>
                 </div>
 
@@ -28,6 +28,10 @@
                     <button type="submit" class="btn btn-primary ">Connexion</button>
                 </div>
             </form>
+
+            <div class="button-group button-ajout">
+                <a href="{{ route('usagers.create') }}"><button type="button" class="btn btn-primary">Créer un compte</button></a>
+            </div>
         </div>
     </div>
 </section>

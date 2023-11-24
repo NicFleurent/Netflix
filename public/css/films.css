@@ -136,6 +136,13 @@ body.active {
   flex-direction: row;
 }
 
+.presentation-compte{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .presentation .image img{
   display: none;
   width: 30vw;
@@ -199,6 +206,12 @@ iframe{
 .acteur .cd-popup-trigger-acteur{
   margin-left: 5px;
   color: var(--citrine);
+}
+
+.section-sans-film{
+  color: var(--citrine) !important;
+  text-align: center !important;
+  grid-column: 1 / span 4;
 }
 
 
@@ -281,6 +294,18 @@ iframe{
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+.section-bouton-compte{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.section-bouton-compte form, .section-bouton-compte a{
+  margin: 10px;
 }
 
 /**
