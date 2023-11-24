@@ -92,7 +92,7 @@ class PersonnesController extends Controller
             $personne->save();
             $nomPersonne = $personne->nom;
 
-            return redirect()->route('personnes.index')->with('message', "Vous avez bien modifé " . $nomPersonne . " !");
+            return redirect()->route('personnes.index')->with('message', "Vous avez bien modifié " . $nomPersonne . " !");
         } catch (\Throwable $e) {
             //Gérer l'erreur
             Log::debug($e);
@@ -105,7 +105,6 @@ class PersonnesController extends Controller
      */
     public function destroy($id)
     {
-        //    $bErreur = false;
         try {
             $personne = Personne::findOrFail($id);
             $nomFilms = "";
@@ -115,24 +114,24 @@ class PersonnesController extends Controller
 
                 foreach ($personne->filmsRealises as $filmRealise) {
                     if ($i < count($personne->filmsRealises)) {
-                        $nomFilms = $filmRealise->nom . ',';
+                        $nomFilms = $filmRealise->titre . ' ,';
                     } else {
-                        $nomFilms = $filmRealise->nom;
+                        $nomFilms = $filmRealise->titre;
                     }
                     $i++;
                 }
-                return redirect()->route('personnes.index')->withErrors(['La suppression n\'a pas fonctionné, vous devez supprimer ses films avant' . $nomFilms]);
+                return redirect()->route('personnes.index')->withErrors(['Vous devez supprimer ses films avant : ' . $nomFilms]);
             }
             if (count($personne->filmsProduits) > 0) {
                 foreach ($personne->filmsProduits as $filmProduit) {
                     if ($i < count($personne->filmsProduits)) {
-                        $nomFilms = $filmProduit->nom . ',';
+                        $nomFilms = $filmProduit->titre . ',';
                     } else {
-                        $nomFilms = $filmProduit->nom;
+                        $nomFilms = $filmProduit->titre;
                     }
                     $i++;
                 }
-                return redirect()->route('personnes.index')->withErrors(['La suppression n\'a pas fonctionné, vous devez supprimer ses films avant' . $nomFilms]);
+                return redirect()->route('personnes.index')->withErrors(['Vous devez supprimer ses films avant : ' . $nomFilms]);
             }
             $personne->roles()->detach();
             $personne->delete();
@@ -140,8 +139,9 @@ class PersonnesController extends Controller
         } catch (\Throwable $e) {
             //Gérer l'erreur
             Log::debug($e);
+            
+            // dd($personne->filmsJouesAP());
             return redirect()->route('personnes.index')->withErrors(['La suppression n\'a pas fonctionné']);
         }
-        return redirect()->route('personnes.index');
     }
 }
