@@ -16,7 +16,7 @@ td a:visited {
 
 td a img {
     width: 20%;
-    margin: auto;
+   
 }
 
 .centrer {
@@ -27,8 +27,30 @@ table,
 th,
 td {
     border: 1px solid;
+    border-collapse: collapse;
+    border-color: white;
+}
+
+table th{
+    color: var(--citrine);
 }
 
 table {
     width: 100%;
+}
+
+.lienFilmo {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.lienFilmo span{
+    margin: auto;
+}
+
+.text-info span{
+    color: var(--citrine);
+    display: contents;
 }

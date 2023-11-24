@@ -30,9 +30,12 @@
             </div>
             <div class="information">
                 <div>
-                    <div class="text-info bloc-resume">Date de naissance : {{$personne->date_naissance}}</div>
+                    <div class="text-info bloc-resume">Date de naissance :
+                        <span>{{$personne->date_naissance}}</span>
+                    </div>
                     {{-- Tableau filmographie --}}
-                    <div class="">
+                    <div>
+                        <h3>Filmographie</h3>
                         <table>
                             <thead class="txt-blanc">
                                 <tr class="centrer">
@@ -47,9 +50,9 @@
                                 <tr class="centrer">
                                     <td>{{ $filmJoue->annee_sortie }}</td>
                                     <td>
-                                        <a href="{{ route('films.show', ['film' => $filmJoue->id]) }}">
-                                            {{ $filmJoue->titre }}
+                                        <a class="lienFilmo" href="{{ route('films.show', ['film' => $filmJoue->id]) }}">
                                             <img src="{{ $filmJoue->lien_pochette }}" alt="Poster de {{ $filmJoue->titre }}">
+                                            <span>{{ $filmJoue->titre }}</span>
                                         </a>
                                     </td>
 
@@ -87,11 +90,11 @@
                                 <tr class="centrer">
                                     <td>{{ $filmProduit->annee_sortie }}</td>
                                     <td>
-                                        <a href="{{ route('films.show', ['film' => $filmProduit->id]) }}">
-                                            {{ $filmProduit->titre }}
-                                            <div>
-                                                <img src="{{ $filmProduit->lien_pochette }}" alt="Poster de {{ $filmProduit->titre }}">
-                                            </div>
+                                        <a class="lienFilmo" href="{{ route('films.show', ['film' => $filmProduit->id]) }}">
+
+
+                                            <img src="{{ $filmProduit->lien_pochette }}" alt="Poster de {{ $filmProduit->titre }}">
+                                            <span>{{ $filmProduit->titre }}</span>
                                         </a>
                                     </td>
                                 </tr>
@@ -128,9 +131,9 @@
                                 @foreach ($personne->filmsRealises as $filmRealise)
                                 <tr class="centrer">
                                     <td>{{ $filmRealise->annee_sortie }}</td>
-                                    <td> <a href="{{ route('films.show', ['film' => $filmRealise->id]) }}">
-                                            {{ $filmRealise->titre }}
+                                    <td> <a class="lienFilmo" href="{{ route('films.show', ['film' => $filmRealise->id]) }}">
                                             <img src="{{ $filmRealise->lien_pochette }}" alt="Poster de {{ $filmRealise->titre }}">
+                                            <span>{{ $filmRealise->titre }}</span>
                                         </a>
                                     </td>
                                     {{-- Initialisation des variables de rôle --}}
