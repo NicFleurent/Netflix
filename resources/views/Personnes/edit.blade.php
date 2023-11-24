@@ -70,31 +70,5 @@
                 <button type="submit" class="btn btn-primary">Modifier</button>
             </form>
         </div>
-
-
-        <a href="#0" class=" btn btn-primary cd-popup-trigger">
-            Supprimer
-        </a>
-
-        <!-- Modal Suppresion Film -->
-        <div class="cd-popup" role="alert">
-            <div class="cd-popup-container">
-                <p>Voulez-vous vraiment supprimer cette personne?</p>
-                <ul class="cd-buttons">
-                    <li>
-                        <form action="{{route('personnes.destroy', [$personne->id]) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">
-                                <data>OUI</data>
-                            </button>
-                        </form>
-                    </li>
-                    <li><a href="#" class="cd-popup-non">NON</a></li>
-                </ul>
-                <a href="#" class="cd-popup-close img-replace"></a>
-            </div> <!-- cd-popup-container -->
-        </div> <!-- cd-popup -->
-//DETACHER
 </section>
 @endsection

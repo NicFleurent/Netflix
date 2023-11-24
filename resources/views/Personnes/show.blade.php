@@ -13,7 +13,12 @@
     <div class="lien-edit">
         <a href="{{route('personnes.edit', [$personne])}}">
             <ion-icon name="construct-outline"></ion-icon>
-            <data>Modifier</data>
+            <data>Mettre à jour</data>
+        </a>
+
+        <a href="#0" class=" cd-popup-trigger">
+            <ion-icon name="remove-circle-outline"></ion-icon>
+            <data>Supprimer</data>
         </a>
     </div>
     @endrole
@@ -151,8 +156,27 @@
     </div>
 </section>
 
-</table>
-</div>
-</section>
+@role('admin')
+<!-- Modal Suppresion Film -->
+<div class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <p>Voulez-vous vraiment supprimer cette personne?</p>
+        <ul class="cd-buttons">
+            <li>
+                <form action="{{route('personnes.destroy', [$personne->id]) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">
+                        <data>OUI</data>
+                    </button>
+                </form>
+            </li>
+            <li><a href="#" class="cd-popup-non">NON</a></li>
+        </ul>
+        <a href="#" class="cd-popup-close img-replace"></a>
+    </div> <!-- cd-popup-container -->
+</div> <!-- cd-popup -->
+<!-- DÉTACHER -->
+@endrole
 @endif
 @endsection
