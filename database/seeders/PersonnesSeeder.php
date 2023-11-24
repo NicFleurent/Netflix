@@ -235,7 +235,7 @@ class PersonnesSeeder extends Seeder
                 'id' => 32,
                 'nom' => 'Daniel Radcliffe' ,                
                 'date_naissance' => '1989-07-23',
-                'lien_photo' => 'https://images.squarespace-cdn.com/content/v1/5ca2aca0ebfc7fb8582ecd8c/1565384366105-0NIBVF2G0JMAIO5WSXQE/Dan-Headshot-1Smll_Crppd.jpg?format=1500w',
+                'lien_photo' => 'https://i.guim.co.uk/img/media/808b031d10688602deb60849458557ee2a714992/1141_94_4025_2415/master/4025.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=26fb24ef5ee6c8a55083613588f3bc16',
                 'role' => 'Acteur'
              ],
              [

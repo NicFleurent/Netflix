@@ -1,0 +1,34 @@
+.txt-blanc {
+    color: white;
+}
+
+td a:hover {
+    color: var(--citrine) !important;
+}
+
+td a:link {
+    color: white;
+}
+
+td a:visited {
+    color: white;
+}
+
+td a img {
+    width: 20%;
+    margin: auto;
+}
+
+.centrer {
+    text-align: center;
+}
+
+table,
+th,
+td {
+    border: 1px solid;
+}
+
+table {
+    width: 100%;
+}

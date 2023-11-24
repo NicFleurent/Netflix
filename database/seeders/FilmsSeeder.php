@@ -225,7 +225,7 @@ class FilmsSeeder extends Seeder
                 'duree' => 152,
                 'annee_sortie' => '1998',
                 'lien_film' => 'https://www.youtube.com/embed/P1BGgqhVGAI?si=sIMDY4Anj2SDVHJV',
-                'lien_pochette' => 'https://th.bing.com/th/id/R.05d82c56505c85530a0cff4ded40caa7?rik=N7p6doAu6Vt72A&riu=http%3a%2f%2femmawatson45170.e-monsite.com%2fmedias%2fimages%2f4bud3nugd2xnhlkyncxhfjpheh5.jpg&ehk=QvPuPONSypmhm6Rd6l2Hq9nxaj2I9rMbsTzkRgUPKjA%3d&risl=&pid=ImgRaw&r=0',
+                'lien_pochette' => 'https://m.media-amazon.com/images/I/51TaxvnsBsL._AC_UF894,1000_QL80_.jpg',
                 'realisateur_id' => 34,
                 'producteur_id' => 34,
                 'acteurprincipal_id' => 32,

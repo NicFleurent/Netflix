@@ -18,7 +18,7 @@
             </div>
             @endif
             <form class="form " method="post" action="{{ route('personnes.update', [$personne]) }}">
-                <div class="title">Modifier une personne</div>
+                <div class="title">Modifier</div>
                 @csrf
                 @method('patch')
                 <div class="input-container ic1">
