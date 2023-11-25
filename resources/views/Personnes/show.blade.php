@@ -81,7 +81,7 @@
                                     <td>{{ $personne->role }}</td>
                                     @endif
                                 </tr>
-                                </tr>
+                              
                                 @endforeach
 
                                 {{-- producteurs/productrices --}}
@@ -91,13 +91,11 @@
                                     <td>{{ $filmProduit->annee_sortie }}</td>
                                     <td>
                                         <a class="lienFilmo" href="{{ route('films.show', ['film' => $filmProduit->id]) }}">
-
-
                                             <img src="{{ $filmProduit->lien_pochette }}" alt="Poster de {{ $filmProduit->titre }}">
                                             <span>{{ $filmProduit->titre }}</span>
                                         </a>
                                     </td>
-                                </tr>
+         
 
                                 {{-- Initialisation des variables de rôle --}}
                                 @php
@@ -125,8 +123,9 @@
                                 <td>{{ $personne->role }}</td>
                                 @endif
                                 @endif
+                                </tr>
                                 @endforeach
-
+                                
                                 {{-- réalisateur/réalisatrice --}}
                                 @foreach ($personne->filmsRealises as $filmRealise)
                                 <tr class="centrer">
