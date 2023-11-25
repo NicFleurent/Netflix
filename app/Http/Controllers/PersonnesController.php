@@ -110,6 +110,19 @@ class PersonnesController extends Controller
             $nomFilms = "";
             $i = 1;
 
+            if (count($personne->filmsJouesAP) > 0) {
+
+                foreach ($personne->filmsJouesAP as $filmJoueAP) {
+                    if ($i < count($personne->filmsJouesAP)) {
+                        $nomFilms = $filmJoueAP->titre . ' ,';
+                    } else {
+                        $nomFilms = $filmJoueAP->titre;
+                    }
+                    $i++;
+                }
+                return redirect()->route('personnes.index')->withErrors(['Vous devez supprimer ses films avant : ' . $nomFilms]);
+            }
+
             if (count($personne->filmsRealises) > 0) {
 
                 foreach ($personne->filmsRealises as $filmRealise) {
