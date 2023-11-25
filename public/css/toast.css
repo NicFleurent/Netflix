@@ -9,7 +9,7 @@
 .toast {
   position: absolute;
   top: 115px;
-  right: 510px;
+  right: calc(50% - 225px);
   border-radius: 12px;
   width: 450px;
   background: #fff;
@@ -133,3 +133,9 @@
 }
 
 /* Reste a modifier quand lecran plus petit */
+@media (max-width: 550px){
+  .toast {
+    right: calc(50% - 137px);
+    width: 275px;
+  }
+}
