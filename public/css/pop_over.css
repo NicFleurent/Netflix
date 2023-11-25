@@ -1,0 +1,55 @@
+
+  /* Popover styling */
+  
+  a {
+    text-decoration: none;
+    color: var(--eerie-black);
+  }
+  
+  .popover__wrapper {
+    position: relative;
+  }
+  .popover__content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 0px;
+    bottom: -165px;
+    transform: translate(0, 10px);
+    background-color: var(--citrine);
+    padding: .5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: auto;
+    height: 150px;
+    border-radius: 1em;
+    text-align: center;
+  }
+  .popover__content img{
+    height: 100px;
+    margin: auto;
+  }
+  /*.popover__content:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    right: calc(90% - 10px);
+    top: -8px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #bfbfbf transparent;
+    transition-duration: 0.3s;
+    transition-property: transform;
+  }*/
+  .popover__wrapper:hover .popover__content {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -20px);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  }
+  .popover__content:hover{
+    background-color: #bfbfbf;
+  }
+  .popover__message {
+    text-align: center;
+  }

@@ -2,6 +2,10 @@
 
 @section('title', 'Netflix - ' . $film->titre)
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/pop_over.css') }}">
+@endsection
+
 @section('contenu')
     @if(isset($film))
         <section class="zoomFilm">
@@ -53,23 +57,46 @@
                         </div>
                         <div class="bloc-info">
                             <div class="text-info">Marque : <span>{{$film->brand}}</span></div>
-                            <div class="text-info">Réalisateur : <span>{{$film->realisateur->nom}}</span></div>
+                            <div class="text-info popover__wrapper">Réalisateur : 
+                                <span>{{$film->realisateur->nom}}</span>
+                                <a class="popover__content" href="{{ route('personnes.show', [$film->realisateur]) }}">
+                                    <b class="popover__message">Plus d'information</b>
+                                    <img alt="photo {{$film->realisateur->nom}}" src="{{$film->realisateur->lien_photo}}">
+                                </a>
+                            </div>
                         </div>
                         <div class="bloc-info">
-                            <div class="text-info">Producteur : <span>{{$film->producteur->nom}}</span></div>
-                            <div class="text-info">Acteur Principal : <span>{{$film->acteurprincipal->nom}}</span></div>
+                            <div class="text-info popover__wrapper">Producteur : 
+                                <span>{{$film->producteur->nom}}</span>
+                                <a class="popover__content" href="{{ route('personnes.show', [$film->producteur]) }}">
+                                    <b class="popover__message">Plus d'information</b>
+                                    <img alt="photo {{$film->producteur->nom}}" src="{{$film->producteur->lien_photo}}">
+                                </a>
+                            </div>
+
+                            <div class="text-info popover__wrapper">Acteur Principal : 
+                                <span>{{$film->acteurprincipal->nom}}</span>
+                                <a class="popover__content" href="{{ route('personnes.show', [$film->acteurprincipal]) }}">
+                                    <b class="popover__message">Plus d'information</b>
+                                    <img alt="photo {{$film->acteurprincipal->nom}}" src="{{$film->acteurprincipal->lien_photo}}">
+                                </a>
+                            </div>
                         </div>
                         <div class="bloc-acteur">
                             <p>Acteurs :</p>
                             @foreach($film->acteurs as $acteurDuFilm)
-                                <p class="acteur">
+                                <div class="acteur popover__wrapper">
                                     {{$acteurDuFilm->nom}}
                                     @role('admin')
                                     <a id="{{$acteurDuFilm->id}}" href="#" class="cd-popup-trigger-acteur">
                                         <ion-icon name="remove-circle-outline"></ion-icon>
                                     </a>
                                     @endrole
-                                </p>
+                                    <a class="popover__content" href="{{ route('personnes.show', [$acteurDuFilm]) }}">
+                                        <b class="popover__message">Plus d'information</b>
+                                        <img alt="photo {{$acteurDuFilm->nom}}" src="{{$acteurDuFilm->lien_photo}}">
+                                    </a>
+                                </div>
 
                                 @role('admin')
                                 <!-- Modal Suppresion Acteur -->
