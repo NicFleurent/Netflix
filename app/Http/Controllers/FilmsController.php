@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Film;
 use App\Models\Personne;
 use App\Http\Requests\FilmRequest;
+use App\Http\Requests\FilmModifRequest;
 use App\Http\Requests\ActeurFilmRequest;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Log;
@@ -169,7 +170,7 @@ class FilmsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(FilmRequest $request, Film $film)
+    public function update(FilmModifRequest $request, Film $film)
     {
         try {
             $film->titre = $request->titre;
@@ -177,7 +178,25 @@ class FilmsController extends Controller
             $film->duree = $request->duree;
             $film->annee_sortie = $request->annee_sortie;
             $film->lien_film = $request->lien_film;
-            $film->lien_pochette = $request->lien_pochette;
+
+            if(isset($request->lien_pochette)){
+                if(File::exists($film->lien_pochette)){
+                    File::delete($film->lien_pochette);
+                }
+
+                $uploadedFile = $request->file('lien_pochette');
+                $nomFichierUnique = str_replace(' ','_', $film->titre).'-'.uniqid().'.'.$uploadedFile->extension();
+
+                try{
+                    $request->lien_pochette->move(public_path('img/films'), $nomFichierUnique);
+                }
+                catch(\Symfony\Component\HttpFoundation\File\Exception\FileException $e){
+                    Log::error("Erreur lors du téléversement du fichier.", [$e]);
+                }
+
+                $film->lien_pochette = 'img/films/' . $nomFichierUnique;
+            }
+
             $film->type = $request->type;
             $film->genre = $request->genre;
             $film->brand = $request->brand;
