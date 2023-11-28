@@ -32,7 +32,7 @@
                 <h1 class="h1 section-title">{{$film->titre}}</h1>
                 <div class="presentation">
                     <div class="image">
-                        <img src="{{$film->lien_pochette}}" alt="{{$film->titre}} movie poster">
+                        <img src="{{asset($film->lien_pochette)}}" alt="{{$film->titre}} movie poster">
                     </div>
                     <div class="information">
                         <div class="trailer">

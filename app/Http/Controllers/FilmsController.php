@@ -9,6 +9,7 @@ use App\Http\Requests\FilmRequest;
 use App\Http\Requests\ActeurFilmRequest;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
 
 class FilmsController extends Controller
 {
@@ -98,6 +99,18 @@ class FilmsController extends Controller
     {
         try {
             $film = new Film($request->all());
+
+            $uploadedFile = $request->file('lien_pochette');
+            $nomFichierUnique = str_replace(' ','_', $film->titre).'-'.uniqid().'.'.$uploadedFile->extension();
+
+            try{
+                $request->lien_pochette->move(public_path('img/films'), $nomFichierUnique);
+            }
+            catch(\Symfony\Component\HttpFoundation\File\Exception\FileException $e){
+                Log::error("Erreur lors du téléversement du fichier.", [$e]);
+            }
+
+            $film->lien_pochette = 'img/films/' . $nomFichierUnique;
             $film->save();
             return redirect()->route('films.index')->with('message', "Vous avez bien ajouté " . $film->titre . " !");
         }
@@ -191,6 +204,10 @@ class FilmsController extends Controller
     {
         try{
             $film = Film::findOrFail($id);
+
+            if(File::exists($film->lien_pochette)){
+                File::delete($film->lien_pochette);
+            }
 
             //Si un film a des acteurs, on ne peut pas le supprimer.
             $film->acteurs()->detach();
