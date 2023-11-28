@@ -7,6 +7,8 @@ use App\Models\Personne;
 use App\Models\Film;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\PersonneRequest;
+use App\Http\Requests\PersonneModifRequest;
+use Illuminate\Support\Facades\File;
 
 class PersonnesController extends Controller
 {
@@ -52,12 +54,21 @@ class PersonnesController extends Controller
     {
         try {
             $personne = new Personne($request->all());
+            $uploadedFile = $request->file('lien_photo');
+            $nomFichierUnique = str_replace(' ', '_', $personne->nom . '-' . uniqid() . '.' . $uploadedFile->extension());
+            try {
+                $request->lien_photo->move(public_path('img/personnes'), $nomFichierUnique);
+            } catch (\Symfony\Component\HttpFoundation\File\Exception\FileException $e) {
+                Log::error("Erreur lors du téléchargement du fichier.", [$e]);
+            }
+            $personne->lien_photo = 'img/personnes/' . $nomFichierUnique;
             $personne->save();
             $nomPersonne = $request->input('nom');
             return redirect()->route('personnes.index')->with('message', "Vous avez bien ajouté " . $nomPersonne . " !");
         } catch (\Throwable $e) {
             //Permet de gérer l'erreur
             Log::debug($e);
+            return redirect()->route('personnes.index')->withErrors(['L\'ajout n\'a pas fonctionné']);
         }
         return redirect()->route('personnes.index');
     }
@@ -82,12 +93,25 @@ class PersonnesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(PersonneRequest $request, Personne $personne)
+    public function update(PersonneModifRequest $request, Personne $personne)
     {
         try {
             $personne->nom = $request->nom;
             $personne->date_naissance = $request->date_naissance;
-            $personne->lien_photo = $request->lien_photo;
+            if (isset($request->lien_photo)) {
+                if (File::exists($personne->lien_photo)) {
+                    File::delete($personne->lien_photo);
+                }
+                $uploadedFile = $request->file('lien_photo');
+                $nomFichierUnique = str_replace(' ', '_', $personne->nom . '-' . uniqid() . '.' . $uploadedFile->extension());
+                try {
+                    $request->lien_photo->move(public_path('img/personnes'), $nomFichierUnique);
+                } catch (\Symfony\Component\HttpFoundation\File\Exception\FileException $e) {
+                    Log::error("Erreur lors du téléchargement du fichier.", [$e]);
+                }
+                $personne->lien_photo =  'img/personnes/' . $nomFichierUnique;
+            }
+
             $personne->role = $request->role;
             $personne->save();
             $nomPersonne = $personne->nom;
@@ -96,6 +120,7 @@ class PersonnesController extends Controller
         } catch (\Throwable $e) {
             //Gérer l'erreur
             Log::debug($e);
+            return redirect()->route('personnes.index')->withErrors(['La modification n\'a pas fonctionnée']);
         }
         return redirect()->route('personnes.index');
     }
@@ -109,6 +134,10 @@ class PersonnesController extends Controller
             $personne = Personne::findOrFail($id);
             $nomFilms = "";
             $i = 1;
+
+            if (File::exists($personne->lien_photo)) {
+                File::delete($personne->lien_photo);
+            }
 
             if (count($personne->filmsJouesAP) > 0) {
 
@@ -138,7 +167,7 @@ class PersonnesController extends Controller
             if (count($personne->filmsProduits) > 0) {
                 foreach ($personne->filmsProduits as $filmProduit) {
                     if ($i < count($personne->filmsProduits)) {
-                        $nomFilms = $filmProduit->titre . ',';
+                        $nomFilms = $filmProduit->titre . ' ,';
                     } else {
                         $nomFilms = $filmProduit->titre;
                     }
@@ -152,7 +181,7 @@ class PersonnesController extends Controller
         } catch (\Throwable $e) {
             //Gérer l'erreur
             Log::debug($e);
-            
+
             // dd($personne->filmsJouesAP());
             return redirect()->route('personnes.index')->withErrors(['La suppression n\'a pas fonctionné']);
         }

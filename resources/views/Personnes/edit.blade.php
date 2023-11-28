@@ -17,7 +17,7 @@
                 @endforeach
             </div>
             @endif
-            <form class="form " method="post" action="{{ route('personnes.update', [$personne]) }}">
+            <form class="form " method="post" action="{{ route('personnes.update', [$personne]) }}" enctype="multipart/form-data" >
                 <div class="title">Modifier</div>
                 @csrf
                 @method('patch')
@@ -40,9 +40,9 @@
                 @endif
 
                 <div class="input-container ic2">
-                    <input type="text" class=" input" id="lien_photo" placeholder=" " name="lien_photo" value="{{ old('lien_photo') == null ? $personne->lien_photo : old('lien_photo') }}">
+                    <input type="file" class=" input" id="lien_photo" placeholder=" " name="lien_photo">
                     <div class="cut cut-lien"></div>
-                    <label for="lien_photo" class="placeholder">Lien photo de la personne</label>
+                    <label for="lien_photo" class="placeholder">Sélectionner une image</label>
                 </div>
                 @if($errors->has('lien_photo'))
                 <p>{{ $errors->first('lien_photo') }}</p>

@@ -26,7 +26,7 @@
         <h1 class="h1 section-title">{{ $personne->nom }}</h1>
         <div class="presentation">
             <div class="image">
-                <img src="{{ $personne->lien_photo }}" alt="Image de {{ $personne->nom }} ">
+                <img src="{{ asset($personne->lien_photo) }}" alt="Image de {{ $personne->nom }} ">
             </div>
             <div class="information">
                 <div>

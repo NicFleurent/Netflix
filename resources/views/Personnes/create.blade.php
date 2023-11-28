@@ -8,10 +8,8 @@
 
 @section('contenu')
 <section class="upcoming">
-    <div class="container">
         <div class="container">
-
-            <form class="form " method="post" action="{{route('personnes.store') }}">
+            <form class="form " method="post" action="{{route('personnes.store') }}" enctype="multipart/form-data" >
                 <div class="title">Ajouter une personne</div>
                 @csrf
                 <div class="input-container ic1">
@@ -33,9 +31,9 @@
                 @endif
 
                 <div class="input-container ic2">
-                    <input type="text" class=" input" id="lien_photo" placeholder=" " name="lien_photo" value="{{ old('lien_photo')}}">
+                    <input type="file" class=" input" id="lien_photo" placeholder=" " name="lien_photo" value="{{ old('lien_photo')}}">
                     <div class="cut cut-lien"></div>
-                    <label for="lien_photo" class="placeholder">Lien photo de la personne</label>
+                    <label for="lien_photo" class="placeholder">Sélectionner l'image</label>
                 </div>
                 @if($errors->has('lien_photo'))
                 <p>{{ $errors->first('lien_photo') }}</p>
