@@ -143,9 +143,9 @@ class PersonnesController extends Controller
 
                 foreach ($personne->filmsJouesAP as $filmJoueAP) {
                     if ($i < count($personne->filmsJouesAP)) {
-                        $nomFilms = $filmJoueAP->titre . ' ,';
+                        $nomFilms .=  $filmJoueAP->titre . ' ,';
                     } else {
-                        $nomFilms = $filmJoueAP->titre;
+                        $nomFilms .= $filmJoueAP->titre;
                     }
                     $i++;
                 }
@@ -156,9 +156,9 @@ class PersonnesController extends Controller
 
                 foreach ($personne->filmsRealises as $filmRealise) {
                     if ($i < count($personne->filmsRealises)) {
-                        $nomFilms = $filmRealise->titre . ' ,';
+                        $nomFilms .= $filmRealise->titre . ' ,';
                     } else {
-                        $nomFilms = $filmRealise->titre;
+                        $nomFilms .= $filmRealise->titre;
                     }
                     $i++;
                 }
@@ -167,9 +167,9 @@ class PersonnesController extends Controller
             if (count($personne->filmsProduits) > 0) {
                 foreach ($personne->filmsProduits as $filmProduit) {
                     if ($i < count($personne->filmsProduits)) {
-                        $nomFilms = $filmProduit->titre . ' ,';
+                        $nomFilms .= $filmProduit->titre . ' ,';
                     } else {
-                        $nomFilms = $filmProduit->titre;
+                        $nomFilms .= $filmProduit->titre;
                     }
                     $i++;
                 }
