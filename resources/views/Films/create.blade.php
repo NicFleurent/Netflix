@@ -54,7 +54,7 @@
                     <p>{{ $errors->first('lien_film') }}</p>
                 @endif
                 <div class="input-container ic2">
-                    <input id="lien_pochette" class="input" type="file" placeholder=" " name="lien_pochette" value="{{ old('lien_pochette') }}"/>
+                    <input id="lien_pochette" class="input" type="file" placeholder=" " name="lien_pochette"/>
                     <div class="cut cut-image"></div>
                     <label for="titre" class="placeholder">Téléverser une image</label>
                 </div>
