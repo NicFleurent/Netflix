@@ -10,7 +10,7 @@
     <section class="upcoming">
         <div class="container">
 
-            <form class="form" method="post" action="{{ route('films.store') }}">
+            <form class="form" method="post" action="{{ route('films.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="title">Ajouter du contenu</div>
                 <div class="input-container ic1">
@@ -54,9 +54,9 @@
                     <p>{{ $errors->first('lien_film') }}</p>
                 @endif
                 <div class="input-container ic2">
-                    <input id="lien_pochette" class="input" type="text" placeholder=" " name="lien_pochette" value="{{ old('lien_pochette') }}"/>
+                    <input id="lien_pochette" class="input" type="file" placeholder=" " name="lien_pochette" value="{{ old('lien_pochette') }}"/>
                     <div class="cut cut-image"></div>
-                    <label for="titre" class="placeholder">Lien du poster (image)</label>
+                    <label for="titre" class="placeholder">Téléverser une image</label>
                 </div>
                 @if($errors->has('lien_pochette'))
                     <p>{{ $errors->first('lien_pochette') }}</p>

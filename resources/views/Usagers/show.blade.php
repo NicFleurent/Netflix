@@ -3,7 +3,7 @@
 @section('title', 'Netflix - Mon compte')
 
 @section('contenu')
-    @foreach($usagers as $usager)
+    @if(isset($usager))
         <section class="zoomFilm">
             <div class="container">
                 
@@ -49,5 +49,5 @@
                 <a href="#" class="cd-popup-close img-replace"></a>
             </div> <!-- cd-popup-container -->
         </div> <!-- cd-popup -->
-    @endforeach
+    @endif
 @endsection

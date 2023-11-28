@@ -24,7 +24,6 @@ class UsagersController extends Controller
     {
         $reussi=Auth::attempt(['nomUsager' => $request->nomUsager,'password' => $request->password]);
         if($reussi){
-            Session::put('nomUsager', $request->nomUsager);
             return redirect()->route('films.index')->with('message',"Connexion réussie");
         }
          else{
@@ -42,8 +41,6 @@ class UsagersController extends Controller
         $request->session()->invalidate();
     
         $request->session()->regenerateToken();
-
-        Session::forget('usager');
     
         return redirect()->route('usagers.showLogin')->with('message',"Déconnexion réussie");
     }  
@@ -67,16 +64,13 @@ class UsagersController extends Controller
             $usager->save();
     
 
-            if(null !== Session::get('nomUsager')){
-                $nomUsagerSession = Session::get('nomUsager');
-                $usagersSession = Usager::where('nomUsager', $nomUsagerSession)->get();
-                foreach($usagersSession as $usagerSession){
-                    if($usagerSession->role === 'admin'){
-                        return redirect()->route('usagers.index')->with('message', "Vous avez bien ajouté " . $usager->nomUsager . " !"); 
-                    }
-                    else{
-                        return redirect()->route('login')->with('message', "Vous avez bien ajouté " . $usager->nomUsager . " !");
-                    }
+            if(null !== Auth::user()){
+                $usagerSession = Auth::user();
+                if($usagerSession->role === 'admin'){
+                    return redirect()->route('usagers.index')->with('message', "Vous avez bien ajouté " . $usager->nomUsager . " !"); 
+                }
+                else{
+                    return redirect()->route('login')->with('message', "Vous avez bien ajouté " . $usager->nomUsager . " !");
                 }
             }
             else{
@@ -88,17 +82,14 @@ class UsagersController extends Controller
             //Gérer l'erreur
             Log::debug($e);
     
-            $nomUsagerSession = Session::get('nomUsager');
-            $usagersSession = Usager::where('nomUsager', $nomUsagerSession)->get();
+            $usagerSession = Auth::user();
 
             if(isset($usagersSession)){
-                foreach($usagersSession as $usagerSession){
-                    if($usagerSession->role === 'admin'){
-                        return redirect()->route('usagers.index')->withErrors('L\'ajout n\'a pas fonctionné'); 
-                    }
-                    else{
-                        return redirect()->route('login')->withErrors('L\'ajout n\'a pas fonctionné');
-                    }
+                if($usagerSession->role === 'admin'){
+                    return redirect()->route('usagers.index')->withErrors('L\'ajout n\'a pas fonctionné'); 
+                }
+                else{
+                    return redirect()->route('login')->withErrors('L\'ajout n\'a pas fonctionné');
                 }
             }
             else{
@@ -112,9 +103,8 @@ class UsagersController extends Controller
     */
    public function show()
    {
-        $nomUsagerSession = Session::get('nomUsager');
-        $usagers = Usager::where('nomUsager', $nomUsagerSession)->get();
-        return View('Usagers.show', compact('usagers'));
+        $usager = Auth::user();
+        return View('usagers.show', compact('usager'));
    }
 
    /**
@@ -138,7 +128,6 @@ class UsagersController extends Controller
            $usager->password = $request->password;
            $usager->role = $request->role;
            $usager->save();
-           Session::put('nomUsager', $request->nomUsager);
            return redirect()->route('films.index')->with('message', "Vous avez bien modifié votre compte !");
        }
    
@@ -197,8 +186,6 @@ class UsagersController extends Controller
         
            $request->session()->regenerateToken();
 
-           Session::forget('usager');
-
            return redirect()->route('films.index')->with('message', "Suppression de votre compte réussi!");
        }
        catch(\Throwable $e){
@@ -227,13 +214,10 @@ class UsagersController extends Controller
         try{
             $usager = Usager::findOrFail($id);
  
-            $nomUsagerSession = Session::get('nomUsager');
-            $usagersSession = Usager::where('nomUsager', $nomUsagerSession)->get();
+            $usagerSession = Auth::user();
             
-            foreach($usagersSession as $usagerSession){
-                if($usager->nomUsager === $usagerSession->nomUsager){
-                    return redirect()->route('usagers.index')->withErrors(['Vous ne pouvez pas supprimer votre propre compte ici']); 
-                }
+            if($usager->nomUsager === $usagerSession->nomUsager){
+                return redirect()->route('usagers.index')->withErrors(['Vous ne pouvez pas supprimer votre propre compte ici']); 
             }
 
             $usager->delete();
