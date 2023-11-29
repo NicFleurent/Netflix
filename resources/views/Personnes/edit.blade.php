@@ -10,14 +10,8 @@
 <section class="upcoming">
     <div class="container">
         <div class="container">
-            @if(isset($errors) && $errors->any())
-            <div>
-                @foreach($errors->all() as $error)
-                <p>{{$message}}</p>
-                @endforeach
-            </div>
-            @endif
-            <form class="form " method="post" action="{{ route('personnes.update', [$personne]) }}" enctype="multipart/form-data" >
+
+            <form class="form " method="post" action="{{ route('personnes.update', [$personne]) }}" enctype="multipart/form-data">
                 <div class="title">Modifier</div>
                 @csrf
                 @method('patch')
@@ -39,13 +33,12 @@
                 <p>{{ $errors->first('date_naissance') }}</p>
                 @endif
 
-                <div class="input-container ic2">
-                    <input type="file" class=" input" id="lien_photo" placeholder=" " name="lien_photo">
-                    <div class="cut cut-lien"></div>
-                    <label for="lien_photo" class="placeholder">Sélectionner une image</label>
+                <div class="input-container ic2 txt-jaune">
+                    <label for="lien_photo"> Sélectionner une image </label>
+                    <input type="file" id="lien_photo" name="lien_photo">
                 </div>
                 @if($errors->has('lien_photo'))
-                <p>{{ $errors->first('lien_photo') }}</p>
+                <p class="erreur-margin">{{ $errors->first('lien_photo') }}</p>
                 @endif
 
                 <div class="select-subgroup">

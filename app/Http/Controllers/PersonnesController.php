@@ -181,8 +181,6 @@ class PersonnesController extends Controller
         } catch (\Throwable $e) {
             //Gérer l'erreur
             Log::debug($e);
-
-            // dd($personne->filmsJouesAP());
             return redirect()->route('personnes.index')->withErrors(['La suppression n\'a pas fonctionné']);
         }
     }
