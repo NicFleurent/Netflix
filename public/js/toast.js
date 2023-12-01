@@ -36,6 +36,7 @@ let toast = document.querySelector(".toast");
 let progress = document.querySelector(".progress");
 
 let timer;
+let timer2;
 
 
 toast.classList.add("active");
@@ -46,3 +47,8 @@ timer = setTimeout(() => {
   toast.classList.remove("active");
   progress.classList.remove("active");
 }, 3000); 
+
+timer2 = setTimeout(() => {
+  toast.classList.add("d-none");
+
+}, 3360); 

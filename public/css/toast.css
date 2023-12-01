@@ -25,6 +25,10 @@
   transition: transform 0.45s ease-in-out;
 }
 
+.toast.d-none{
+  display: none;
+}
+
 .toast .toast-content {
   display: flex;
   align-items: center;
