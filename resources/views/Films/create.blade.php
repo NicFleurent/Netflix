@@ -4,6 +4,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/forms.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/blockToast.css') }}">
 @endsection
 
 @section('contenu')
@@ -21,9 +22,9 @@
                 @if($errors->has('titre'))
                     <p>{{ $errors->first('titre') }}</p>
                 @endif
-                <div class="input-container ic2">
-                    <input id="resume" class="input" type="text" placeholder=" " name="resume" value="{{ old('resume') }}"/>
-                    <div class="cut cut-synopsis"></div>
+                <div class="input-container-textarea ic2">
+                    <textarea id="resume" class="input" name="resume" placeholder=" ">{{ old('resume') }}</textarea>              
+                    <div class="cut cut-synopsis"></div>                   
                     <label for="titre" class="placeholder">Synopsis</label>
                 </div>
                 @if($errors->has('resume'))
@@ -53,15 +54,8 @@
                 @if($errors->has('lien_film'))
                     <p>{{ $errors->first('lien_film') }}</p>
                 @endif
-                <div class="input-container ic2">
-                    <input id="lien_pochette" class="input" type="file" placeholder=" " name="lien_pochette"/>
-                    <div class="cut cut-image"></div>
-                    <label for="titre" class="placeholder">Téléverser une image</label>
-                </div>
-                @if($errors->has('lien_pochette'))
-                    <p>{{ $errors->first('lien_pochette') }}</p>
-                @endif
-                <div class="input-container ic2">
+            
+                <div class="input-container ic2 margin-top">
                     <input id="type" class="input" type="text" placeholder=" " name="type" value="{{ old('type') }}"/>
                     <div class="cut cut-type"></div>
                     <label for="titre" class="placeholder">Type</label>
@@ -93,6 +87,16 @@
                 @if($errors->has('cote'))
                     <p>{{ $errors->first('cote') }}</p>
                 @endif
+
+                <div class="input-container ic2 txt-jaune ">
+                 <label for="lien_pochette"> Sélectionner une image </label>
+                 <input type="file"  id="lien_pochette"  name="lien_pochette">          
+                </div>
+                
+                @if($errors->has('lien_pochette'))
+                    <p class="erreur-margin">{{ $errors->first('lien_pochette') }}</p>
+                @endif
+
                 <div class="select-group">
                     <div class="select-subgroup">
                         <label for="rating">Classification</label>

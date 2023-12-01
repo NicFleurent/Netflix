@@ -180,6 +180,17 @@ input[type="file"]::file-selector-button {
     background-color: var(--citrine);
     color: black;
   }
+
+  textarea{
+    resize: none;
+    font-family: var(--ff-poppins);
+  }
+
+  .input-container-textarea{
+    height: 100px;
+    position: relative;
+    width: 100%;
+  }
   
 /**************************************************
 Select 
