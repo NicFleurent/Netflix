@@ -34,6 +34,15 @@
                                 <h3 class="card-title">{{ $acteur->nom }}</h3>
                             </a>
                         </div>
+
+                        @role('admin')
+                        <div class="lien-edit">
+                            <a href="{{route('personnes.edit', [$acteur])}}">
+                                <ion-icon name="construct-outline"></ion-icon>
+                                <data>Mettre à jour</data>
+                            </a>
+                        </div>
+                        @endrole
                     </div>
                 </li>
                 @endforeach
@@ -69,6 +78,15 @@
                                 <h3 class="card-title">{{ $realisateur->nom }}</h3>
                             </a>
                         </div>
+
+                        @role('admin')
+                        <div class="lien-edit">
+                            <a href="{{route('personnes.edit', [$realisateur])}}">
+                                <ion-icon name="construct-outline"></ion-icon>
+                                <data>Mettre à jour</data>
+                            </a>
+                        </div>
+                        @endrole
                     </div>
                 </li>
 
@@ -105,6 +123,15 @@
                                 <h3 class="card-title">{{ $producteur->nom }}</h3>
                             </a>
                         </div>
+
+                        @role('admin')
+                        <div class="lien-edit">
+                            <a href="{{route('personnes.edit', [$producteur])}}">
+                                <ion-icon name="construct-outline"></ion-icon>
+                                <data>Mettre à jour</data>
+                            </a>
+                        </div>
+                        @endrole
                     </div>
                 </li>
                 @endforeach
@@ -140,6 +167,15 @@
                                 <h3 class="card-title">{{ $doubleur->nom }}</h3>
                             </a>
                         </div>
+
+                        @role('admin')
+                        <div class="lien-edit">
+                            <a href="{{route('personnes.edit', [$doubleur])}}">
+                                <ion-icon name="construct-outline"></ion-icon>
+                                <data>Mettre à jour</data>
+                            </a>
+                        </div>
+                        @endrole
                     </div>
                 </li>
 
@@ -176,6 +212,15 @@
                                 <h3 class="card-title">{{ $dateAnniversaire->nom }}</h3>
                             </a>
                         </div>
+
+                        @role('admin')
+                        <div class="lien-edit">
+                            <a href="{{route('personnes.edit', [$dateAnniversaire])}}">
+                                <ion-icon name="construct-outline"></ion-icon>
+                                <data>Mettre à jour</data>
+                            </a>
+                        </div>
+                        @endrole
                     </div>
                 </li>
                 @endforeach
