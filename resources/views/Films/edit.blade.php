@@ -55,15 +55,6 @@
                 @if($errors->has('lien_film'))
                     <p>{{ $errors->first('lien_film') }}</p>
                 @endif
-              
-                <div class="input-container ic2">
-                    <input id="type" class="input" type="text" placeholder=" " name="type" value="{{ old('type') == null ? $film->type : old('type') }}"/>
-                    <div class="cut cut-type"></div>
-                    <label for="titre" class="placeholder">Type</label>
-                </div>
-                @if($errors->has('type'))
-                    <p>{{ $errors->first('type') }}</p>
-                @endif
                 <div class="input-container ic2">
                     <input id="genre" class="input" type="text" placeholder=" " name="genre" value="{{ old('genre') == null ? $film->genre : old('genre') }}"/>
                     <div class="cut cut-genre"></div>
@@ -99,6 +90,21 @@
                 @endif
 
                 <div class="select-group">
+                    <div class="select-subgroup">
+                        <label for="type">Type</label>
+                        <div class="select select-classification">
+                            <select class="form-control" id="type" name="type">
+                                {{ old('type') != null ? $comparateur = old('type') : $comparateur = $film->type }}
+                                <option value="">Choisir</option>
+                                <option value="film" {{ "film" == $comparateur ? 'selected' : null }}>film</option>
+                                <option value="serie" {{ "serie" == $comparateur ? 'selected' : null }}>serie</option>
+                                <option value="anime" {{ "anime" == $comparateur ? 'selected' : null }}>anime</option>
+                            </select>
+                        </div>
+                        @if($errors->has('type'))
+                            <span>{{ $errors->first('type') }}</span>
+                        @endif
+                    </div>
                     <div class="select-subgroup">
                         <label for="rating">Classification</label>
                         <div class="select select-classification">

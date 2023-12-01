@@ -22,6 +22,7 @@
                 @if($errors->has('titre'))
                     <p>{{ $errors->first('titre') }}</p>
                 @endif
+
                 <div class="input-container-textarea ic2">
                     <textarea id="resume" class="input" name="resume" placeholder=" ">{{ old('resume') }}</textarea>              
                     <div class="cut cut-synopsis"></div>                   
@@ -30,6 +31,7 @@
                 @if($errors->has('resume'))
                     <p>{{ $errors->first('resume') }}</p>
                 @endif
+
                 <div class="input-container ic2">
                     <input id="duree" class="input" type="number" placeholder=" " name="duree" value="{{ old('duree') }}"/>
                     <div class="cut cut-duree"></div>
@@ -38,6 +40,7 @@
                 @if($errors->has('duree'))
                     <p>{{ $errors->first('duree') }}</p>
                 @endif
+
                 <div class="input-container ic2">
                     <input id="annee_sortie" class="input" type="number" placeholder=" " name="annee_sortie" value="{{ old('annee_sortie') }}"/>
                     <div class="cut cut-annee"></div>
@@ -46,6 +49,7 @@
                 @if($errors->has('annee_sortie'))
                     <p>{{ $errors->first('annee_sortie') }}</p>
                 @endif
+
                 <div class="input-container ic2">
                     <input id="lien_film" class="input" type="text" placeholder=" " name="lien_film" value="{{ old('lien_film') }}"/>
                     <div class="cut cut-trailer"></div>
@@ -54,15 +58,7 @@
                 @if($errors->has('lien_film'))
                     <p>{{ $errors->first('lien_film') }}</p>
                 @endif
-            
-                <div class="input-container ic2 margin-top">
-                    <input id="type" class="input" type="text" placeholder=" " name="type" value="{{ old('type') }}"/>
-                    <div class="cut cut-type"></div>
-                    <label for="titre" class="placeholder">Type</label>
-                </div>
-                @if($errors->has('type'))
-                    <p>{{ $errors->first('type') }}</p>
-                @endif
+
                 <div class="input-container ic2">
                     <input id="genre" class="input" type="text" placeholder=" " name="genre" value="{{ old('genre') }}"/>
                     <div class="cut cut-genre"></div>
@@ -71,6 +67,7 @@
                 @if($errors->has('genre'))
                     <p>{{ $errors->first('genre') }}</p>
                 @endif
+
                 <div class="input-container ic2">
                     <input id="brand" class="input" type="text" placeholder=" " name="brand" value="{{ old('brand') }}"/>
                     <div class="cut cut-marque"></div>
@@ -79,6 +76,7 @@
                 @if($errors->has('brand'))
                     <p>{{ $errors->first('brand') }}</p>
                 @endif
+
                 <div class="input-container ic2">
                     <input id="cote" class="input" type="number" placeholder=" " name="cote" value="{{ old('cote') }}" step=".1"/>
                     <div class="cut cut-cote"></div>
@@ -92,12 +90,25 @@
                  <label for="lien_pochette"> Sélectionner une image </label>
                  <input type="file"  id="lien_pochette"  name="lien_pochette">          
                 </div>
-                
                 @if($errors->has('lien_pochette'))
                     <p class="erreur-margin">{{ $errors->first('lien_pochette') }}</p>
                 @endif
 
                 <div class="select-group">
+                    <div class="select-subgroup">
+                        <label for="type">Type</label>
+                        <div class="select select-classification">
+                            <select class="form-control" id="type" name="type">
+                                <option value="">Choisir</option>
+                                <option value="film" {{ "film" == old('type') ? 'selected' : null }}>film</option>
+                                <option value="serie" {{ "serie" == old('type') ? 'selected' : null }}>serie</option>
+                                <option value="anime" {{ "anime" == old('type') ? 'selected' : null }}>anime</option>
+                            </select>
+                        </div>
+                        @if($errors->has('type'))
+                            <span>{{ $errors->first('type') }}</span>
+                        @endif
+                    </div>
                     <div class="select-subgroup">
                         <label for="rating">Classification</label>
                         <div class="select select-classification">
