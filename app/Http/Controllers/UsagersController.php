@@ -121,12 +121,9 @@ class UsagersController extends Controller
    public function update(UsagerModifInfoRequest $request, Usager $usager)
    {
        try {
-           $usager->nomUsager = $request->nomUsager;
            $usager->email = $request->email;
            $usager->nom = $request->nom;
            $usager->prenom = $request->prenom;
-           $usager->password = $request->password;
-           $usager->role = $request->role;
            $usager->save();
            return redirect()->route('films.index')->with('message', "Vous avez bien modifié votre compte !");
        }
@@ -152,12 +149,7 @@ class UsagersController extends Controller
    public function updatePassword(UsagerModifPasswordRequest $request, Usager $usager)
    {
        try {
-           $usager->nomUsager = $request->nomUsager;
-           $usager->email = $request->email;
-           $usager->nom = $request->nom;
-           $usager->prenom = $request->prenom;
            $usager->password = Hash::make($request->password);
-           $usager->role = $request->role;
            $usager->save();
            return redirect()->route('films.index')->with('message', "Vous avez bien modifié votre mot de passe !");
        }
