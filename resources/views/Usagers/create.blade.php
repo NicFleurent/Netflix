@@ -2,6 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/forms.css') }}">
+<link rel="stylesheet" href="{{ asset('css/blockToast.css') }}">
 @endsection
 
 @section('title', 'Netflix - Créer un compte')

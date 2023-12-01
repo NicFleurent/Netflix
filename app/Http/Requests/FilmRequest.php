@@ -50,6 +50,7 @@ class FilmRequest extends FormRequest
             'lien_film.u_r_l' => 'Entrer une URL valide',
             'lien_film.regex' => 'Le lien doit être la source d\'un iframe',
             'lien_pochette.required' => 'Le lien du poster est requis',
+            'lien_pochette.image' => 'Le ficher doit être une image',
             'lien_pochette.mimes' => 'Le type de fichier n\'est pas reconnu (png, jpeg, jpg, gif, webp)',
             'lien_pochette.max' => 'La taille de l\'image ne peut pas dépasser 4096Kb.',
             'realisateur_id.required' => 'Le réalisateur est requis',
