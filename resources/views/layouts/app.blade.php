@@ -182,11 +182,8 @@
                                 <ion-icon name="logo-linkedin"></ion-icon>
                             </a>
                         </li>
-
                     </ul>
-
                 </div>
-
             </div>
         </div>
 
@@ -219,7 +216,19 @@
             </div>
         </div>
         <div class="progress "></div>
-    </div>
+    </div> 
+    @elseif(session('modal'))
+        <!-- Modal alerte films à supprimer avant-->
+     <div class=" cd-popup-supp" role="alert">
+    <div class="cd-popup-container-supp">
+    <p class="liste-films">{!!session('modal')!!}</p>
+    <ul class="cd-buttons">
+            <li><a href="#" class="cd-popup-non">Ok</a></li>
+     </ul>
+        <a href="#" class="cd-popup-close img-replace"></a>
+    </div> <!-- cd-popup-container -->
+    </div> <!-- cd-popup-supp -->
+
     @elseif(isset($errors) && $errors->any())
     {{-- TOAST ERREUR --}}
     <div class="toast">
@@ -251,11 +260,8 @@
     <!-- Scripts modal -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('js/modal-supp-erreur.js') }}"></script>
     <script src="{{ asset('js/toast.js') }}"></script>
-    
- 
-
-
 </body>
 
 </html>

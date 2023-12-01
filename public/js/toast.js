@@ -50,5 +50,4 @@ timer = setTimeout(() => {
 
 timer2 = setTimeout(() => {
   toast.classList.add("d-none");
-
 }, 3360); 

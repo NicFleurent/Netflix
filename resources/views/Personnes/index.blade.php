@@ -182,9 +182,9 @@
                 @else
                 <p> Aucun vieillissent ce mois-ci. </p>
                 @endif
-
             </ul>
         </div>
     </section>
+    
 </main>
 @endsection

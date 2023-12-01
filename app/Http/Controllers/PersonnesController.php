@@ -133,6 +133,7 @@ class PersonnesController extends Controller
         try {
             $personne = Personne::findOrFail($id);
             $nomFilms = "";
+            $suppressionImpossible = false;
             $i = 1;
 
             if (File::exists($personne->lien_photo)) {
@@ -140,41 +141,44 @@ class PersonnesController extends Controller
             }
 
             if (count($personne->filmsJouesAP) > 0) {
-
+            $suppressionImpossible = true;
                 foreach ($personne->filmsJouesAP as $filmJoueAP) {
                     if ($i < count($personne->filmsJouesAP)) {
-                        $nomFilms .=  $filmJoueAP->titre . ' ,';
+                        $nomFilms .= 'Acteur principal : ' . $filmJoueAP->titre . '<br>';
                     } else {
-                        $nomFilms .= $filmJoueAP->titre;
+                        $nomFilms .= 'Acteur principal : ' . $filmJoueAP->titre . '<br>' ;
                     }
                     $i++;
                 }
-                return redirect()->route('personnes.index')->withErrors(['Vous devez supprimer ses films avant : ' . $nomFilms]);
             }
 
             if (count($personne->filmsRealises) > 0) {
-
+                $suppressionImpossible = true;
                 foreach ($personne->filmsRealises as $filmRealise) {
                     if ($i < count($personne->filmsRealises)) {
-                        $nomFilms .= $filmRealise->titre . ' ,';
+                        $nomFilms .= 'Réalisateur(ice) : ' . $filmRealise->titre . '<br>';
                     } else {
-                        $nomFilms .= $filmRealise->titre;
+                        $nomFilms .= 'Réalisateur(ice) : ' . $filmRealise->titre;
                     }
                     $i++;
                 }
-                return redirect()->route('personnes.index')->withErrors(['Vous devez supprimer ses films avant : ' . $nomFilms]);
+    
             }
             if (count($personne->filmsProduits) > 0) {
+                $suppressionImpossible = true;
                 foreach ($personne->filmsProduits as $filmProduit) {
                     if ($i < count($personne->filmsProduits)) {
-                        $nomFilms .= $filmProduit->titre . ' ,';
+                        $nomFilms .= 'Producteur(ice) : ' . $filmProduit->titre . '<br>';
                     } else {
-                        $nomFilms .= $filmProduit->titre;
+                        $nomFilms .= 'Producteur(ice) : ' . $filmProduit->titre;
                     }
                     $i++;
                 }
-                return redirect()->route('personnes.index')->withErrors(['Vous devez supprimer ses films avant : ' . $nomFilms]);
             }
+            if($suppressionImpossible){
+                return redirect()->route('personnes.index')->with('modal','Vous devez supprimer ses films avant : <br>' . $nomFilms);
+            }
+            
             $personne->roles()->detach();
             $personne->delete();
             return redirect()->route('personnes.index')->with('message', "Suppression de " . $personne->nom . " réussi!");
