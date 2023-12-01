@@ -10,6 +10,8 @@
     <!-- favicon-->
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
+    <link rel="icon" href="{{ asset('img/logo_icon.png') }}">
+
     <!-- custom css link-->
     <link rel="stylesheet" href="{{ asset('css/films.css') }}">
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
