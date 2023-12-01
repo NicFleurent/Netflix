@@ -30,11 +30,6 @@
                 @if($errors->has('password_confirmation'))
                     <p>{{ $errors->first('password_confirmation') }}</p>
                 @endif
-                <input type="hidden" class="input" id="nomUsager" placeholder=" " name="nomUsager" value="{{ $usager->nomUsager }}">
-                <input type="hidden" class="input" id="role" placeholder=" " name="role" value="{{ $usager->role }}">
-                <input type="hidden" class="input" id="nom" placeholder=" " name="nom" value="{{ $usager->nom }}">
-                <input type="hidden" class="input" id="prenom" placeholder=" " name="prenom" value="{{ $usager->prenom }}">
-                <input type="hidden" class="input" id="email" placeholder=" " name="email" value="{{ $usager->email }}">
 
                 <div class="filter-list lien-edit">
                     <button type="submit" class="btn btn-primary ">Enregistrer</button>

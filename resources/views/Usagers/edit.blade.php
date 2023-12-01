@@ -14,14 +14,6 @@
                 <div class="title">Modifier mon compte</div>
                 @csrf
                 @method('patch')
-                <div class="input-container ic1">
-                    <input type="text" class="input" id="nomUsager" placeholder=" " name="nomUsager" value="{{ old('nomUsager') == null ? $usager->nomUsager : old('nomUsager') }}">
-                    <div class="cut cut-user"></div>
-                    <label for="nomUsager" class="placeholder">Nom d'usager</label>
-                </div>
-                @if($errors->has('nomUsager'))
-                    <p>{{ $errors->first('nomUsager') }}</p>
-                @endif
                 <div class="input-container ic2">
                     <input type="text" class="input" id="email" placeholder=" " name="email" value="{{ old('email') == null ? $usager->email : old('email') }}">
                     <div class="cut cut-short"></div>
@@ -46,8 +38,6 @@
                 @if($errors->has('prenom'))
                     <p>{{ $errors->first('prenom') }}</p>
                 @endif
-                <input type="hidden" class="input" id="password" placeholder=" " name="password" value="{{ $usager->password }}">
-                <input type="hidden" class="input" id="role" placeholder=" " name="role" value="{{ $usager->role }}">
 
                 <div class="filter-list lien-edit">
                     <button type="submit" class="btn btn-primary ">Enregistrer</button>

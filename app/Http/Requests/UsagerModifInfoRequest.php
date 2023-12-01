@@ -22,24 +22,18 @@ class UsagerModifInfoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nomUsager' => 'required',
-            'password' => 'required',
             'email' => 'required|email',
             'nom' => 'required',
-            'prenom' => 'required',
-            'role' => 'required'
+            'prenom' => 'required'
         ];
     }
 
     public function messages(){
         return[
-            'nomUsager.required' => 'Le nom d\'usager est requis',
-            'password.required' => 'Le mot de passe est requis',
             'email.required' => 'L\'adresse courriel est requise',
             'email.email' => 'Entrer une adresse courriel valide',
             'nom.required' => 'Le nom est requis',
-            'prenom.required' => 'Le prénom est requis',
-            'role.required' => 'Le role est requis'
+            'prenom.required' => 'Le prénom est requis'
         ];
     }
 }
