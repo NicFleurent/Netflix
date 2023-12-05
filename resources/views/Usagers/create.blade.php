@@ -70,7 +70,7 @@
                             <select class="form-control" id="role" name="role">
                                 <option value="">Choisir</option>
                                 @role('admin')
-                                <option value="admin" {{ "normal" == old('role') ? 'selected' : null }}>admin</option>
+                                <option value="admin" {{ "admin" == old('role') ? 'selected' : null }}>admin</option>
                                 @endrole
                                 <option value="normal" {{ "normal" == old('role') ? 'selected' : null }}>normal</option>
                                 <option value="enfant" {{ "enfant" == old('role') ? 'selected' : null }}>enfant</option>

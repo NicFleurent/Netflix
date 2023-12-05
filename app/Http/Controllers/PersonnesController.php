@@ -136,10 +136,6 @@ class PersonnesController extends Controller
             $suppressionImpossible = false;
             $i = 1;
 
-            if (File::exists($personne->lien_photo)) {
-                File::delete($personne->lien_photo);
-            }
-
             if (count($personne->filmsJouesAP) > 0) {
             $suppressionImpossible = true;
                 foreach ($personne->filmsJouesAP as $filmJoueAP) {
@@ -181,6 +177,11 @@ class PersonnesController extends Controller
             
             $personne->roles()->detach();
             $personne->delete();
+            
+            if (File::exists($personne->lien_photo)) {
+                File::delete($personne->lien_photo);
+            }
+            
             return redirect()->route('personnes.index')->with('message', "Suppression de " . $personne->nom . " réussi!");
         } catch (\Throwable $e) {
             //Gérer l'erreur
